@@ -1,0 +1,94 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#000000"><meta name="description" content="Derive Maxwell–Boltzmann, Bose–Einstein and Fermi–Dirac occupation laws.">
+<title>MB, BE, and FD Statistics · Statistical Mechanics</title>
+<link rel="stylesheet" href="../style.css"><link rel="icon" href="../icon.svg" type="image/svg+xml">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],packages:{'[+]':['ams']}},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script defer src="../reader.js"></script>
+</head><body>
+<a href="#main" class="skip">Skip to lesson</a>
+<header class="hero"><div class="shell"><p class="eyebrow"><a href="../index.html">STATISTICAL MECHANICS</a> / CHAPTER 07</p>
+<h1>MB, BE, and FD Statistics</h1><p class="subtitle">Derive Maxwell–Boltzmann, Bose–Einstein and Fermi–Dirac occupation laws.</p>
+<nav class="toplinks" aria-label="Website navigation"><a href="../index.html">All chapters</a><a href="https://geeeooooo.github.io/EM/">Electromagnetism</a></nav>
+<div class="tools"><button id="smaller" type="button" aria-label="Decrease text size">A−</button><button id="larger" type="button" aria-label="Increase text size">A+</button><button id="expand" type="button">Show derivations</button><button id="collapse" type="button">Hide derivations</button></div>
+</div></header>
+<main id="main" class="shell">
+<nav class="chapter-jump" aria-label="Within chapter"><a href="#counting">Why occupation statistics differ</a><a href="#bose">Derive Bose–Einstein occupation</a><a href="#fermi">Derive Fermi–Dirac occupation</a><a href="#mb">Maxwell–Boltzmann from Bose and Fermi formulas</a><a href="#integrals">Particle number, energy and density of states</a><a href="#condensation">Bose–Einstein condensation in 3D</a></nav>
+
+<section class="lesson" id="counting"><p class="tag">07.1 · Identical quantum particles</p><h2>Why occupation statistics differ</h2>
+<p>For independent single-particle levels \(\epsilon_j\), a many-body microstate is specified by occupations \(n_j\). Bosons permit \(n_j=0,1,2,\ldots\); spinless fermions or one fermionic spin-orbital permit \(n_j=0,1\). The particle number and energy are \(N=\sum_jn_j\), \(E=\sum_jn_j\epsilon_j\).</p>
+<div class="equation">\[\boxed{\Xi=\prod_j\Xi_j},\qquad \Xi_j=\sum_{n_j}e^{-\beta(\epsilon_j-\mu)n_j}.\]</div>
+<p>Factorization assumes a noninteracting gas in the grand canonical ensemble. Different spin states correspond to different orbitals; a level of degeneracy \(g_j\) includes \(g_j\) independent orbitals.</p>
+</section>
+<section class="lesson" id="bose"><p class="tag">07.2 · Bosons</p><h2>Derive Bose–Einstein occupation</h2>
+<details open><summary>Grand sum over all nonnegative occupancies</summary><div class="steps">
+<p>Let \(y=e^{-\beta(\epsilon-\mu)}=ze^{-\beta\epsilon}\), with fugacity \(z=e^{\beta\mu}\). For a bosonic orbital,</p>
+\[\Xi_\epsilon=\sum_{n=0}^{\infty}y^n=\frac1{1-y}\qquad (y&lt;1).\]
+<p>The mean occupation follows by differentiating the log partition function with respect to \(u=\beta\mu\):</p>
+\[\bar n=\frac{\partial\ln\Xi_\epsilon}{\partial u}
+=\frac{\partial[-\ln(1-y)]}{\partial u}
+=\frac{y}{1-y},\quad \frac{\partial y}{\partial u}=y.\]
+\[\boxed{\bar n_{\rm BE}(\epsilon)=\frac1{e^{\beta(\epsilon-\mu)}-1}}.\]
+<p>For a finite-temperature ideal Bose gas, the fugacity must satisfy \(\mu&lt;\epsilon_0\), where \(\epsilon_0\) is the lowest one-particle energy, to keep the geometric sums finite. In thermodynamic-limit BEC the chemical potential approaches \(\epsilon_0\) from below.</p>
+</div></details>
+</section>
+<section class="lesson" id="fermi"><p class="tag">07.3 · Fermions</p><h2>Derive Fermi–Dirac occupation</h2>
+<details open><summary>Grand sum over occupancy zero or one</summary><div class="steps">
+<p>For one fermionic orbital the allowed occupancies are 0 and 1, so</p>
+\[\Xi_\epsilon=1+y,\qquad y=e^{-\beta(\epsilon-\mu)}.\]
+<p>Differentiate the logarithm:</p>
+\[\bar n=\frac{\partial\ln(1+y)}{\partial(\beta\mu)}=\frac{y}{1+y}.\]
+\[\boxed{\bar n_{\rm FD}(\epsilon)=\frac1{e^{\beta(\epsilon-\mu)}+1}}.\]
+<p>The plus sign reflects Pauli exclusion: no single spin-orbital can accommodate two identical fermions.</p>
+</div></details>
+<details><summary>Zero-temperature Fermi sea</summary><div class="steps">
+<p>At fixed chemical potential \(\mu\), take \(T\to0\) or \(\beta\to\infty\). If \(\epsilon&lt;\mu\), \(e^{\beta(\epsilon-\mu)}\to0\) and \(\bar n\to1\). If \(\epsilon&gt;\mu\), the exponential diverges and \(\bar n\to0\).</p>
+\[\boxed{\bar n_{\rm FD}(\epsilon)\to
+\begin{cases}1,&amp;\epsilon&lt;\epsilon_F,\\0,&amp;\epsilon&gt;\epsilon_F,\end{cases}}\]
+<p>At zero temperature the chemical potential approaches the Fermi energy \(\epsilon_F\) of the fixed-density gas. Therefore the many-body ground state fills multiple single-particle orbitals rather than placing all fermions in the lowest orbital.</p>
+</div></details>
+</section>
+<section class="lesson" id="mb"><p class="tag">07.4 · Classical limit</p><h2>Maxwell–Boltzmann from Bose and Fermi formulas</h2>
+<details open><summary>Show why the ±1 becomes negligible</summary><div class="steps">
+<p>Write \(y=e^{-\beta(\epsilon-\mu)}=ze^{-\beta\epsilon}\). The bosonic and fermionic mean occupancies are \(\bar n_{\rm BE}=y/(1-y)\) and \(\bar n_{\rm FD}=y/(1+y)\).</p>
+<p>When \(y\ll1\), expand \(1/(1\mp y)=1\pm y+O(y^2)\). To leading order,</p>
+\[\boxed{\bar n_{\rm MB}\approx y=e^{-\beta(\epsilon-\mu)}}.\]
+<p>The classical regime is controlled by low orbital occupancies and \(n\lambda_T^d/g_s\ll1\) in a dilute homogeneous gas—not by merely setting the temperature to some arbitrary large numerical value.</p>
+</div></details>
+<div class="equation"><h3>Comparison</h3>
+\[\boxed{\bar n(\epsilon)=
+\begin{cases}
+e^{-\beta(\epsilon-\mu)},&amp;\mathrm{MB\ (dilute)},\\[3pt]
+(e^{\beta(\epsilon-\mu)}-1)^{-1},&amp;\mathrm{BE},\\[3pt]
+(e^{\beta(\epsilon-\mu)}+1)^{-1},&amp;\mathrm{FD}.
+\end{cases}}\]</div>
+</section>
+<section class="lesson" id="integrals"><p class="tag">07.5 · Thermodynamic sums</p><h2>Particle number, energy and density of states</h2>
+<p>For mean occupation \(\bar n(\epsilon)\), the ideal-gas sums are \(N=\sum_j\bar n_j\), \(U=\sum_j\epsilon_j\bar n_j\). In a large system, introduce a density of states \(g(\epsilon)\) that includes spin degeneracy:</p>
+\[\boxed{N=\int_0^\infty g(\epsilon)\bar n(\epsilon)\,d\epsilon},\quad
+\boxed{U=\int_0^\infty \epsilon\,g(\epsilon)\bar n(\epsilon)\,d\epsilon}.\]
+<p>For bosons, treat a macroscopically occupied ground state separately when necessary: \(N=N_0+N_{\rm ex}\). For fermions in three dimensions at \(T=0\), \(N=\int_0^{\epsilon_F}g(\epsilon)\,d\epsilon\).</p>
+<details><summary>Worked derivation · \(U=\frac35N\epsilon_F\) in a 3D Fermi gas at \(T=0\)</summary><div class="steps">
+<p>For a spin-degenerate, nonrelativistic uniform 3D gas, \(g(\epsilon)=C\epsilon^{1/2}\) where \(C\) includes the volume and spin degeneracy. At zero temperature, occupations equal one for \(\epsilon&lt;\epsilon_F\).</p>
+\[N=C\int_0^{\epsilon_F}\epsilon^{1/2}d\epsilon
+=\frac{2C}{3}\epsilon_F^{3/2},\]
+\[U=C\int_0^{\epsilon_F}\epsilon^{3/2}d\epsilon
+=\frac{2C}{5}\epsilon_F^{5/2}.\]
+<p>Divide the equations:</p>
+\[\boxed{U=\frac35N\epsilon_F}.\]
+<p>This is a many-particle quantum ground-state energy, not a zero-energy classical gas. The specific heat tends to zero as \(T\to0\), despite finite \(U\).</p>
+</div></details>
+</section>
+<section class="lesson" id="condensation"><p class="tag">07.6 · Extension</p><h2>Bose–Einstein condensation in 3D</h2>
+<details><summary>Sketch the ideal Bose-gas critical temperature</summary><div class="steps">
+<p>For a 3D uniform ideal gas of spinless bosons with ground energy set to zero, the maximum number of particles occupying excited states at temperature \(T\) occurs as \(\mu\to0^-\):</p>
+\[N_{\rm ex,max}=\frac V{\lambda_T^3}\zeta(3/2).\]
+<p>The onset of condensation occurs when \(N=N_{\rm ex,max}\). With \(n=N/V\) and \(\lambda_T=h/\sqrt{2\pi mk_BT}\), solve for \(T\):</p>
+\[\boxed{T_c=\frac{2\pi\hbar^2}{mk_B}\left(\frac n{\zeta(3/2)}\right)^{2/3}}.\]
+<p>Below \(T_c\), the excess particles occupy the lowest state macroscopically: \(N_0=N-N_{\rm ex}\) in the thermodynamic limit. This formula assumes a uniform, noninteracting, three-dimensional, spinless gas. The corresponding homogeneous ideal Bose gas does not have conventional finite-temperature BEC in 1D or 2D in the thermodynamic limit.</p>
+</div></details>
+</section>
+<div class="chapter-move"><a href="./06.html">← 06 Classical Ideal Gases and Equipartition</a><a href="./08.html">08 Density of States in 1D, 2D, and 3D →</a></div>
+<footer><p>MS Physics · Statistical Mechanics Field Notes</p><p>SI notation unless stated otherwise. Mathematical assumptions and conventions are identified in each derivation. Expand a proof to see its steps.</p><a href="../index.html">Back to contents</a></footer>
+</main></body></html>

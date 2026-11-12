@@ -1,0 +1,83 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#000000"><meta name="description" content="Einstein and Debye partition functions, phonon density of states and specific heat.">
+<title>Einstein and Debye Solids · Statistical Mechanics</title>
+<link rel="stylesheet" href="../style.css"><link rel="icon" href="../icon.svg" type="image/svg+xml">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],packages:{'[+]':['ams']}},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script defer src="../reader.js"></script>
+</head><body>
+<a href="#main" class="skip">Skip to lesson</a>
+<header class="hero"><div class="shell"><p class="eyebrow"><a href="../index.html">STATISTICAL MECHANICS</a> / CHAPTER 10</p>
+<h1>Einstein and Debye Solids</h1><p class="subtitle">Einstein and Debye partition functions, phonon density of states and specific heat.</p>
+<nav class="toplinks" aria-label="Website navigation"><a href="../index.html">All chapters</a><a href="https://geeeooooo.github.io/EM/">Electromagnetism</a></nav>
+<div class="tools"><button id="smaller" type="button" aria-label="Decrease text size">A−</button><button id="larger" type="button" aria-label="Increase text size">A+</button><button id="expand" type="button">Show derivations</button><button id="collapse" type="button">Hide derivations</button></div>
+</div></header>
+<main id="main" class="shell">
+<nav class="chapter-jump" aria-label="Within chapter"><a href="#einstein">Einstein model: partition function, \(U\), \(C_V\)</a><a href="#debyeDOS">Debye model and the phonon density of states</a><a href="#debyeCv">Debye internal energy and heat capacity</a><a href="#limits">Derive the \(T^3\) and Dulong–Petit limits</a><a href="#dimensions">Dimensional extension</a></nav>
+
+<section class="lesson" id="einstein"><p class="tag">10.1 · Independent oscillators</p><h2>Einstein model: partition function, \(U\), \(C_V\)</h2>
+<p>Model a solid with \(N\) atoms as \(3N\) independent identical quantum harmonic modes with a common frequency \(\omega_E\). The excitation number of each mode is \(n=0,1,2,\ldots\).</p>
+<details open><summary>Derive Einstein heat capacity from a geometric series</summary><div class="steps">
+<p>A mode has \(E_n=\hbar\omega_E(n+1/2)\). Its partition function is</p>
+\[z_E=\sum_{n=0}^\infty e^{-\beta\hbar\omega_E(n+1/2)}
+=\frac{e^{-\beta\hbar\omega_E/2}}{1-e^{-\beta\hbar\omega_E}}.\]
+<p>For \(3N\) independent modes, \(Z_E=z_E^{3N}\). Let \(x=\beta\hbar\omega_E=\Theta_E/T\), \(\Theta_E=\hbar\omega_E/k_B\). Then</p>
+\[\ln Z_E=-\frac{3Nx}{2}-3N\ln(1-e^{-x}).\]
+<p>Differentiate with respect to \(\beta\):</p>
+\[\boxed{U_E=3N\hbar\omega_E\left(\frac12+\frac1{e^x-1}\right)}.\]
+<p>With \(dx/dT=-x/T\),</p>
+\[\boxed{C_{V,E}=3Nk_B\,x^2\frac{e^x}{(e^x-1)^2}}.\]
+<p>At \(T\ll\Theta_E\), \(C_{V,E}\approx3Nk_Bx^2e^{-x}\); at \(T\gg\Theta_E\), \(C_{V,E}\to3Nk_B\). The zero-point term \(3N\hbar\omega_E/2\) contributes to \(U_E\) but not \(C_{V,E}\).</p>
+</div></details>
+</section>
+<section class="lesson" id="debyeDOS"><p class="tag">10.2 · Continuum phonons</p><h2>Debye model and the phonon density of states</h2>
+<p>Debye replaces identical-frequency Einstein modes with collective acoustic modes of different \(\omega\), approximated as linearly dispersing \(\omega=vk\) in an isotropic solid. Three polarizations are represented by an effective average velocity. Mode counting imposes a cutoff \(\omega_D\) so the total is \(3N\).</p>
+<details open><summary>Derive \(g(\omega)=9N\omega^2/\omega_D^3\)</summary><div class="steps">
+<p>In three spatial dimensions, the number of k-states in a spherical shell is proportional to \(4\pi k^2\,dk\). With \(\omega\propto k\), the frequency density of states therefore scales as \(g(\omega)=A\omega^2\).</p>
+<p>Fix \(A\) by requiring precisely \(3N\) vibrational modes:</p>
+\[3N=\int_0^{\omega_D}A\omega^2d\omega=\frac{A\omega_D^3}{3}.\]
+<p>Solve \(A=9N/\omega_D^3\):</p>
+\[\boxed{g_D(\omega)=\frac{9N\omega^2}{\omega_D^3}},\qquad 0\le\omega\le\omega_D.\]
+<p>Define Debye temperature \(\Theta_D=\hbar\omega_D/k_B\).</p>
+</div></details>
+</section>
+<section class="lesson" id="debyeCv"><p class="tag">10.3 · Derivation</p><h2>Debye internal energy and heat capacity</h2>
+<details open><summary>Convert the frequency integral to the Debye function</summary><div class="steps">
+<p>A phonon mode of frequency \(\omega\) has thermal mean energy \(\hbar\omega/(e^{\beta\hbar\omega}-1)\), in addition to its temperature-independent zero-point contribution. Sum the thermal portions over \(g_D(\omega)\):</p>
+\[U_{\rm th}=\int_0^{\omega_D}g_D(\omega)\frac{\hbar\omega}{e^{\beta\hbar\omega}-1}\,d\omega.\]
+<p>Insert \(g_D\) and substitute \(x=\hbar\omega/(k_BT)\), giving \(\omega=(k_BT/\hbar)x\) and \(d\omega=(k_BT/\hbar)dx\):</p>
+\[U_{\rm th}=\frac{9N\hbar}{\omega_D^3}\int_0^{\omega_D}\frac{\omega^3}{e^{\beta\hbar\omega}-1}d\omega,\]
+\[\boxed{U_{\rm th}=9Nk_BT\left(\frac T{\Theta_D}\right)^3
+\int_0^{\Theta_D/T}\frac{x^3}{e^x-1}\,dx}.\]
+<p>Differentiate with respect to \(T\) at fixed \(V\) to obtain the heat capacity, equivalently</p>
+\[\boxed{C_{V,D}=9Nk_B\left(\frac T{\Theta_D}\right)^3
+\int_0^{\Theta_D/T}\frac{x^4e^x}{(e^x-1)^2}dx}.\]
+<p>The last form follows by differentiating each mode's Bose occupation under the integral; it is equivalent to differentiating the expression for \(U_{\rm th}\) with a moving upper limit.</p>
+</div></details>
+</section>
+<section class="lesson" id="limits"><p class="tag">10.4 · Asymptotics</p><h2>Derive the \(T^3\) and Dulong–Petit limits</h2>
+<details open><summary>Low-temperature Debye \(T^3\) law</summary><div class="steps">
+<p>If \(T\ll\Theta_D\), the upper limit \(\Theta_D/T\to\infty\). The convergent Bose integral becomes</p>
+\[\int_0^\infty\frac{x^3}{e^x-1}dx
+=\Gamma(4)\zeta(4)=6\frac{\pi^4}{90}=\frac{\pi^4}{15}.\]
+<p>Insert into the Debye thermal energy:</p>
+\[U_{\rm th}\approx9Nk_BT\left(\frac T{\Theta_D}\right)^3\frac{\pi^4}{15}
+=\frac{3\pi^4}{5}Nk_B\frac{T^4}{\Theta_D^3}.\]
+<p>Differentiate:</p>
+\[\boxed{C_{V,D}\approx\frac{12\pi^4}{5}Nk_B\left(\frac T{\Theta_D}\right)^3}.\]
+<p>Thus the low-temperature heat capacity of a 3D ideal Debye solid follows the \(T^3\) law, unlike the exponential suppression of the Einstein model.</p>
+</div></details>
+<details open><summary>High-temperature Dulong–Petit limit</summary><div class="steps">
+<p>For \(k_BT\gg\hbar\omega_D\), each mode has thermal mean energy \(\hbar\omega/(e^{\beta\hbar\omega}-1)\approx k_BT\). There are \(3N\) modes, so</p>
+\[U_{\rm th}\approx\int_0^{\omega_D}g_D(\omega)\,k_BT\,d\omega=3Nk_BT.\]
+\[\boxed{C_{V,D}\to3Nk_B}.\]
+<p>This is the Dulong–Petit law; it is shared by Einstein and Debye models in their classical high-temperature limits.</p>
+</div></details>
+</section>
+<section class="lesson" id="dimensions"><h2>Dimensional extension</h2><div class="equation">
+<p>For acoustic phonons with linear dispersion in an idealized \(d\)-dimensional continuum, \(g_d(\omega)\propto\omega^{d-1}\). The thermal energy scales as \(U_{\rm th}\propto T^{d+1}\) at sufficiently low temperatures, so \(C_V\propto T^d\). Actual low-dimensional materials may have flexural modes, anisotropy, and finite-size effects that alter this scaling.</p></div>
+</section>
+<div class="chapter-move"><a href="./09.html">← 09 Quantum-to-Classical Temperature Limits</a><a href="./11.html">11 Fluctuations and Phase Behavior →</a></div>
+<footer><p>MS Physics · Statistical Mechanics Field Notes</p><p>SI notation unless stated otherwise. Mathematical assumptions and conventions are identified in each derivation. Expand a proof to see its steps.</p><a href="../index.html">Back to contents</a></footer>
+</main></body></html>
