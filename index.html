@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<meta name="description" content="Statistical Mechanics MS Physics study website, textbook-style topic outline with selectable chapters.">
+<link rel="icon" type="image/svg+xml" href="./icon.svg">
+<link rel="stylesheet" href="./style.css">
+<title>Statistical Mechanics · Field Notes</title>
+<script>
+window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],packages:{'[+]':['ams']}},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script defer src="./app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to topics</a>
+<header class="hero"><div class="shell">
+<p class="eyebrow">FIELD NOTES / MS PHYSICS</p>
+<h1>Statistical Mechanics</h1>
+<p>A structured outline for complete derivations.</p>
+<nav aria-label="Websites" class="nav"><a href="./index.html" aria-current="page">Statistical Mechanics</a><a href="https://geeeooooo.github.io/EM/">Electromagnetism</a></nav>
+</div></header>
+<main id="main" class="shell">
+<section class="intro"><p class="eyebrow">PROPOSED SYLLABUS</p>
+<h2>Choose your topics</h2>
+<p>Open any chapter and select the subsections you want added to the website. The selected topics can be copied into your ChatGPT conversation. Your three previously requested topics—canonical partition functions, quantum-state boundary conditions, and quantum-to-classical limits—are expanded below.</p>
+<p><strong>Current stage:</strong> outline only. Complete textbook-level derivations, physical explanations, and worked problems will be added after you select chapters.</p></section>
+<section class="equations" aria-label="Example typeset equations">
+<p class="eyebrow">EQUATION DISPLAY PREVIEW</p>
+<div class="mathline">\[Z(\beta,V,N)=\sum_i e^{-\beta E_i},\qquad \beta=\frac{1}{k_BT}\]</div>
+<div class="mathline">\[F=-k_BT\ln Z,\qquad U=-\left(\frac{\partial\ln Z}{\partial\beta}\right)_{V,N}\]</div>
+<p class="small">Equations are typeset using MathJax SVG. Long formulas scroll horizontally on watch screens. Initial loading requires internet access.</p>
+</section>
+<section class="picker" aria-label="Selection tools">
+<div class="picker-head"><div><h2>Select sections</h2><p class="small" id="count" aria-live="polite">0 selected</p></div><div class="buttons"><button type="button" id="copy">Copy choices</button><button type="button" id="clear">Clear</button></div></div>
+<label for="search">Search the outline</label>
+<input id="search" type="search" placeholder="Topic, term, or number…">
+<div class="buttons" id="view-buttons"><button type="button" id="smaller" aria-label="Smaller text">A−</button><button type="button" id="larger" aria-label="Larger text">A+</button><button type="button" id="expand">Expand all</button><button type="button" id="collapse">Collapse all</button></div>
+<p class="small" id="status" aria-live="polite">Selections can be stored locally in your browser.</p>
+</section>
+<section class="outline" aria-label="Course topic outline">
+<h2>Course outline</h2>
+<details class="chapter" id="chapter-01" >
+<summary><span class="number">01</span><span class="heading"><strong>Thermodynamic Foundations</strong><small>Proposed chapter</small></span><span class="plus" aria-hidden="true">+</span></summary>
+<div class="topics"><label class="topic"><input type="checkbox" data-id="01.1" data-chapter="Thermodynamic Foundations"><span class="num">01.1</span><span>First, second, and zeroth laws; heat and work</span></label>
+<label class="topic"><input type="checkbox" data-id="01.2" data-chapter="Thermodynamic Foundations"><span class="num">01.2</span><span>Entropy and reversible versus irreversible processes</span></label>
+<label class="topic"><input type="checkbox" data-id="01.3" data-chapter="Thermodynamic Foundations"><span class="num">01.3</span><span>State functions, natural variables, and thermodynamic identities</span></label>
+<label class="topic"><input type="checkbox" data-id="01.4" data-chapter="Thermodynamic Foundations"><span class="num">01.4</span><span>Helmholtz, Gibbs, enthalpy, and grand potentials</span></label>
+<label class="topic"><input type="checkbox" data-id="01.5" data-chapter="Thermodynamic Foundations"><span class="num">01.5</span><span>Legendre transforms and Maxwell relations</span></label>
+<label class="topic"><input type="checkbox" data-id="01.6" data-chapter="Thermodynamic Foundations"><span class="num">01.6</span><span>Heat capacities and response functions</span></label></div>
+</details>
+<details class="chapter" id="chapter-02" >
+<summary><span class="number">02</span><span class="heading"><strong>Microstates and Entropy</strong><small>Proposed chapter</small></span><span class="plus" aria-hidden="true">+</span></summary>
+<div class="topics"><label class="topic"><input type="checkbox" data-id="02.1" data-chapter="Microstates and Entropy"><span class="num">02.1</span><span>Microstates, macrostates, multiplicity, and phase space</span></label>
+<label class="topic"><input type="checkbox" data-id="02.2" data-chapter="Microstates and Entropy"><span class="num">02.2</span><span>Microcanonical probabilities and equal a priori weighting</span></label>
+<label class="topic"><input type="checkbox" data-id="02.3" data-chapter="Microstates and Entropy"><span class="num">02.3</span><span>Boltzmann and Gibbs entropies</span></label>
+<label class="topic"><input type="checkbox" data-id="02.4" data-chapter="Microstates and Entropy"><span class="num">02.4</span><span>Distinguishable versus indistinguishable counting</span></label>
+<label class="topic"><input type="checkbox" data-id="02.5" data-chapter="Microstates and Entropy"><span class="num">02.5</span><span>Entropy maximization and thermal equilibrium</span></label></div>
+</details>
+<details class="chapter" id="chapter-03" >
+<summary><span class="number">03</span><span class="heading"><strong>Statistical Ensembles</strong><small>Proposed chapter</small></span><span class="plus" aria-hidden="true">+</span></summary>
+<div class="topics"><label class="topic"><input type="checkbox" data-id="03.1" data-chapter="Statistical Ensembles"><span class="num">03.1</span><span>Microcanonical ensemble and its constraints</span></label>
+<label class="topic"><input type="checkbox" data-id="03.2" data-chapter="Statistical Ensembles"><span class="num">03.2</span><span>Deriving canonical Boltzmann probabilities</span></label>
+<label class="topic"><input type="checkbox" data-id="03.3" data-chapter="Statistical Ensembles"><span class="num">03.3</span><span>Grand canonical ensemble and the chemical potential</span></label>
+<label class="topic"><input type="checkbox" data-id="03.4" data-chapter="Statistical Ensembles"><span class="num">03.4</span><span>Partition functions and ensemble averages</span></label>
+<label class="topic"><input type="checkbox" data-id="03.5" data-chapter="Statistical Ensembles"><span class="num">03.5</span><span>Ensemble fluctuations and equivalence</span></label></div>
+</details>
+<details class="chapter" id="chapter-04" open>
+<summary><span class="number">04</span><span class="heading"><strong>Canonical Partition Functions</strong><small>One of your first three requested topics</small></span><span class="plus" aria-hidden="true">+</span></summary>
+<div class="topics"><label class="topic"><input type="checkbox" data-id="04.1" data-chapter="Canonical Partition Functions"><span class="num">04.1</span><span>Building Z from energies and degeneracies</span></label>
+<label class="topic"><input type="checkbox" data-id="04.2" data-chapter="Canonical Partition Functions"><span class="num">04.2</span><span>Factorization for independent systems</span></label>
+<label class="topic"><input type="checkbox" data-id="04.3" data-chapter="Canonical Partition Functions"><span class="num">04.3</span><span>Deriving F, U, S, P and other thermodynamic variables</span></label>
+<label class="topic"><input type="checkbox" data-id="04.4" data-chapter="Canonical Partition Functions"><span class="num">04.4</span><span>Deriving CV and the energy variance relation</span></label>
+<label class="topic"><input type="checkbox" data-id="04.5" data-chapter="Canonical Partition Functions"><span class="num">04.5</span><span>Two-level systems and heat-capacity peaks</span></label>
+<label class="topic"><input type="checkbox" data-id="04.6" data-chapter="Canonical Partition Functions"><span class="num">04.6</span><span>Canonical ideal-gas and oscillator applications</span></label></div>
+</details>
+<details class="chapter" id="chapter-05" open>
+<summary><span class="number">05</span><span class="heading"><strong>Quantum States and Boundary Conditions</strong><small>One of your first three requested topics</small></span><span class="plus" aria-hidden="true">+</span></summary>
+<div class="topics"><label class="topic"><input type="checkbox" data-id="05.1" data-chapter="Quantum States and Boundary Conditions"><span class="num">05.1</span><span>Infinite potential well: why n starts at 1</span></label>
+<label class="topic"><input type="checkbox" data-id="05.2" data-chapter="Quantum States and Boundary Conditions"><span class="num">05.2</span><span>Harmonic oscillator: why n starts at 0</span></label>
+<label class="topic"><input type="checkbox" data-id="05.3" data-chapter="Quantum States and Boundary Conditions"><span class="num">05.3</span><span>Normalization, boundary conditions, and zero-point energy</span></label>
+<label class="topic"><input type="checkbox" data-id="05.4" data-chapter="Quantum States and Boundary Conditions"><span class="num">05.4</span><span>One-, two-, and three-dimensional energy spectra</span></label>
+<label class="topic"><input type="checkbox" data-id="05.5" data-chapter="Quantum States and Boundary Conditions"><span class="num">05.5</span><span>Isotropic versus anisotropic oscillators and degeneracy</span></label>
+<label class="topic"><input type="checkbox" data-id="05.6" data-chapter="Quantum States and Boundary Conditions"><span class="num">05.6</span><span>Deriving quantum partition functions from allowed states</span></label></div>
+</details>
+<details class="chapter" id="chapter-06" >
+<summary><span class="number">06</span><span class="heading"><strong>Classical Ideal Gases and Equipartition</strong><small>Proposed chapter</small></span><span class="plus" aria-hidden="true">+</span></summary>
+<div class="topics"><label class="topic"><input type="checkbox" data-id="06.1" data-chapter="Classical Ideal Gases and Equipartition"><span class="num">06.1</span><span>Classical phase-space partition functions</span></label>
+<label class="topic"><input type="checkbox" data-id="06.2" data-chapter="Classical Ideal Gases and Equipartition"><span class="num">06.2</span><span>Translational partition function and Gibbs correction</span></label>
+<label class="topic"><input type="checkbox" data-id="06.3" data-chapter="Classical Ideal Gases and Equipartition"><span class="num">06.3</span><span>Ideal-gas equation of state and thermodynamic functions</span></label>
+<label class="topic"><input type="checkbox" data-id="06.4" data-chapter="Classical Ideal Gases and Equipartition"><span class="num">06.4</span><span>Maxwell–Boltzmann velocity and speed distributions</span></label>
+<label class="topic"><input type="checkbox" data-id="06.5" data-chapter="Classical Ideal Gases and Equipartition"><span class="num">06.5</span><span>Equipartition theorem: proof, applications, limits</span></label>
+<label class="topic"><input type="checkbox" data-id="06.6" data-chapter="Classical Ideal Gases and Equipartition"><span class="num">06.6</span><span>Rotational/vibrational degrees of freedom</span></label></div>
+</details>
+<details class="chapter" id="chapter-07" >
+<summary><span class="number">07</span><span class="heading"><strong>MB, BE, and FD Statistics</strong><small>Proposed chapter</small></span><span class="plus" aria-hidden="true">+</span></summary>
+<div class="topics"><label class="topic"><input type="checkbox" data-id="07.1" data-chapter="MB, BE, and FD Statistics"><span class="num">07.1</span><span>Occupation numbers and the grand partition function</span></label>
+<label class="topic"><input type="checkbox" data-id="07.2" data-chapter="MB, BE, and FD Statistics"><span class="num">07.2</span><span>Maxwell–Boltzmann distribution and classical limit</span></label>
+<label class="topic"><input type="checkbox" data-id="07.3" data-chapter="MB, BE, and FD Statistics"><span class="num">07.3</span><span>Bose–Einstein distribution and bosonic occupancy</span></label>
+<label class="topic"><input type="checkbox" data-id="07.4" data-chapter="MB, BE, and FD Statistics"><span class="num">07.4</span><span>Fermi–Dirac distribution and Pauli exclusion</span></label>
+<label class="topic"><input type="checkbox" data-id="07.5" data-chapter="MB, BE, and FD Statistics"><span class="num">07.5</span><span>Chemical potential and particle-number constraints</span></label>
+<label class="topic"><input type="checkbox" data-id="07.6" data-chapter="MB, BE, and FD Statistics"><span class="num">07.6</span><span>Degenerate Fermi gases and Bose condensation (optional)</span></label></div>
+</details>
+<details class="chapter" id="chapter-08" >
+<summary><span class="number">08</span><span class="heading"><strong>Density of States and Dimensionality</strong><small>Proposed chapter</small></span><span class="plus" aria-hidden="true">+</span></summary>
+<div class="topics"><label class="topic"><input type="checkbox" data-id="08.1" data-chapter="Density of States and Dimensionality"><span class="num">08.1</span><span>State counting in momentum or wavevector space</span></label>
+<label class="topic"><input type="checkbox" data-id="08.2" data-chapter="Density of States and Dimensionality"><span class="num">08.2</span><span>Density of states g(E) in 1D</span></label>
+<label class="topic"><input type="checkbox" data-id="08.3" data-chapter="Density of States and Dimensionality"><span class="num">08.3</span><span>Density of states g(E) in 2D</span></label>
+<label class="topic"><input type="checkbox" data-id="08.4" data-chapter="Density of States and Dimensionality"><span class="num">08.4</span><span>Density of states g(E) in 3D</span></label>
+<label class="topic"><input type="checkbox" data-id="08.5" data-chapter="Density of States and Dimensionality"><span class="num">08.5</span><span>Converting sums to integrals for N and U</span></label>
+<label class="topic"><input type="checkbox" data-id="08.6" data-chapter="Density of States and Dimensionality"><span class="num">08.6</span><span>Thermal de Broglie wavelength and dimensional scaling</span></label></div>
+</details>
+<details class="chapter" id="chapter-09" open>
+<summary><span class="number">09</span><span class="heading"><strong>Quantum-to-Classical Temperature Limits</strong><small>One of your first three requested topics</small></span><span class="plus" aria-hidden="true">+</span></summary>
+<div class="topics"><label class="topic"><input type="checkbox" data-id="09.1" data-chapter="Quantum-to-Classical Temperature Limits"><span class="num">09.1</span><span>Identifying the relevant energy scale and gap</span></label>
+<label class="topic"><input type="checkbox" data-id="09.2" data-chapter="Quantum-to-Classical Temperature Limits"><span class="num">09.2</span><span>Low- and high-temperature quantum oscillators</span></label>
+<label class="topic"><input type="checkbox" data-id="09.3" data-chapter="Quantum-to-Classical Temperature Limits"><span class="num">09.3</span><span>Low- and high-temperature particles in 1D/2D/3D boxes</span></label>
+<label class="topic"><input type="checkbox" data-id="09.4" data-chapter="Quantum-to-Classical Temperature Limits"><span class="num">09.4</span><span>Continuum approximation and classical partition functions</span></label>
+<label class="topic"><input type="checkbox" data-id="09.5" data-chapter="Quantum-to-Classical Temperature Limits"><span class="num">09.5</span><span>How dimensionality affects low-temperature behavior</span></label>
+<label class="topic"><input type="checkbox" data-id="09.6" data-chapter="Quantum-to-Classical Temperature Limits"><span class="num">09.6</span><span>Equipartition breakdown and quantum-statistical limits</span></label></div>
+</details>
+<details class="chapter" id="chapter-10" >
+<summary><span class="number">10</span><span class="heading"><strong>Einstein and Debye Solids</strong><small>Proposed chapter</small></span><span class="plus" aria-hidden="true">+</span></summary>
+<div class="topics"><label class="topic"><input type="checkbox" data-id="10.1" data-chapter="Einstein and Debye Solids"><span class="num">10.1</span><span>Einstein oscillator model and partition function</span></label>
+<label class="topic"><input type="checkbox" data-id="10.2" data-chapter="Einstein and Debye Solids"><span class="num">10.2</span><span>Einstein U and CV in low/high T limits</span></label>
+<label class="topic"><input type="checkbox" data-id="10.3" data-chapter="Einstein and Debye Solids"><span class="num">10.3</span><span>Phonon modes and Debye density of states</span></label>
+<label class="topic"><input type="checkbox" data-id="10.4" data-chapter="Einstein and Debye Solids"><span class="num">10.4</span><span>Deriving Debye heat capacity and T-cubed law</span></label>
+<label class="topic"><input type="checkbox" data-id="10.5" data-chapter="Einstein and Debye Solids"><span class="num">10.5</span><span>Dulong–Petit limit and comparing solid models</span></label></div>
+</details>
+<details class="chapter" id="chapter-11" >
+<summary><span class="number">11</span><span class="heading"><strong>Fluctuations and Phase Behavior</strong><small>Proposed chapter</small></span><span class="plus" aria-hidden="true">+</span></summary>
+<div class="topics"><label class="topic"><input type="checkbox" data-id="11.1" data-chapter="Fluctuations and Phase Behavior"><span class="num">11.1</span><span>Energy and particle-number fluctuations</span></label>
+<label class="topic"><input type="checkbox" data-id="11.2" data-chapter="Fluctuations and Phase Behavior"><span class="num">11.2</span><span>Response functions and fluctuation relations</span></label>
+<label class="topic"><input type="checkbox" data-id="11.3" data-chapter="Fluctuations and Phase Behavior"><span class="num">11.3</span><span>Stability and free-energy minimization</span></label>
+<label class="topic"><input type="checkbox" data-id="11.4" data-chapter="Fluctuations and Phase Behavior"><span class="num">11.4</span><span>Phase coexistence and transitions</span></label>
+<label class="topic"><input type="checkbox" data-id="11.5" data-chapter="Fluctuations and Phase Behavior"><span class="num">11.5</span><span>Critical behavior (optional advanced topic)</span></label></div>
+</details>
+<details class="chapter" id="chapter-12" >
+<summary><span class="number">12</span><span class="heading"><strong>Comprehensive Exam Toolkit</strong><small>Proposed chapter</small></span><span class="plus" aria-hidden="true">+</span></summary>
+<div class="topics"><label class="topic"><input type="checkbox" data-id="12.1" data-chapter="Comprehensive Exam Toolkit"><span class="num">12.1</span><span>Essential formula sheets with assumptions</span></label>
+<label class="topic"><input type="checkbox" data-id="12.2" data-chapter="Comprehensive Exam Toolkit"><span class="num">12.2</span><span>Conceptual questions and theorem applicability</span></label>
+<label class="topic"><input type="checkbox" data-id="12.3" data-chapter="Comprehensive Exam Toolkit"><span class="num">12.3</span><span>Complete worked partition-function questions</span></label>
+<label class="topic"><input type="checkbox" data-id="12.4" data-chapter="Comprehensive Exam Toolkit"><span class="num">12.4</span><span>Quantum box, oscillator, ideal-gas and Debye problems</span></label>
+<label class="topic"><input type="checkbox" data-id="12.5" data-chapter="Comprehensive Exam Toolkit"><span class="num">12.5</span><span>Common mistakes, limits and dimensional checks</span></label></div>
+</details>
+<p id="empty" hidden>No matching chapters.</p>
+</section>
+<section class="intro ending"><h2>Each selected topic will contain</h2><p>Physical context and assumptions; all governing equations; step-by-step mathematical derivations; interpretation of results; relevant limits; fully solved MS Physics examination problems; and a concise formula summary.</p></section>
+<footer><p>Statistical Mechanics / Field Notes</p><p>Independent of the <a href="https://geeeooooo.github.io/EM/">Electromagnetism website</a>. Hosted with GitHub Pages.</p></footer>
+</main></body></html>
