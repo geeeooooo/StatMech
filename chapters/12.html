@@ -1,0 +1,129 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#000000"><meta name="description" content="Worked MS Physics problems, essential formulas, exam checks and physical interpretations.">
+<title>Comprehensive Exam Toolkit · Statistical Mechanics</title>
+<link rel="stylesheet" href="../style.css"><link rel="icon" href="../icon.svg" type="image/svg+xml">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],packages:{'[+]':['ams']}},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script defer src="../reader.js"></script>
+</head><body>
+<a href="#main" class="skip">Skip to lesson</a>
+<header class="hero"><div class="shell"><p class="eyebrow"><a href="../index.html">STATISTICAL MECHANICS</a> / CHAPTER 12</p>
+<h1>Comprehensive Exam Toolkit</h1><p class="subtitle">Worked MS Physics problems, essential formulas, exam checks and physical interpretations.</p>
+<nav class="toplinks" aria-label="Website navigation"><a href="../index.html">All chapters</a><a href="https://geeeooooo.github.io/EM/">Electromagnetism</a></nav>
+<div class="tools"><button id="smaller" type="button" aria-label="Decrease text size">A−</button><button id="larger" type="button" aria-label="Increase text size">A+</button><button id="expand" type="button">Show derivations</button><button id="collapse" type="button">Hide derivations</button></div>
+</div></header>
+<main id="main" class="shell">
+<nav class="chapter-jump" aria-label="Within chapter"><a href="#methods">How to approach a Statistical Mechanics derivation</a><a href="#problem1">Problem 1 · 2D anisotropic harmonic oscillator</a><a href="#problem2">Problem 2 · Particle in a 1D infinite box</a><a href="#problem3">Problem 3 · Derive all ideal-gas functions</a><a href="#problem4">Problem 4 · Derive boson and fermion occupations</a><a href="#problem5">Problem 5 · Debye low-temperature heat capacity</a><a href="#problem6">Problem 6 · When does equipartition fail?</a><a href="#summary">Essential equation sheet</a></nav>
+
+<section class="lesson" id="methods"><p class="tag">12.1 · Exam strategy</p><h2>How to approach a Statistical Mechanics derivation</h2>
+<p>For every system, start by identifying the ensemble (\(E,V,N\), \(T,V,N\), or \(T,V,\mu\)); list allowed levels and their degeneracies; construct \(Z\) or \(\Xi\); derive observables <em>by differentiating</em>; and check dimensions and limits. Do not invoke equipartition without confirming its classical assumptions.</p>
+<div class="equation">\[\boxed{
+Z=\sum_i e^{-\beta E_i},\quad
+F=-k_BT\ln Z,\quad
+U=-\partial_\beta\ln Z,\quad
+S=k_B(\ln Z+\beta U),\quad
+C_V=\frac{\operatorname{Var}(E)}{k_BT^2}
+}\]</div>
+</section>
+<section class="lesson" id="problem1"><p class="tag">12.2 · Fully worked</p><h2>Problem 1 · 2D anisotropic harmonic oscillator</h2>
+<p>A single particle moves in \(V(x,y)=\tfrac12m\omega_x^2x^2+\tfrac12m\omega_y^2y^2\). Derive the energy eigenvalues, canonical partition function, \(U\), and \(C_V\). Find low- and high-\(T\) limits.</p>
+<details open><summary>Solution · separation, geometric sums and derivatives</summary><div class="steps">
+<p>Separate the Hamiltonian \(H=H_x+H_y\), with independent oscillator quantum numbers \(n_x,n_y=0,1,\ldots\):</p>
+\[\boxed{E_{n_x,n_y}=\hbar\omega_x(n_x+\tfrac12)+\hbar\omega_y(n_y+\tfrac12)}.\]
+<p>The canonical sum factorizes:</p>
+\[Z=\sum_{n_x,n_y=0}^\infty e^{-\beta E_{n_x,n_y}}
+=\prod_{j=x,y}\left[e^{-\beta\hbar\omega_j/2}\sum_{n_j=0}^\infty e^{-\beta\hbar\omega_jn_j}\right].\]
+<p>Using the geometric series,</p>
+\[\boxed{Z=\prod_{j=x,y}\frac{e^{-\beta\hbar\omega_j/2}}{1-e^{-\beta\hbar\omega_j}}}.\]
+<p>Take logs and differentiate with respect to \(\beta\); write \(x_j=\beta\hbar\omega_j\):</p>
+\[\boxed{U=\sum_{j=x,y}\hbar\omega_j\left(\tfrac12+\frac1{e^{x_j}-1}\right)}.\]
+<p>Since \(dx_j/dT=-x_j/T\), the heat capacity is</p>
+\[\boxed{C_V=k_B\sum_{j=x,y}x_j^2\frac{e^{x_j}}{(e^{x_j}-1)^2}}.\]
+<p>Low \(T\), when \(k_BT\ll\hbar\omega_x,\hbar\omega_y\): \(U\to\hbar(\omega_x+\omega_y)/2\), \(C_V\to0\). High \(T\), when \(k_BT\gg\hbar\omega_x,\hbar\omega_y\): \(U\sim2k_BT\), \(C_V\to2k_B\).</p>
+</div></details>
+</section>
+<section class="lesson" id="problem2"><p class="tag">12.3 · Fully worked</p><h2>Problem 2 · Particle in a 1D infinite box</h2>
+<p>For a particle in \(0&lt;x&lt;L\), derive the first excitation gap and its leading low-temperature heat capacity. Explain the high-temperature continuum result.</p>
+<details open><summary>Solution · gap and asymptotic partition function</summary><div class="steps">
+<p>Dirichlet boundary conditions give \(\psi_n(x)=\sqrt{2/L}\sin(n\pi x/L)\) with \(n=1,2,\ldots\) and \(E_n=\epsilon n^2\), \(\epsilon=\pi^2\hbar^2/(2mL^2)\).</p>
+<p>The ground and first excited energies are \(E_1=\epsilon\) and \(E_2=4\epsilon\), so</p>
+\[\boxed{\Delta=E_2-E_1=3\epsilon=\frac{3\pi^2\hbar^2}{2mL^2}}.\]
+<p>For \(k_BT\ll\Delta\), approximate \(Z\approx e^{-\beta\epsilon}(1+e^{-\beta\Delta})\). With \(y=\beta\Delta\),</p>
+\[U\approx\epsilon+\frac{\Delta}{e^y+1},\qquad
+\boxed{C_V\approx k_By^2\frac{e^y}{(e^y+1)^2}\sim k_By^2e^{-y}}.\]
+<p>At sufficiently high \(T\), approximate \(\sum_{n=1}^\infty e^{-\beta\epsilon n^2}\) by \(\int_0^\infty e^{-\beta\epsilon n^2}dn=L/\lambda_T\), giving \(U\sim\frac12 k_BT\) and \(C_V\to\frac12k_B\).</p>
+</div></details>
+</section>
+<section class="lesson" id="problem3"><p class="tag">12.4 · Fully worked</p><h2>Problem 3 · Derive all ideal-gas functions</h2>
+<p>For \(N\) identical classical monatomic particles in 3D, use \(Z_N=(V/\lambda_T^3)^N/N!\). Derive the free energy, pressure, energy, entropy and heat capacity.</p>
+<details><summary>Solution · apply thermodynamic derivative identities</summary><div class="steps">
+<p>Use Stirling's approximation: \(\ln N!\approx N\ln N-N\). Thus</p>
+\[\ln Z_N\approx N\left[\ln\frac{V}{N\lambda_T^3}+1\right].\]
+<p>Apply \(F=-k_BT\ln Z_N\), \(P=k_BT\partial_V\ln Z_N\), \(U=-\partial_\beta\ln Z_N\), and \(S=k_B(\ln Z_N+\beta U)\):</p>
+\[\boxed{F=-Nk_BT\left[\ln\frac{V}{N\lambda_T^3}+1\right]},\]
+\[\boxed{PV=Nk_BT,\quad U=\frac32Nk_BT,\quad C_V=\frac32Nk_B},\]
+\[\boxed{S=Nk_B\left[\ln\frac{V}{N\lambda_T^3}+\frac52\right]}.\]
+<p>These require the dilute classical ideal-gas regime. They should not be used unchanged for degenerate fermions or Bose-condensed gases.</p>
+</div></details>
+</section>
+<section class="lesson" id="problem4"><p class="tag">12.5 · Fully worked</p><h2>Problem 4 · Derive boson and fermion occupations</h2>
+<p>An independent orbital of energy \(\epsilon\) can hold unlimited bosons or at most one fermion. Show how the grand-canonical sum gives BE and FD occupations.</p>
+<details><summary>Solution · two different sums</summary><div class="steps">
+<p>Let \(y=e^{-\beta(\epsilon-\mu)}\). For bosons,</p>
+\[\Xi_{\rm B}=\sum_{n=0}^\infty y^n=\frac1{1-y},\quad
+\bar n_{\rm B}=y\frac{\partial\ln\Xi_{\rm B}}{\partial y}
+=\boxed{\frac1{e^{\beta(\epsilon-\mu)}-1}}.\]
+<p>For fermions,</p>
+\[\Xi_{\rm F}=1+y,\quad
+\bar n_{\rm F}=y\frac{\partial\ln\Xi_{\rm F}}{\partial y}
+=\boxed{\frac1{e^{\beta(\epsilon-\mu)}+1}}.\]
+<p>When \(y\ll1\), either is \(\bar n\approx y=e^{-\beta(\epsilon-\mu)}\), the dilute Maxwell–Boltzmann limit.</p>
+</div></details>
+</section>
+<section class="lesson" id="problem5"><p class="tag">12.6 · Fully worked</p><h2>Problem 5 · Debye low-temperature heat capacity</h2>
+<p>A 3D Debye solid has \(3N\) acoustic vibrational modes with \(g(\omega)=9N\omega^2/\omega_D^3\). Derive \(C_V\) in the low-temperature limit.</p>
+<details><summary>Solution · Bose integral and T³ law</summary><div class="steps">
+<p>Thermal energy is</p>
+\[U_{\rm th}=\int_0^{\omega_D}\frac{\hbar\omega\,g(\omega)}{e^{\beta\hbar\omega}-1}d\omega.\]
+<p>Substitute \(x=\hbar\omega/(k_BT)\), \(\Theta_D=\hbar\omega_D/k_B\):</p>
+\[U_{\rm th}=9Nk_BT\left(\frac T{\Theta_D}\right)^3\int_0^{\Theta_D/T}\frac{x^3}{e^x-1}\,dx.\]
+<p>At \(T\ll\Theta_D\), replace the upper bound with infinity. Use \(\int_0^\infty x^3/(e^x-1)\,dx=\pi^4/15\):</p>
+\[U_{\rm th}\approx\frac{3\pi^4}{5}Nk_B\,\frac{T^4}{\Theta_D^3}.\]
+<p>Differentiate with respect to temperature:</p>
+\[\boxed{C_V\approx\frac{12\pi^4}{5}Nk_B\left(\frac T{\Theta_D}\right)^3}.\]
+<p>The low-temperature lattice heat capacity follows \(T^3\) in this 3D acoustic model; it is not the exponential form of Einstein's single-frequency approximation.</p>
+</div></details>
+</section>
+<section class="lesson" id="problem6"><p class="tag">12.7 · Conceptual question</p><h2>Problem 6 · When does equipartition fail?</h2>
+<details><summary>Answer with quantitative oscillator example</summary><div class="steps">
+<p>Classical equipartition says each independent quadratic Hamiltonian term contributes \(k_BT/2\). For a <em>quantum</em> harmonic oscillator, however,</p>
+\[U=\hbar\omega\left(\frac12+\frac1{e^{\hbar\omega/(k_BT)}-1}\right).\]
+<p>At \(T\to0\), \(U\to\hbar\omega/2\), not zero, while \(C_V\to0\). At \(T\gg\hbar\omega/k_B\), \(U\to k_BT\) and \(C_V\to k_B\), as expected from the two classical quadratic terms. Therefore equipartition requires the relevant levels to be thermally dense and the classical quadratic model to apply.</p>
+</div></details>
+</section>
+<section class="lesson" id="summary"><h2>Essential equation sheet</h2>
+<div class="equation">
+\[\begin{aligned}
+\beta&amp;=(k_BT)^{-1},\\
+F&amp;=-k_BT\ln Z,\quad U=-\partial_\beta\ln Z,\\
+S&amp;=k_B(\ln Z+\beta U),\\
+C_V&amp;=k_B\beta^2\partial_\beta^2\ln Z,\\
+\Omega_{\rm G}&amp;=-k_BT\ln\Xi,\quad \langle N\rangle=k_BT\,\partial_\mu\ln\Xi,\\
+\operatorname{Var}(E)&amp;=k_BT^2C_V,\quad \operatorname{Var}(N)=k_BT\,\partial_\mu\langle N\rangle.
+\end{aligned}\]
+</div>
+<div class="equation">
+\[\begin{aligned}
+Z_{\rm osc}&amp;=\frac{e^{-\beta\hbar\omega/2}}{1-e^{-\beta\hbar\omega}},\\
+E_{\rm box,n}&amp;=\frac{n^2\pi^2\hbar^2}{2mL^2},\quad n\ge1,\\
+\lambda_T&amp;=\frac{h}{\sqrt{2\pi mk_BT}},\\
+Z_{\rm gas}&amp;=\frac1{N!}\left(\frac V{\lambda_T^3}\right)^N,\\
+\bar n_{\rm BE/FD}&amp;=\left[e^{\beta(\epsilon-\mu)}\mp1\right]^{-1}.
+\end{aligned}\]
+</div>
+<p class="caution">In any derivation, state the held-fixed variables when differentiating, identify the classical or quantum regime, and check whether the result is for one particle, many noninteracting particles, or a collective mode system.</p>
+</section>
+<div class="chapter-move"><a href="./11.html">← 11 Fluctuations and Phase Behavior</a><span></span></div>
+<footer><p>MS Physics · Statistical Mechanics Field Notes</p><p>SI notation unless stated otherwise. Mathematical assumptions and conventions are identified in each derivation. Expand a proof to see its steps.</p><a href="../index.html">Back to contents</a></footer>
+</main></body></html>

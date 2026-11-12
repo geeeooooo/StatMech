@@ -1,0 +1,111 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#000000"><meta name="description" content="Equilibrium fluctuations, response functions, free-energy stability, and phase coexistence.">
+<title>Fluctuations and Phase Behavior · Statistical Mechanics</title>
+<link rel="stylesheet" href="../style.css"><link rel="icon" href="../icon.svg" type="image/svg+xml">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],packages:{'[+]':['ams']}},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script defer src="../reader.js"></script>
+</head><body>
+<a href="#main" class="skip">Skip to lesson</a>
+<header class="hero"><div class="shell"><p class="eyebrow"><a href="../index.html">STATISTICAL MECHANICS</a> / CHAPTER 11</p>
+<h1>Fluctuations and Phase Behavior</h1><p class="subtitle">Equilibrium fluctuations, response functions, free-energy stability, and phase coexistence.</p>
+<nav class="toplinks" aria-label="Website navigation"><a href="../index.html">All chapters</a><a href="https://geeeooooo.github.io/EM/">Electromagnetism</a></nav>
+<div class="tools"><button id="smaller" type="button" aria-label="Decrease text size">A−</button><button id="larger" type="button" aria-label="Increase text size">A+</button><button id="expand" type="button">Show derivations</button><button id="collapse" type="button">Hide derivations</button></div>
+</div></header>
+<main id="main" class="shell">
+<nav class="chapter-jump" aria-label="Within chapter"><a href="#canonicalfluct">Canonical energy fluctuations and heat capacity</a><a href="#grandfluct">Grand canonical number fluctuations</a><a href="#susceptibility">Fluctuation–response and susceptibility</a><a href="#freeenergy">Free-energy minimization and phase coexistence</a><a href="#landau">Landau theory: a simple mean-field transition</a></nav>
+
+<section class="lesson" id="canonicalfluct"><p class="tag">11.1 · Energy variance</p><h2>Canonical energy fluctuations and heat capacity</h2>
+<p>The canonical ensemble has fixed \(T,V,N\), but fluctuating energy. A derivative of \(\ln Z\) relates those microscopic fluctuations to the thermodynamic heat capacity.</p>
+<details open><summary>Derive \(\operatorname{Var}(E)=k_BT^2C_V\)</summary><div class="steps">
+<p>Start with \(Z=\sum_i e^{-\beta E_i}\) and \(U=\langle E\rangle=-\partial_\beta\ln Z\). First and second derivatives of \(Z\) are</p>
+\[Z'=-\sum_i E_i e^{-\beta E_i},\qquad
+Z''=\sum_i E_i^2e^{-\beta E_i}.\]
+<p>Using \((\ln Z)''=Z''/Z-(Z'/Z)^2\),</p>
+\[\frac{\partial^2\ln Z}{\partial\beta^2}
+=\langle E^2\rangle-\langle E\rangle^2
+=\operatorname{Var}(E).\]
+<p>Differentiate \(U\) and use \(d\beta/dT=-1/(k_BT^2)\):</p>
+\[C_V=\frac{\partial U}{\partial T}=
+-\operatorname{Var}(E)\left(-\frac1{k_BT^2}\right).\]
+\[\boxed{\operatorname{Var}(E)=k_BT^2 C_V}.\]
+<p><strong>Meaning:</strong> a system with a larger heat capacity exhibits larger equilibrium energy fluctuations at fixed \(T\). For ordinary canonical systems with fixed Hamiltonian \(C_V\ge0\).</p>
+</div></details>
+<details><summary>Example · relative energy fluctuations of an ideal gas</summary><div class="steps">
+<p>For a 3D classical ideal monatomic gas, \(U=\frac32Nk_BT\) and \(C_V=\frac32Nk_B\). Therefore</p>
+\[\operatorname{Var}(E)=\frac32N(k_BT)^2.\]
+<p>The relative standard deviation is</p>
+\[\frac{\sqrt{\operatorname{Var}(E)}}{U}
+=\frac{\sqrt{\frac32N}\,k_BT}{\frac32Nk_BT}
+=\boxed{\sqrt{\frac{2}{3N}}}.\]
+<p>The relative fluctuations vanish as \(N^{-1/2}\) for macroscopic systems, helping explain why ensemble averages predict sharply defined thermodynamic observables.</p>
+</div></details>
+</section>
+<section class="lesson" id="grandfluct"><p class="tag">11.2 · Particle variance</p><h2>Grand canonical number fluctuations</h2>
+<details open><summary>Derive \(\operatorname{Var}(N)=k_BT(\partial N/\partial\mu)\)</summary><div class="steps">
+<p>In the grand canonical ensemble, \(\Xi=\sum_a e^{-\beta(E_a-\mu N_a)}\). Let \(u=\beta\mu\). Then</p>
+\[\frac{\partial\ln\Xi}{\partial u}=\langle N\rangle,\quad
+\frac{\partial^2\ln\Xi}{\partial u^2}
+=\langle N^2\rangle-\langle N\rangle^2.\]
+<p>Because \(du/d\mu=\beta\) at fixed \(T,V\),</p>
+\[\frac{\partial\langle N\rangle}{\partial\mu}
+=\beta\operatorname{Var}(N).\]
+\[\boxed{\operatorname{Var}(N)
+=k_BT\left(\frac{\partial\langle N\rangle}{\partial\mu}\right)_{T,V}}.\]
+<p><strong>Meaning:</strong> sensitivity of particle number to chemical potential is tied to the size of equilibrium number fluctuations.</p>
+</div></details>
+</section>
+<section class="lesson" id="susceptibility"><p class="tag">11.3 · Response theorem</p><h2>Fluctuation–response and susceptibility</h2>
+<details open><summary>Derive \(\chi=\beta\,\operatorname{Var}(M)\)</summary><div class="steps">
+<p>Suppose an externally controlled field \(h\) couples to an observable \(M\) via the Hamiltonian \(H(h)=H_0-hM\), with \(M\) independent of \(h\). Then</p>
+\[Z(h)=\sum_i e^{-\beta(E_{0i}-hM_i)}.\]
+<p>Differentiate with respect to \(h\):</p>
+\[\frac{\partial\ln Z}{\partial h}=\beta\langle M\rangle.\]
+<p>Differentiate again, or apply the quotient rule to the weighted average:</p>
+\[\frac{\partial\langle M\rangle}{\partial h}
+=\beta(\langle M^2\rangle-\langle M\rangle^2).\]
+\[\boxed{\chi\equiv\left(\frac{\partial\langle M\rangle}{\partial h}\right)_T
+=\beta\operatorname{Var}(M)}.\]
+<p>The result assumes the specified linear coupling and canonical equilibrium; it need not hold unchanged for arbitrary field-dependent observables or non-equilibrium systems.</p>
+</div></details>
+<details><summary>Worked example · one classical two-state magnetic moment</summary><div class="steps">
+<p>Consider a moment with \(M=\pm\mu\) and energies \(E=-hM=\mp\mu h\). Then</p>
+\[Z=e^{\beta\mu h}+e^{-\beta\mu h}=2\cosh(\beta\mu h).\]
+\[\langle M\rangle=\frac1\beta\partial_h\ln Z
+=\mu\tanh(\beta\mu h).\]
+<p>Differentiate once more:</p>
+\[\boxed{\chi=\beta\mu^2\,\operatorname{sech}^2(\beta\mu h)}.\]
+<p>At zero field, \(\chi_0=\mu^2/(k_BT)\); for \(N\) noninteracting identical spins multiply by \(N\). The inverse-temperature behavior is the Curie-law form for this simple model.</p>
+</div></details>
+</section>
+<section class="lesson" id="freeenergy"><p class="tag">11.4 · Stability</p><h2>Free-energy minimization and phase coexistence</h2>
+<p>At fixed \(T,V,N\), a stable equilibrium minimizes Helmholtz \(F\) over accessible macroscopic configurations. At fixed \(T,P,N\), minimize Gibbs \(G\). Local stability requires appropriate positive curvature with respect to allowed order-parameter variations.</p>
+<details open><summary>Derive equality of chemical potentials in coexisting phases</summary><div class="steps">
+<p>Two phases \(\alpha,\beta\) are in thermal and mechanical equilibrium at the same \(T,P\), and may exchange particles while total \(N=N_\alpha+N_\beta\) remains fixed.</p>
+<p>For variations of a single-component system at fixed \(T,P\), \(dG_i=\mu_i\,dN_i\). Therefore</p>
+\[dG_{\rm tot}=\mu_\alpha dN_\alpha+\mu_\beta dN_\beta.\]
+<p>Conservation gives \(dN_\beta=-dN_\alpha\), so</p>
+\[dG_{\rm tot}=(\mu_\alpha-\mu_\beta)dN_\alpha.\]
+<p>At coexistence, the first variation must vanish for allowed exchange, yielding</p>
+\[\boxed{\mu_\alpha(T,P)=\mu_\beta(T,P)}.\]
+<p>This is one chemical-equilibrium condition for coexisting phases, alongside equal temperature and pressure.</p>
+</div></details>
+</section>
+<section class="lesson" id="landau"><p class="tag">11.5 · Advanced extension</p><h2>Landau theory: a simple mean-field transition</h2>
+<details><summary>Minimize an even fourth-order free-energy model</summary><div class="steps">
+<p>Consider an order parameter \(m\) and a phenomenological free energy, where \(a,b&gt;0\):</p>
+\[F(m,T)=F_0+\frac a2(T-T_c)m^2+\frac b4m^4.\]
+<p>Stationary states satisfy</p>
+\[\frac{\partial F}{\partial m}=a(T-T_c)m+bm^3=0,\]
+\[m[a(T-T_c)+bm^2]=0.\]
+<p>Solutions are \(m=0\), and if \(T&lt;T_c\), \(m=\pm\sqrt{a(T_c-T)/b}\). The second derivative is</p>
+\[\frac{\partial^2F}{\partial m^2}=a(T-T_c)+3bm^2.\]
+<p>At \(T&gt;T_c\), \(m=0\) is stable. At \(T&lt;T_c\), \(m=0\) becomes unstable and the two nonzero extrema are stable:</p>
+\[\boxed{m_{\rm eq}=\pm\sqrt{\frac{a(T_c-T)}{b}}\quad (T&lt;T_c)}.\]
+<p>This continuous symmetry-breaking transition is a <em>mean-field</em> model, not a universal exact result. Critical exponents and fluctuations can differ in real systems, especially in low dimensions.</p>
+</div></details>
+</section>
+<div class="chapter-move"><a href="./10.html">← 10 Einstein and Debye Solids</a><a href="./12.html">12 Comprehensive Exam Toolkit →</a></div>
+<footer><p>MS Physics · Statistical Mechanics Field Notes</p><p>SI notation unless stated otherwise. Mathematical assumptions and conventions are identified in each derivation. Expand a proof to see its steps.</p><a href="../index.html">Back to contents</a></footer>
+</main></body></html>
