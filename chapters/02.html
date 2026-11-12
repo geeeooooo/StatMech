@@ -58,12 +58,12 @@
 </section>
 <section class="lesson" id="temperature"><p class="tag">02.4 · Thermodynamic bridge</p><h2>Temperature and equilibrium from entropy</h2>
 <details open><summary>Derive equality of temperatures from total multiplicity</summary><div class="steps">
-<p>Two weakly coupled systems A and B can exchange energy while \(E_{\rm tot}=E_A+E_B\) stays fixed. Their combined multiplicity is \(\Omega_{\rm tot}(E_A)=\Omega_A(E_A)\Omega_B(E_{\rm tot}-E_A)\).</p>
-<p>At equilibrium, the most probable energy division maximizes \(S_{\rm tot}=S_A(E_A)+S_B(E_{\rm tot}-E_A)\):</p>
-\[0=\frac{dS_{\rm tot}}{dE_A}
-=\frac{\partial S_A}{\partial E_A}-\frac{\partial S_B}{\partial E_B}.\]
+<p>Two weakly coupled systems A and B exchange energy while their total internal energy \(U_{\rm tot}=U_A+U_B\) remains fixed. Their combined multiplicity is \(\Omega_{\rm tot}(U_A)=\Omega_A(U_A)\Omega_B(U_{\rm tot}-U_A)\).</p>
+<p>At equilibrium, the most probable division of internal energy maximizes \(S_{\rm tot}=S_A(U_A)+S_B(U_{\rm tot}-U_A)\):</p>
+\[0=\frac{dS_{\rm tot}}{dU_A}
+=\frac{\partial S_A}{\partial U_A}-\frac{\partial S_B}{\partial U_B}.\]
 <p>Define reciprocal temperature from entropy:</p>
-\[\boxed{\frac1T=\left(\frac{\partial S}{\partial E}\right)_{V,N}}.\]
+\[\boxed{\frac1T=\left(\frac{\partial S}{\partial U}\right)_{V,N}}.\]
 <p>Hence \(1/T_A=1/T_B\), or \(T_A=T_B\), at ordinary thermal equilibrium. This shows how equal temperatures follow from microstate counting and energy conservation.</p>
 </div></details>
 <div class="equation"><h3>Exam caution</h3><p>For a classical continuous phase space, entropy requires a properly normalized state-counting measure (with a phase-space cell such as \(h^{3N}\) and appropriate indistinguishability factors). A raw logarithm of a dimensionful phase-space volume is not thermodynamically meaningful.</p></div>

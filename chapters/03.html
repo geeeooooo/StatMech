@@ -17,10 +17,11 @@
 <nav class="chapter-jump" aria-label="Within chapter"><a href="#microcanonical">Microcanonical ensemble</a><a href="#canonical">Canonical ensemble and Boltzmann probability</a><a href="#grand">Grand canonical ensemble</a><a href="#comparison">Ensembles compared</a></nav>
 
 <section class="lesson" id="microcanonical"><p class="tag">03.1 · Isolated system</p><h2>Microcanonical ensemble</h2>
-<p>An isolated system has fixed \(E,V,N\) up to a narrow energy resolution \(\delta E\), and accessible microstates are modeled as equiprobable.</p>
-<div class="equation">\[\boxed{p_i=\begin{cases}1/\Omega(E,V,N),&amp; E_i\in[E,E+\delta E],\\0,&amp;\text{otherwise}.\end{cases}}\]
-\[\boxed{S=k_B\ln\Omega},\qquad
-\frac1T=\left(\frac{\partial S}{\partial E}\right)_{V,N}.\]
+<p>An isolated system is specified by internal energy \(U\), volume \(V\), and particle number \(N\), with a narrow energy-shell width \(\delta U\). Its accessible microstates are modeled as equiprobable. Use \(E_i\) only for the energy of an individual microstate; \(U\) denotes the thermodynamic energy shell.</p>
+<div class="equation">\[\boxed{p_i=\begin{cases}1/\Omega(U,V,N),&amp; E_i\in[U-\delta U/2,U+\delta U/2],\\0,&amp;\text{otherwise}.\end{cases}}\]
+\[\boxed{S(U,V,N)=k_B\ln\Omega(U,V,N)},\qquad
+\boxed{\frac1T=\left(\frac{\partial S}{\partial U}\right)_{V,N}}.\]
+<p class="small">Here \(\Omega(U,V,N)\) counts microstates in a narrow shell centered at \(U\). With a finite shell, its actual mean \(\langle E_i\rangle\) need not precisely equal the shell center; the correspondence becomes accurate in the narrow-shell thermodynamic approximation.</p>
 </div>
 <details><summary>Why the microcanonical probability normalizes</summary><div class="steps">
 <p>Exactly \(\Omega\) states have nonzero probability. Summing all probabilities yields</p>
@@ -30,9 +31,9 @@
 </section>
 <section class="lesson" id="canonical"><p class="tag">03.2 · Heat exchange</p><h2>Canonical ensemble and Boltzmann probability</h2>
 <details open><summary>Derive the canonical distribution from a reservoir</summary><div class="steps">
-<p>Combine a small system of microstate energy \(E_i\) with a large isolated reservoir at \(E_{\rm tot}\). Since the reservoir has energy \(E_R=E_{\rm tot}-E_i\), the probability of a specific system microstate is proportional to \(\Omega_R(E_{\rm tot}-E_i)\).</p>
-\[\ln\Omega_R(E_{\rm tot}-E_i)\approx \ln\Omega_R(E_{\rm tot})-E_i\frac{\partial\ln\Omega_R}{\partial E_R}.\]
-<p>Use \(\partial\ln\Omega_R/\partial E_R=1/(k_BT)\equiv\beta\):</p>
+<p>Combine a small system in microstate \(i\), of energy \(E_i\), with a large isolated reservoir at total internal energy \(U_{\rm tot}\). The reservoir has internal energy \(U_R=U_{\rm tot}-E_i\), so the probability is proportional to \(\Omega_R(U_{\rm tot}-E_i)\).</p>
+\[\ln\Omega_R(U_{\rm tot}-E_i)\approx \ln\Omega_R(U_{\rm tot})-E_i\frac{\partial\ln\Omega_R}{\partial U_R}.\]
+<p>Use \(\partial\ln\Omega_R/\partial U_R=1/(k_BT)\equiv\beta\):</p>
 \[p_i\propto\exp(-\beta E_i).\]
 <p>Normalize:</p>
 \[\boxed{p_i=\frac{e^{-\beta E_i}}{Z}},\qquad \boxed{Z=\sum_i e^{-\beta E_i}}.\]
@@ -70,10 +71,11 @@
 <section class="lesson" id="comparison"><h2>Ensembles compared</h2>
 <div class="equation">\[\begin{array}{c|c|c}
 \text{Ensemble}&amp;\text{Fixed}&amp;\text{Fluctuating}\\\hline
-\text{Microcanonical}&amp;E,V,N&amp;\text{no exchange}\\
-\text{Canonical}&amp;T,V,N&amp;E\\
-\text{Grand canonical}&amp;T,V,\mu&amp;E,N
+\text{Microcanonical}&amp;U,V,N&amp;\text{no exchange}\\
+\text{Canonical}&amp;T,V,N&amp;E_i\\
+\text{Grand canonical}&amp;T,V,\mu&amp;E_i,N
 \end{array}\]</div>
+<p>In this table, fluctuating \(E_i\) denotes the energy of the occupied microstate; \(U=\langle E_i\rangle\) is its equilibrium mean, not a fluctuating microstate label.</p>
 <p>Different ensembles become equivalent for many short-range systems in the thermodynamic limit away from singularities; finite systems and long-range-interaction systems can exhibit important differences.</p></section>
 <div class="chapter-move"><a href="./02.html">← 02 Microstates and Entropy</a><a href="./04.html">04 Canonical Partition Functions →</a></div>
 <footer><p>MS Physics · Statistical Mechanics Field Notes</p><p>SI notation unless stated otherwise. Mathematical assumptions and conventions are identified in each derivation. Expand a proof to see its steps.</p><a href="../index.html">Back to contents</a></footer>

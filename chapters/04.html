@@ -23,10 +23,10 @@
 \[\boxed{Z=\sum_n g_n e^{-\beta E_n}}.\]
 <p><strong>Meaning:</strong> lower-energy states carry larger Boltzmann weight; degeneracy increases the statistical importance of a given energy. Normalization follows from \(\sum_i p_i=1\).</p>
 <details><summary>Derivation · why Boltzmann weights have this form</summary><div class="steps">
-<p>Let the combined system and reservoir be isolated at energy \(E_{\rm tot}\). If the system occupies state \(i\), the reservoir has \(E_R=E_{\rm tot}-E_i\), so \(p_i\) is proportional to its multiplicity \(\Omega_R(E_{\rm tot}-E_i)\).</p>
-\[\ln\Omega_R(E_{\rm tot}-E_i)=\ln\Omega_R(E_{\rm tot})-E_i\left(\frac{\partial\ln\Omega_R}{\partial E_R}\right)+\cdots.\]
-<p>Using \(S_R=k_B\ln\Omega_R\) and \(1/T=(\partial S_R/\partial E_R)\), the derivative is \(1/(k_BT)=\beta\).</p>
-\[\Omega_R(E_{\rm tot}-E_i)\propto e^{-\beta E_i},\]
+<p>Let the combined system and reservoir be isolated at total internal energy \(U_{\rm tot}\). If the system occupies microstate \(i\), of energy \(E_i\), the reservoir has internal energy \(U_R=U_{\rm tot}-E_i\), so \(p_i\) is proportional to \(\Omega_R(U_{\rm tot}-E_i)\).</p>
+\[\ln\Omega_R(U_{\rm tot}-E_i)=\ln\Omega_R(U_{\rm tot})-E_i\left(\frac{\partial\ln\Omega_R}{\partial U_R}\right)+\cdots.\]
+<p>Using \(S_R=k_B\ln\Omega_R\) and \(1/T=(\partial S_R/\partial U_R)_{V_R,N_R}\), the derivative is \(1/(k_BT)=\beta\).</p>
+\[\Omega_R(U_{\rm tot}-E_i)\propto e^{-\beta E_i},\]
 \[\boxed{p_i=\frac{e^{-\beta E_i}}{\sum_j e^{-\beta E_j}}}.\]
 <p>The reservoir is assumed large enough for the temperature to remain effectively fixed and for higher-order terms to be negligible.</p>
 </div></details>
