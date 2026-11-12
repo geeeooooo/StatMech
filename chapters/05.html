@@ -1,0 +1,106 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#000000"><meta name="description" content="Why the particle-in-a-box and oscillator quantum numbers begin differently.">
+<title>Quantum States and Boundary Conditions · Statistical Mechanics</title>
+<link rel="stylesheet" href="../style.css"><link rel="icon" href="../icon.svg" type="image/svg+xml">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],packages:{'[+]':['ams']}},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script defer src="../reader.js"></script>
+</head><body>
+<a href="#main" class="skip">Skip to lesson</a>
+<header class="hero"><div class="shell"><p class="eyebrow"><a href="../index.html">STATISTICAL MECHANICS</a> / CHAPTER 05</p>
+<h1>Quantum States and Boundary Conditions</h1><p class="subtitle">Why the particle-in-a-box and oscillator quantum numbers begin differently.</p>
+<nav class="toplinks" aria-label="Website navigation"><a href="../index.html">All chapters</a><a href="https://geeeooooo.github.io/EM/">Electromagnetism</a></nav>
+<div class="tools"><button id="smaller" type="button" aria-label="Decrease text size">A−</button><button id="larger" type="button" aria-label="Increase text size">A+</button><button id="expand" type="button">Show derivations</button><button id="collapse" type="button">Hide derivations</button></div>
+</div></header>
+<main id="main" class="shell">
+<nav class="chapter-jump" aria-label="Within chapter"><a href="#well">1D infinite well: why \(n=1,2,\ldots\)</a><a href="#oscillator">Quantum harmonic oscillator: why \(n=0,1,\ldots\)</a><a href="#multidimensional">2D and 3D spectra and degeneracy</a><a href="#partitions">Quantum single-particle partition functions</a><a href="#summary">Exam summary</a></nav>
+
+<section class="lesson" id="well"><p class="tag">05.1 · Boundary conditions</p><h2>1D infinite well: why \(n=1,2,\ldots\)</h2>
+<p>A particle of mass \(m\) occupies \(0&lt;x&lt;L\), with \(V(x)=0\) inside and infinite potential outside. The wavefunction must vanish at both impenetrable walls; normalized states must be nonzero.</p>
+<details open><summary>Derive quantized \(k_n\), wavefunctions, and energies</summary><div class="steps">
+<p>Inside the well, the stationary Schrödinger equation is</p>
+\[-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}=E\psi
+\quad\Longrightarrow\quad
+\psi''+k^2\psi=0,\quad k^2=\frac{2mE}{\hbar^2}.\]
+<p>Its real-wavenumber solution is \(\psi(x)=A\sin kx+B\cos kx\).</p>
+<p>At \(x=0\), \(\psi(0)=0\Rightarrow B=0\). At \(x=L\), \(\psi(L)=A\sin(kL)=0\).</p>
+<p>The nonzero eigenfunction requires \(A\ne0\), so \(\sin(kL)=0\):</p>
+\[kL=n\pi,\qquad k_n=\frac{n\pi}{L}.\]
+<p>For \(n=0\), \(k=0\). The correct \(E=0\) solution of the differential equation is \(\psi=Ax+B\). The two wall conditions give \(B=0\) and \(AL=0\Rightarrow A=0\). Thus \(n=0\) yields only the <strong>zero vector</strong>, which cannot be normalized or represent a state. Negative \(n\) merely relabels the same sine modes up to sign.</p>
+<p>Normalize, using \(\int_0^L\sin^2(n\pi x/L)\,dx=L/2\):</p>
+\[\boxed{\psi_n(x)=\sqrt{\frac2L}\sin\left(\frac{n\pi x}{L}\right)},\qquad n=1,2,\ldots\]
+\[\boxed{E_n=\frac{n^2\pi^2\hbar^2}{2mL^2}}.\]
+<p><strong>Physical meaning:</strong> the walls enforce nodes, and the lowest allowed mode has a finite wavelength and energy. Ground-state energy is not zero even though the potential is zero inside.</p>
+</div></details>
+</section>
+<section class="lesson" id="oscillator"><p class="tag">05.2 · Ladder operators</p><h2>Quantum harmonic oscillator: why \(n=0,1,\ldots\)</h2>
+<p>For \(V(x)=\frac12m\omega^2x^2\), the wavefunction is not forced to vanish at any finite wall. Instead, acceptable states must be square-integrable on the whole line.</p>
+<details open><summary>Derive the energy spectrum from \(a^\dagger a\)</summary><div class="steps">
+<p>Define dimensionless ladder operators</p>
+\[a=\sqrt{\frac{m\omega}{2\hbar}}x+\frac{i}{\sqrt{2m\hbar\omega}}p,\qquad
+a^\dagger=\sqrt{\frac{m\omega}{2\hbar}}x-\frac{i}{\sqrt{2m\hbar\omega}}p.\]
+<p>Using \([x,p]=i\hbar\), one finds \([a,a^\dagger]=1\). Rewriting \(H=p^2/(2m)+m\omega^2x^2/2\),</p>
+\[\boxed{H=\hbar\omega\left(a^\dagger a+\frac12\right)}.\]
+<p>Define number operator \(N=a^\dagger a\). Since \(\langle\psi|N|\psi\rangle=\|a|\psi\rangle\|^2\ge0\), \(N\) has nonnegative eigenvalues.</p>
+<p>The commutators \([N,a]=-a\), \([N,a^\dagger]=a^\dagger\) show that \(a\) lowers and \(a^\dagger\) raises the eigenvalue of \(N\) by one. Repeated lowering must end at a lowest normalizable state \(|0\rangle\) satisfying \(a|0\rangle=0\); its eigenvalue is <strong>zero</strong>. Raising gives \(n=0,1,2,\ldots\).</p>
+\[\boxed{E_n=\hbar\omega\left(n+\frac12\right)},\qquad n=0,1,2,\ldots\]
+<p><strong>Not a contradiction:</strong> the oscillator has an admissible state labeled \(n=0\), but its energy is still \(E_0=\frac12\hbar\omega&gt;0\).</p>
+</div></details>
+<details><summary>Derive the ground-state Gaussian explicitly</summary><div class="steps">
+<p>In position space \(p=-i\hbar\,d/dx\). Applying \(a\psi_0=0\) gives</p>
+\[\left(\sqrt{\frac{m\omega}{2\hbar}}x+\sqrt{\frac{\hbar}{2m\omega}}\frac{d}{dx}\right)\psi_0=0,\]
+\[\frac{d\psi_0}{dx}=-\frac{m\omega}{\hbar}x\psi_0.\]
+<p>Separate variables and integrate:</p>
+\[\frac{d\psi_0}{\psi_0}=-\frac{m\omega}{\hbar}x\,dx,\qquad
+\psi_0=C\,e^{-m\omega x^2/(2\hbar)}.\]
+<p>Normalization \(\int_{-\infty}^{\infty}|\psi_0|^2dx=1\), together with the Gaussian integral, gives</p>
+\[\boxed{\psi_0(x)=\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}e^{-m\omega x^2/(2\hbar)}}.\]
+<p>The Gaussian is nonzero and normalizable, so \(n=0\) is a genuine state.</p>
+</div></details>
+</section>
+<section class="lesson" id="multidimensional"><p class="tag">05.3 · Separable systems</p><h2>2D and 3D spectra and degeneracy</h2>
+<details open><summary>Rectangular box · why every \(n_j\ge1\)</summary><div class="steps">
+<p>For a rectangular box of side lengths \(L_j\), separation \(\psi(\mathbf r)=\prod_jX_j(x_j)\) yields independent sine modes with \(n_j=1,2,\ldots\). The total energy is additive:</p>
+\[\boxed{E_{\{n_j\}}=\sum_{j=1}^{d}\frac{\pi^2\hbar^2n_j^2}{2mL_j^2}},\qquad d=1,2,3.\]
+<p>For a cubic box the ground state is \((1,1,\ldots,1)\) and first excited levels are degenerate: any one of \(d\) coordinates may change from \(1\) to \(2\).</p>
+</div></details>
+<details open><summary>2D anisotropic oscillator · derive the energies</summary><div class="steps">
+<p>Take a separable Hamiltonian</p>
+\[H=\frac{p_x^2+p_y^2}{2m}+\frac12m\omega_x^2x^2+\frac12m\omega_y^2y^2=H_x+H_y.\]
+<p>Each 1D factor has \(E_{n_x}^{(x)}=\hbar\omega_x(n_x+1/2)\) and \(E_{n_y}^{(y)}=\hbar\omega_y(n_y+1/2)\). Because the factors act on separate coordinates and commute, the product wavefunction is an energy eigenstate:</p>
+\[\boxed{E_{n_x,n_y}=\hbar\omega_x(n_x+\tfrac12)+\hbar\omega_y(n_y+\tfrac12)},\]
+\[\boxed{n_x,n_y=0,1,2,\ldots}.\]
+<p>At generic unequal (incommensurate) frequencies, degeneracy is usually absent. For an isotropic 2D oscillator, \(\omega_x=\omega_y=\omega\), \(E=\hbar\omega(N+1)\) where \(N=n_x+n_y\), and degeneracy is \(N+1\).</p>
+<p>For isotropic 3D, \(N=n_x+n_y+n_z\), \(E=\hbar\omega(N+3/2)\), with degeneracy \(g_N=(N+1)(N+2)/2\).</p>
+</div></details>
+</section>
+<section class="lesson" id="partitions"><p class="tag">05.4 · Connecting spectra to thermodynamics</p><h2>Quantum single-particle partition functions</h2>
+<details open><summary>Oscillator partition function: geometric series</summary><div class="steps">
+<p>For one oscillator, insert \(E_n=\hbar\omega(n+1/2)\) into the canonical sum:</p>
+\[Z_{\rm osc}=\sum_{n=0}^\infty e^{-\beta\hbar\omega(n+1/2)}
+=e^{-\beta\hbar\omega/2}\sum_{n=0}^\infty(e^{-\beta\hbar\omega})^n.\]
+<p>Use \(\sum_{n=0}^\infty q^n=1/(1-q)\) for \(|q|&lt;1\):</p>
+\[\boxed{Z_{\rm osc}=\frac{e^{-\beta\hbar\omega/2}}{1-e^{-\beta\hbar\omega}}}.\]
+<p>For separable oscillators in \(d\) dimensions, multiply independent factors:</p>
+\[\boxed{Z_d=\prod_{j=1}^d\frac{e^{-\beta\hbar\omega_j/2}}{1-e^{-\beta\hbar\omega_j}}}.\]
+</div></details>
+<details><summary>Infinite well partition function: why the sum starts at 1</summary><div class="steps">
+<p>The 1D box has \(E_n=\epsilon n^2\) with \(\epsilon=\pi^2\hbar^2/(2mL^2)\), \(n=1,2,\ldots\). Therefore</p>
+\[\boxed{Z_{\rm box}^{(1)}=\sum_{n=1}^\infty e^{-\beta\epsilon n^2}}.\]
+<p>Unlike the oscillator spectrum, the energies scale quadratically with \(n\), so the sum is <em>not</em> an elementary geometric series. For a separable rectangular box \(Z_d=\prod_j\sum_{n_j=1}^\infty\exp[-\beta\pi^2\hbar^2n_j^2/(2mL_j^2)]\).</p>
+</div></details>
+</section>
+<section class="lesson" id="summary"><h2>Exam summary</h2>
+<div class="equation">\[\begin{array}{c|c|c}
+\text{System}&amp;\text{Allowed }n&amp;\text{Ground energy}\\\hline
+\text{Infinite well}&amp;1,2,\dots&amp;\pi^2\hbar^2/(2mL^2)\\
+\text{Harmonic oscillator}&amp;0,1,\dots&amp;\hbar\omega/2
+\end{array}\]</div>
+<p>Quantum-number labels differ because the <strong>operator domains and boundary/normalization conditions differ</strong>, not because one system violates the zero-point principle.</p></section>
+<div class="chapter-move">
+<a href="./04.html">← 04 Canonical Partition Functions</a>
+<a href="./06.html">06 Classical Ideal Gases and Equipartition →</a>
+</div>
+<footer><p>MS Physics · Statistical Mechanics Field Notes</p><p>SI notation unless stated otherwise. Mathematical assumptions and conventions are identified in each derivation. Expand a proof to see its steps.</p><a href="../index.html">Back to contents</a></footer>
+</main></body></html>

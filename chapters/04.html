@@ -1,0 +1,117 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#000000"><meta name="description" content="Boltzmann weights, Z, Helmholtz free energy, internal energy, entropy, heat capacity, and fluctuations.">
+<title>Canonical Partition Functions · Statistical Mechanics</title>
+<link rel="stylesheet" href="../style.css"><link rel="icon" href="../icon.svg" type="image/svg+xml">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],packages:{'[+]':['ams']}},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script defer src="../reader.js"></script>
+</head><body>
+<a href="#main" class="skip">Skip to lesson</a>
+<header class="hero"><div class="shell"><p class="eyebrow"><a href="../index.html">STATISTICAL MECHANICS</a> / CHAPTER 04</p>
+<h1>Canonical Partition Functions</h1><p class="subtitle">Boltzmann weights, Z, Helmholtz free energy, internal energy, entropy, heat capacity, and fluctuations.</p>
+<nav class="toplinks" aria-label="Website navigation"><a href="../index.html">All chapters</a><a href="https://geeeooooo.github.io/EM/">Electromagnetism</a></nav>
+<div class="tools"><button id="smaller" type="button" aria-label="Decrease text size">A−</button><button id="larger" type="button" aria-label="Increase text size">A+</button><button id="expand" type="button">Show derivations</button><button id="collapse" type="button">Hide derivations</button></div>
+</div></header>
+<main id="main" class="shell">
+<nav class="chapter-jump" aria-label="Within chapter"><a href="#setup">Energy levels, degeneracy and probability</a><a href="#energy">Derive internal energy from \(Z\)</a><a href="#potentials">Derive \(F\) and \(S\)</a><a href="#cv">Heat capacity and energy fluctuations</a><a href="#example">Two-level system: all five functions</a><a href="#summary">Exam formula summary</a></nav>
+
+<section class="lesson" id="setup"><p class="tag">04.1 · Definitions</p><h2>Energy levels, degeneracy and probability</h2>
+<p>For a system of fixed \(T,V,N\) in equilibrium with a large heat reservoir, enumerate microstates \(i\) of energy \(E_i(V,N)\). Define \(\beta=(k_BT)^{-1}\).</p>
+<div class="equation">\[\boxed{Z(T,V,N)=\sum_i e^{-\beta E_i}},\qquad \boxed{p_i=\frac{e^{-\beta E_i}}{Z}}.\]</div>
+<p>If an energy \(E_n\) has degeneracy \(g_n\), count its distinct microstates:</p>
+\[\boxed{Z=\sum_n g_n e^{-\beta E_n}}.\]
+<p><strong>Meaning:</strong> lower-energy states carry larger Boltzmann weight; degeneracy increases the statistical importance of a given energy. Normalization follows from \(\sum_i p_i=1\).</p>
+<details><summary>Derivation · why Boltzmann weights have this form</summary><div class="steps">
+<p>Let the combined system and reservoir be isolated at energy \(E_{\rm tot}\). If the system occupies state \(i\), the reservoir has \(E_R=E_{\rm tot}-E_i\), so \(p_i\) is proportional to its multiplicity \(\Omega_R(E_{\rm tot}-E_i)\).</p>
+\[\ln\Omega_R(E_{\rm tot}-E_i)=\ln\Omega_R(E_{\rm tot})-E_i\left(\frac{\partial\ln\Omega_R}{\partial E_R}\right)+\cdots.\]
+<p>Using \(S_R=k_B\ln\Omega_R\) and \(1/T=(\partial S_R/\partial E_R)\), the derivative is \(1/(k_BT)=\beta\).</p>
+\[\Omega_R(E_{\rm tot}-E_i)\propto e^{-\beta E_i},\]
+\[\boxed{p_i=\frac{e^{-\beta E_i}}{\sum_j e^{-\beta E_j}}}.\]
+<p>The reservoir is assumed large enough for the temperature to remain effectively fixed and for higher-order terms to be negligible.</p>
+</div></details>
+</section>
+<section class="lesson" id="energy"><p class="tag">04.2 · First derivative</p><h2>Derive internal energy from \(Z\)</h2>
+<details open><summary>Full derivation · \(U=-\partial_\beta\ln Z\)</summary><div class="steps">
+<p>By definition \(U=\langle E\rangle=\sum_i p_i E_i\), so</p>
+\[U=\frac{1}{Z}\sum_i E_i e^{-\beta E_i}.\]
+<p>Differentiate \(Z\) at fixed \(V,N\), assuming \(E_i\) has no explicit \(\beta\)-dependence:</p>
+\[\left(\frac{\partial Z}{\partial\beta}\right)_{V,N}=\sum_i(-E_i)e^{-\beta E_i}.\]
+<p>Therefore</p>
+\[-\frac1Z\left(\frac{\partial Z}{\partial\beta}\right)_{V,N}
+=\frac1Z\sum_iE_i e^{-\beta E_i}=U.\]
+<p>Since \(\partial_\beta\ln Z=(1/Z)\partial_\beta Z\),</p>
+\[\boxed{U=-\left(\frac{\partial\ln Z}{\partial\beta}\right)_{V,N}}.\]
+<p>Equivalently, \(\partial\beta/\partial T=-1/(k_BT^2)\), hence</p>
+\[\boxed{U=k_BT^2\left(\frac{\partial\ln Z}{\partial T}\right)_{V,N}}.\]
+</div></details>
+</section>
+<section class="lesson" id="potentials"><p class="tag">04.3 · Free energy and entropy</p><h2>Derive \(F\) and \(S\)</h2>
+<details open><summary>From the Gibbs entropy formula to Helmholtz free energy</summary><div class="steps">
+<p>For canonical probabilities, Gibbs entropy is \(S=-k_B\sum_i p_i\ln p_i\). Substitute \(\ln p_i=-\beta E_i-\ln Z\):</p>
+\[S=-k_B\sum_i p_i(-\beta E_i-\ln Z).\]
+<p>Normalize \(\sum_i p_i=1\) and use \(\sum_i p_iE_i=U\):</p>
+\[S=k_B(\beta U+\ln Z).\]
+<p>Since \(F=U-TS\),</p>
+\[F=U-k_BT(\beta U+\ln Z)=U-U-k_BT\ln Z.\]
+\[\boxed{F=-k_BT\ln Z},\qquad\boxed{S=k_B(\ln Z+\beta U)}.\]
+<p>The familiar thermodynamic identity \(S=-(\partial F/\partial T)_{V,N}\) agrees: differentiating \(F\),</p>
+\[-\frac{\partial F}{\partial T}=k_B\ln Z+k_BT\frac{\partial\ln Z}{\partial T}
+=k_B\ln Z+\frac UT.\]
+</div></details>
+<div class="equation"><h3>Natural variables and pressure</h3>
+\[dF=-S\,dT-P\,dV+\mu\,dN,\]
+\[\boxed{P=-\left(\frac{\partial F}{\partial V}\right)_{T,N}
+=k_BT\left(\frac{\partial\ln Z}{\partial V}\right)_{T,N}}.\]
+<p>This pressure relation assumes that the volume dependence of microscopic energies is correctly included in \(Z\).</p></div>
+</section>
+<section class="lesson" id="cv"><p class="tag">04.4 · Second derivative</p><h2>Heat capacity and energy fluctuations</h2>
+<details open><summary>Derive \(C_V\) and the variance identity</summary><div class="steps">
+<p>Heat capacity at fixed volume and particle number is</p>
+\[\boxed{C_V=\left(\frac{\partial U}{\partial T}\right)_{V,N}}.\]
+<p>Differentiate \(U=-\partial_\beta\ln Z\) again:</p>
+\[\frac{\partial U}{\partial\beta}=-\frac{\partial^2\ln Z}{\partial\beta^2}.\]
+<p>Compute the second derivative using \(Z'=-\sum_i E_i e^{-\beta E_i}\) and \(Z''=\sum_i E_i^2e^{-\beta E_i}\):</p>
+\[\frac{\partial^2\ln Z}{\partial\beta^2}
+=\frac{Z''}{Z}-\left(\frac{Z'}{Z}\right)^2
+=\langle E^2\rangle-\langle E\rangle^2.\]
+<p>Write \(\mathrm{Var}(E)=\langle E^2\rangle-U^2\). Then</p>
+\[\frac{\partial U}{\partial\beta}=-\mathrm{Var}(E).\]
+<p>Use \(d\beta/dT=-1/(k_BT^2)\) and the chain rule:</p>
+\[\boxed{C_V=\frac{\mathrm{Var}(E)}{k_BT^2}
+=k_B\beta^2\frac{\partial^2\ln Z}{\partial\beta^2}}.\]
+<p>For an ordinary canonical system with temperature-independent energy levels, \(C_V\ge0\). This relation connects a measurable response to equilibrium fluctuations.</p>
+</div></details>
+</section>
+<section class="lesson" id="example"><p class="tag">04.5 · Worked example</p><h2>Two-level system: all five functions</h2>
+<p>A noninteracting two-level particle has energies \(0\) and \(\Delta\), each nondegenerate, with \(\Delta&gt;0\). Set \(y=\beta\Delta\). Find \(Z,F,U,S,C_V\).</p>
+<details open><summary>Complete solution</summary><div class="steps">
+<p>Sum the two Boltzmann factors:</p>
+\[\boxed{Z=1+e^{-y}}.\]
+<p>The free energy follows immediately:</p>
+\[\boxed{F=-k_BT\ln(1+e^{-y})}.\]
+<p>Differentiate with respect to \(\beta\), keeping \(\Delta\) constant:</p>
+\[\frac{\partial\ln Z}{\partial\beta}
+=\frac{-\Delta e^{-y}}{1+e^{-y}},\qquad
+\boxed{U=\frac{\Delta}{e^y+1}}.\]
+<p>Use \(S=k_B(\ln Z+\beta U)\):</p>
+\[\boxed{S=k_B\left[\ln(1+e^{-y})+\frac{y}{e^y+1}\right]}.\]
+<p>For \(C_V=dU/dT\), differentiate \(U\) with respect to \(y\):</p>
+\[\frac{dU}{dy}=-\frac{\Delta e^y}{(e^y+1)^2},\qquad \frac{dy}{dT}=-\frac yT.\]
+\[\boxed{C_V=k_By^2\frac{e^y}{(e^y+1)^2}}.\]
+<p><strong>Checks:</strong> at \(T\to0\), \(U\to0\), \(S\to0\), \(C_V\to0\). At \(T\to\infty\), \(U\to\Delta/2\), \(S\to k_B\ln2\), \(C_V\to0\). The heat capacity has a finite-temperature Schottky peak.</p>
+</div></details>
+</section>
+<section class="lesson" id="summary"><h2>Exam formula summary</h2><div class="equation">
+\[\begin{aligned}
+Z&amp;=\sum_i e^{-\beta E_i},&amp;F&amp;=-k_BT\ln Z,\\
+U&amp;=-\partial_\beta\ln Z,&amp;S&amp;=k_B(\ln Z+\beta U),\\
+C_V&amp;=k_B\beta^2\partial_\beta^2\ln Z,&amp;P&amp;=k_BT\,\partial_V\ln Z.
+\end{aligned}\]
+</div><p class="caution">Keep \(V,N\) fixed when differentiating \(Z\) with respect to temperature or \(\beta\). Do not use the same expression blindly if the energy spectrum itself explicitly depends on temperature.</p></section>
+<div class="chapter-move">
+<a href="./03.html">← 03 Statistical Ensembles</a>
+<a href="./05.html">05 Quantum States and Boundary Conditions →</a>
+</div>
+<footer><p>MS Physics · Statistical Mechanics Field Notes</p><p>SI notation unless stated otherwise. Mathematical assumptions and conventions are identified in each derivation. Expand a proof to see its steps.</p><a href="../index.html">Back to contents</a></footer>
+</main></body></html>

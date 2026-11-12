@@ -1,0 +1,106 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#000000"><meta name="description" content="Quantum and classical limits for 1D, 2D and 3D boxes, oscillators and gases.">
+<title>Quantum-to-Classical Temperature Limits · Statistical Mechanics</title>
+<link rel="stylesheet" href="../style.css"><link rel="icon" href="../icon.svg" type="image/svg+xml">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],packages:{'[+]':['ams']}},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script defer src="../reader.js"></script>
+</head><body>
+<a href="#main" class="skip">Skip to lesson</a>
+<header class="hero"><div class="shell"><p class="eyebrow"><a href="../index.html">STATISTICAL MECHANICS</a> / CHAPTER 09</p>
+<h1>Quantum-to-Classical Temperature Limits</h1><p class="subtitle">Quantum and classical limits for 1D, 2D and 3D boxes, oscillators and gases.</p>
+<nav class="toplinks" aria-label="Website navigation"><a href="../index.html">All chapters</a><a href="https://geeeooooo.github.io/EM/">Electromagnetism</a></nav>
+<div class="tools"><button id="smaller" type="button" aria-label="Decrease text size">A−</button><button id="larger" type="button" aria-label="Increase text size">A+</button><button id="expand" type="button">Show derivations</button><button id="collapse" type="button">Hide derivations</button></div>
+</div></header>
+<main id="main" class="shell">
+<nav class="chapter-jump" aria-label="Within chapter"><a href="#meaning">What “low temperature” means</a><a href="#osc">Exact low/high \(T\) heat capacity in 1D–3D</a><a href="#box">Low-temperature freeze-out and classical continuum</a><a href="#gas">When are Bose and Fermi gases classical?</a><a href="#summary">Summary: which high-\(T\) law applies?</a></nav>
+
+<section class="lesson" id="meaning"><p class="tag">09.1 · Assumptions</p><h2>What “low temperature” means</h2>
+<p>A system is quantum or classical relative to the energy scales of the states it can access; dimensionality alone is not sufficient. A discrete gap \(\Delta\) defines \(y=\Delta/(k_BT)\).</p>
+<div class="equation">\[\begin{aligned}
+k_BT\ll\Delta&amp;:\ \text{ground-state dominated},\\
+k_BT\gg\Delta&amp;:\ \text{many levels accessible}.
+\end{aligned}\]</div>
+<p>For a many-particle gas, a further condition governs quantum degeneracy: \(n\lambda_T^d\) small or large (with density \(n=N/V_d\) and thermal wavelength \(\lambda_T=h/\sqrt{2\pi mk_BT}\)). At high temperature with \(n\lambda_T^d\ll1\), Bose/Fermi gases approach Maxwell–Boltzmann statistics.</p>
+</section>
+<section class="lesson" id="osc"><p class="tag">09.2 · Harmonic oscillators</p><h2>Exact low/high \(T\) heat capacity in 1D–3D</h2>
+<details open><summary>Derive \(U\) and \(C_V\) for a 1D oscillator</summary><div class="steps">
+<p>Let \(x=\beta\hbar\omega\). For one oscillator,</p>
+\[Z=\frac{e^{-x/2}}{1-e^{-x}},\qquad
+\ln Z=-\frac x2-\ln(1-e^{-x}).\]
+<p>Differentiate with respect to \(\beta\), noting \(dx/d\beta=\hbar\omega\):</p>
+\[\frac{\partial\ln Z}{\partial\beta}=-\frac{\hbar\omega}{2}-\frac{\hbar\omega e^{-x}}{1-e^{-x}}.\]
+\[\boxed{U=\hbar\omega\left(\frac12+\frac{1}{e^x-1}\right)}.\]
+<p>For \(C_V=dU/dT\), \(dx/dT=-x/T\). Thus</p>
+\[\frac{dU}{dx}=-\hbar\omega\frac{e^x}{(e^x-1)^2},\]
+\[\boxed{C_V=k_Bx^2\frac{e^x}{(e^x-1)^2}}.\]
+<p><strong>Low \(T\):</strong> \(x\gg1\), \(1/(e^x-1)\approx e^{-x}\), so</p>
+\[U\approx\frac{\hbar\omega}{2}+\hbar\omega e^{-x},\quad C_V\approx k_Bx^2e^{-x}\to0.\]
+<p><strong>High \(T\):</strong> \(x\ll1\), \(1/(e^x-1)=x^{-1}-1/2+x/12+\cdots\), giving</p>
+\[U=k_BT+\frac{(\hbar\omega)^2}{12k_BT}+\cdots,\quad C_V\to k_B.\]
+<p>The high-temperature energy agrees with equipartition: one quadratic kinetic and one quadratic potential term contribute \(k_BT/2\) each. The quantum ground energy is included throughout.</p>
+</div></details>
+<details open><summary>2D/3D anisotropic oscillators: sum the independent modes</summary><div class="steps">
+<p>For frequencies \(\omega_j\), \(j=1,\ldots,d\), separation gives \(Z_d=\prod_j Z_j\), hence \(\ln Z_d=\sum_j\ln Z_j\).</p>
+\[\boxed{U_d=\sum_{j=1}^{d}\hbar\omega_j\left(\frac12+\frac1{e^{x_j}-1}\right)},\quad x_j=\frac{\hbar\omega_j}{k_BT}.\]
+\[\boxed{C_{V,d}=k_B\sum_{j=1}^{d}x_j^2\frac{e^{x_j}}{(e^{x_j}-1)^2}}.\]
+<p>For \(d=2\), sum the \(x\) and \(y\) terms; for \(d=3\), also include \(z\). At \(T\to0\), \(U_d\to\frac12\sum_j\hbar\omega_j\) and \(C_{V,d}\to0\). At \(k_BT\gg\hbar\omega_j\) for <em>all</em> modes,</p>
+\[\boxed{U_d\to d\,k_BT,\qquad C_{V,d}\to d\,k_B}.\]
+<p>When frequencies differ greatly, one mode may be classical while another remains quantum: use the exact sum rather than imposing one limit on every mode.</p>
+</div></details>
+</section>
+<section class="lesson" id="box"><p class="tag">09.3 · Particles in boxes</p><h2>Low-temperature freeze-out and classical continuum</h2>
+<details open><summary>Derive the ground state and first excitation gap in \(d\) dimensions</summary><div class="steps">
+<p>For one noninteracting particle in a \(d\)-dimensional cubic box of side \(L\), let \(\epsilon=\pi^2\hbar^2/(2mL^2)\). The energy is</p>
+\[E_{\mathbf n}=\epsilon\sum_{j=1}^d n_j^2,\qquad n_j=1,2,\ldots\]
+<p>The ground state has every \(n_j=1\), so \(E_0=d\epsilon\). The first excited manifold changes one \(n_j\) from 1 to 2, raising the energy by \((4-1)\epsilon=3\epsilon\) and giving degeneracy \(d\):</p>
+\[\boxed{E_0=d\epsilon,\qquad\Delta=3\epsilon,\qquad g_1=d}.\]
+<p>For \(k_BT\ll\Delta\), retain the ground state and first excited manifold in \(Z\):</p>
+\[Z\approx e^{-\beta E_0}(1+d e^{-\beta\Delta}+\cdots).\]
+<p>Then \(\ln Z\approx-\beta E_0+d e^{-\beta\Delta}\), and</p>
+\[\boxed{U\approx E_0+d\Delta e^{-\beta\Delta}},\qquad
+\boxed{C_V\approx d k_B(\beta\Delta)^2e^{-\beta\Delta}}.\]
+<p>Both the excess energy and heat capacity are exponentially suppressed near the nondegenerate ground state.</p>
+</div></details>
+<details open><summary>High-temperature limit: replace sums by Gaussian integrals</summary><div class="steps">
+<p>For one dimension, \(Z_1=\sum_{n=1}^\infty e^{-\beta\epsilon n^2}\). If many levels contribute, approximate the sum by an integral:</p>
+\[Z_1\approx\int_0^\infty e^{-\beta\epsilon n^2}\,dn
+=\frac12\sqrt{\frac{\pi}{\beta\epsilon}}.\]
+<p>Insert \(\epsilon=\pi^2\hbar^2/(2mL^2)\):</p>
+\[Z_1\approx \frac{L}{h}\sqrt{2\pi mk_BT}=\frac L{\lambda_T},\quad
+\boxed{\lambda_T=\frac h{\sqrt{2\pi mk_BT}}}.\]
+<p>For \(d\) independent Cartesian directions \(Z_d\approx(L/\lambda_T)^d\) (one particle, not \(N\) identical particles).</p>
+\[\ln Z_d\approx d\ln L-\frac d2\ln\beta+\mathrm{constant}.\]
+<p>Differentiate:</p>
+\[\boxed{U=-\partial_\beta\ln Z_d\approx\frac d{2\beta}=\frac d2 k_BT},\]
+\[\boxed{C_V\approx\frac d2k_B}.\]
+<p><strong>Dimension dependence:</strong> a free translational degree contributes \(k_BT/2\), whereas an oscillator degree (kinetic plus quadratic potential) contributes \(k_BT\) when classical.</p>
+</div></details>
+</section>
+<section class="lesson" id="gas"><p class="tag">09.4 · Quantum statistics</p><h2>When are Bose and Fermi gases classical?</h2>
+<details><summary>Classical fugacity and occupation-number limit</summary><div class="steps">
+<p>For bosons or fermions at fugacity \(z=e^{\beta\mu}\), mean occupations are</p>
+\[\bar n_{\rm BE}=\frac1{z^{-1}e^{\beta\epsilon}-1},\qquad
+\bar n_{\rm FD}=\frac1{z^{-1}e^{\beta\epsilon}+1}.\]
+<p>If \(z e^{-\beta\epsilon}\ll1\) for the relevant levels, both denominators are dominated by \(z^{-1}e^{\beta\epsilon}\) and</p>
+\[\boxed{\bar n\approx z e^{-\beta\epsilon}}.\]
+<p>For a uniform dilute nonrelativistic gas, this regime corresponds approximately to</p>
+\[\boxed{n\lambda_T^d/g_s\ll1},\]
+<p>where \(g_s\) is spin degeneracy and \(n=N/V_d\). Low \(T\) does <em>not</em> always imply all particles occupy a single state: fermions fill many levels up to the Fermi energy at \(T=0\).</p>
+</div></details>
+</section>
+<section class="lesson" id="summary"><h2>Summary: which high-\(T\) law applies?</h2>
+<div class="equation">\[\begin{array}{c|c|c}
+\text{One particle; }d\text{ dimensions}&amp;U_{\text{high }T}&amp;C_{V,\text{high }T}\\\hline
+\text{Free in box}&amp;\frac d2k_BT&amp;\frac d2 k_B\\
+\text{Harmonic oscillator}&amp;d k_BT&amp;d k_B
+\end{array}\]</div>
+<p class="caution">Equipartition is classical and requires the appropriate continuous phase-space description and quadratic Hamiltonian terms. Do not treat these limits as universal for all systems in \(d\) dimensions.</p>
+</section>
+<div class="chapter-move">
+<a href="./08.html">← 08 Density of States in 1D, 2D, and 3D</a>
+<a href="./10.html">10 Einstein and Debye Solids →</a>
+</div>
+<footer><p>MS Physics · Statistical Mechanics Field Notes</p><p>SI notation unless stated otherwise. Mathematical assumptions and conventions are identified in each derivation. Expand a proof to see its steps.</p><a href="../index.html">Back to contents</a></footer>
+</main></body></html>
