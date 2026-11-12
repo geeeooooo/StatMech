@@ -1,0 +1,87 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#000000"><meta name="description" content="Classical gas partition integrals, thermodynamic functions, Maxwell speeds, and equipartition.">
+<title>Classical Ideal Gases and Equipartition · Statistical Mechanics</title>
+<link rel="stylesheet" href="../style.css"><link rel="icon" href="../icon.svg" type="image/svg+xml">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],packages:{'[+]':['ams']}},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script defer src="../reader.js"></script>
+</head><body>
+<a href="#main" class="skip">Skip to lesson</a>
+<header class="hero"><div class="shell"><p class="eyebrow"><a href="../index.html">STATISTICAL MECHANICS</a> / CHAPTER 06</p>
+<h1>Classical Ideal Gases and Equipartition</h1><p class="subtitle">Classical gas partition integrals, thermodynamic functions, Maxwell speeds, and equipartition.</p>
+<nav class="toplinks" aria-label="Website navigation"><a href="../index.html">All chapters</a><a href="https://geeeooooo.github.io/EM/">Electromagnetism</a></nav>
+<div class="tools"><button id="smaller" type="button" aria-label="Decrease text size">A−</button><button id="larger" type="button" aria-label="Increase text size">A+</button><button id="expand" type="button">Show derivations</button><button id="collapse" type="button">Hide derivations</button></div>
+</div></header>
+<main id="main" class="shell">
+<nav class="chapter-jump" aria-label="Within chapter"><a href="#classical-Z">Derive the classical ideal-gas partition function</a><a href="#thermo">Derive \(F,U,P,S,C_V\) for an ideal gas</a><a href="#equipartition">Equipartition: proof and limits</a><a href="#maxwell">Maxwell–Boltzmann velocities and speeds</a><a href="#dimensional">Worked comparison: ideal gases in 1D, 2D and 3D</a></nav>
+
+<section class="lesson" id="classical-Z"><p class="tag">06.1 · Phase space</p><h2>Derive the classical ideal-gas partition function</h2>
+<p>For a 3D monatomic ideal gas with \(N\) identical, noninteracting particles, Hamiltonian \(H=\sum_j \mathbf p_j^2/(2m)\), and volume \(V\), the classical limit requires a sufficiently dilute, nondegenerate gas.</p>
+<details open><summary>From the phase-space integral to \(Z_N\)</summary><div class="steps">
+<p>Use the classical canonical phase-space expression, with one factor \(h^{-3}\) per particle and \(1/N!\) for indistinguishable identical particles:</p>
+\[Z_N=\frac{1}{N!h^{3N}}\int d^{3N}q\,d^{3N}p\,
+e^{-\beta\sum_j p_j^2/(2m)}.\]
+<p>Because positions and momenta factorize, \(\int d^3q=V\) for each particle. For one momentum component:</p>
+\[\int_{-\infty}^{\infty}e^{-\beta p_x^2/(2m)}dp_x
+=\sqrt{\frac{2\pi m}{\beta}}.\]
+<p>The three components give \((2\pi m/\beta)^{3/2}\). Thus the one-particle translational partition function is</p>
+\[q_1=\frac V{h^3}(2\pi mk_BT)^{3/2}=\frac V{\lambda_T^3},\]
+\[\boxed{\lambda_T=\frac{h}{\sqrt{2\pi mk_BT}}},\qquad
+\boxed{Z_N=\frac{1}{N!}\left(\frac V{\lambda_T^3}\right)^N}.\]
+<p>In \(d\) dimensions the same calculation gives \(q_1=V_d/\lambda_T^d\), where \(V_d\) is a \(d\)-dimensional volume. The Gibbs \(N!\) factor is valid in the classical dilute limit and avoids the ideal-gas mixing paradox for identical particles.</p>
+</div></details>
+</section>
+<section class="lesson" id="thermo"><p class="tag">06.2 · Observables</p><h2>Derive \(F,U,P,S,C_V\) for an ideal gas</h2>
+<details open><summary>Explicit derivatives from the classical \(Z_N\)</summary><div class="steps">
+<p>For \(N\gg1\), Stirling's approximation \(\ln N!\approx N\ln N-N\) yields</p>
+\[\ln Z_N=N\ln V-3N\ln\lambda_T-N\ln N+N
+=N\left[\ln\left(\frac V{N\lambda_T^3}\right)+1\right].\]
+<p>Helmholtz free energy:</p>
+\[\boxed{F=-Nk_BT\left[\ln\left(\frac V{N\lambda_T^3}\right)+1\right]}.\]
+<p>Since \(\lambda_T^3\propto\beta^{3/2}\), \(\partial_\beta\ln Z_N=-(3N)/(2\beta)\). Thus</p>
+\[\boxed{U=-\partial_\beta\ln Z_N=\frac32Nk_BT}.\]
+<p>Pressure from \(P=k_BT(\partial_V\ln Z_N)_{T,N}\):</p>
+\[\boxed{P=\frac{Nk_BT}{V}},\qquad \boxed{PV=Nk_BT}.\]
+<p>Entropy from \(S=k_B(\ln Z_N+\beta U)\):</p>
+\[\boxed{S=Nk_B\left[\ln\left(\frac V{N\lambda_T^3}\right)+\frac52\right]}.\]
+<p>This is the Sackur–Tetrode form for a classical ideal monatomic gas (large \(N\), correct state counting). Finally,</p>
+\[\boxed{C_V=\frac32Nk_B},\qquad\boxed{C_P=\frac52Nk_B}.\]
+</div></details>
+</section>
+<section class="lesson" id="equipartition"><p class="tag">06.3 · Theorem</p><h2>Equipartition: proof and limits</h2>
+<details open><summary>Derive \(k_BT/2\) per quadratic Hamiltonian term</summary><div class="steps">
+<p>Suppose a classical canonical variable \(x\) appears in the Hamiltonian as \(H_x=ax^2\) with \(a&gt;0\), and its domain is all real numbers. Its one-variable partition integral is</p>
+\[z_x=\int_{-\infty}^{\infty}e^{-\beta ax^2}\,dx=\sqrt{\frac{\pi}{\beta a}}.\]
+<p>Its mean energy is</p>
+\[\langle H_x\rangle=-\frac{\partial\ln z_x}{\partial\beta}
+=-\frac{\partial}{\partial\beta}\left[\frac12\ln\pi-\frac12\ln\beta-\frac12\ln a\right].\]
+\[\boxed{\langle ax^2\rangle=\frac1{2\beta}=\frac12k_BT}.\]
+<p>In a 3D ideal monatomic gas the terms \(p_x^2/2m\), \(p_y^2/2m\), \(p_z^2/2m\) each contribute \(k_BT/2\) per particle. A classical 1D harmonic oscillator has <em>two</em> quadratic contributions, kinetic and potential, totaling \(k_BT\).</p>
+<p><strong>Conditions:</strong> classical continuous variables, appropriate canonical measure, quadratic separable terms and convergent integrals. The theorem is not generally valid for a quantum oscillator when \(k_BT\) is comparable to or below \(\hbar\omega\).</p>
+</div></details>
+</section>
+<section class="lesson" id="maxwell"><p class="tag">06.4 · Distribution</p><h2>Maxwell–Boltzmann velocities and speeds</h2>
+<details open><summary>Derive the 3D speed distribution from component Gaussians</summary><div class="steps">
+<p>Velocity component \(v_x=p_x/m\) has normalized distribution</p>
+\[f(v_x)=\sqrt{\frac{m}{2\pi k_BT}}\,e^{-mv_x^2/(2k_BT)}.\]
+<p>Independent \(v_x,v_y,v_z\) give</p>
+\[f(\mathbf v)=\left(\frac m{2\pi k_BT}\right)^{3/2}e^{-mv^2/(2k_BT)}.\]
+<p>Count all velocity vectors in a spherical shell of radius \(v\) and thickness \(dv\), with volume element \(4\pi v^2dv\):</p>
+\[\boxed{f_{\rm speed}(v)=4\pi\left(\frac m{2\pi k_BT}\right)^{3/2}v^2e^{-mv^2/(2k_BT)}}.\]
+<p>Mean-square speed follows from equipartition: \(m\langle v^2\rangle/2=3k_BT/2\), so</p>
+\[\boxed{v_{\rm rms}=\sqrt{\frac{3k_BT}{m}}}.\]
+<p>To find the most probable speed, set \(d(\ln f_{\rm speed})/dv=0\): \(2/v-mv/(k_BT)=0\). Hence \(v_{\rm mp}=\sqrt{2k_BT/m}\). Direct integration gives \(v_{\rm mean}=\sqrt{8k_BT/(\pi m)}\).</p>
+</div></details>
+</section>
+<section class="lesson" id="dimensional"><h2>Worked comparison: ideal gases in 1D, 2D and 3D</h2>
+<details open><summary>Show the dimension dependence of heat capacity</summary><div class="steps">
+<p>For a one-particle free gas with \(d\) translational coordinates, \(q_1=V_d/\lambda_T^d\). At fixed spatial volume, \(\ln Z_N=N\ln V_d-dN\ln\lambda_T-\ln N!\). Since \(\lambda_T\propto\beta^{1/2}\),</p>
+\[\frac{\partial\ln Z_N}{\partial\beta}=-\frac{dN}{2\beta}.\]
+\[\boxed{U=\frac d2Nk_BT},\qquad\boxed{C_V=\frac d2Nk_B}.\]
+<p>Thus \(C_V=(N/2)k_B\) in 1D, \(Nk_B\) in 2D, \(3Nk_B/2\) in 3D. This result refers to translational kinetic energy only and does not include rotational, vibrational or internal modes.</p>
+</div></details>
+</section>
+<div class="chapter-move"><a href="./05.html">← 05 Quantum States and Boundary Conditions</a><a href="./07.html">07 MB, BE, and FD Statistics →</a></div>
+<footer><p>MS Physics · Statistical Mechanics Field Notes</p><p>SI notation unless stated otherwise. Mathematical assumptions and conventions are identified in each derivation. Expand a proof to see its steps.</p><a href="../index.html">Back to contents</a></footer>
+</main></body></html>

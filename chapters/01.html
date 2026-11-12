@@ -1,0 +1,98 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#000000"><meta name="description" content="Thermodynamic laws, state functions, Legendre transforms, entropy, and Maxwell relations.">
+<title>Thermodynamic Foundations · Statistical Mechanics</title>
+<link rel="stylesheet" href="../style.css"><link rel="icon" href="../icon.svg" type="image/svg+xml">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],packages:{'[+]':['ams']}},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script defer src="../reader.js"></script>
+</head><body>
+<a href="#main" class="skip">Skip to lesson</a>
+<header class="hero"><div class="shell"><p class="eyebrow"><a href="../index.html">STATISTICAL MECHANICS</a> / CHAPTER 01</p>
+<h1>Thermodynamic Foundations</h1><p class="subtitle">Thermodynamic laws, state functions, Legendre transforms, entropy, and Maxwell relations.</p>
+<nav class="toplinks" aria-label="Website navigation"><a href="../index.html">All chapters</a><a href="https://geeeooooo.github.io/EM/">Electromagnetism</a></nav>
+<div class="tools"><button id="smaller" type="button" aria-label="Decrease text size">A−</button><button id="larger" type="button" aria-label="Increase text size">A+</button><button id="expand" type="button">Show derivations</button><button id="collapse" type="button">Hide derivations</button></div>
+</div></header>
+<main id="main" class="shell">
+<nav class="chapter-jump" aria-label="Within chapter"><a href="#laws">Heat, work, and the first law</a><a href="#entropy">Entropy and reversibility</a><a href="#potentials">Thermodynamic potentials and natural variables</a><a href="#maxwell">Derive a Maxwell relation</a><a href="#heat">Heat capacities and adiabatic ideal-gas process</a></nav>
+
+<section class="lesson" id="laws"><p class="tag">01.1 · Fundamental laws</p><h2>Heat, work, and the first law</h2>
+<p>Choose the sign convention <strong>\(Q&gt;0\) means heat into the system</strong>, while <strong>\(W&gt;0\) means work done by the system</strong>. For a closed system,</p>
+<div class="equation">\[\boxed{\Delta U=Q-W},\qquad \boxed{dU=\delta Q-\delta W}.\]</div>
+<p>The different symbols matter: \(U\) is a state function (exact differential), whereas heat and work depend on the process path. For quasistatic mechanical pressure work, \(\delta W=P_{\mathrm{ext}}\,dV\); equality with \(P\,dV\) requires mechanical reversibility.</p>
+<details open><summary>Derive the equilibrium fundamental identity</summary><div class="steps">
+<p>For a reversible step in a simple compressible single-component system, \(\delta Q_{\rm rev}=T\,dS\) and \(\delta W_{\rm rev}=P\,dV\).</p>
+\[dU=T\,dS-P\,dV.\]
+<p>If matter can also be added, the energy change associated with \(dN\) particles is \(\mu\,dN\):</p>
+\[\boxed{dU=T\,dS-P\,dV+\mu\,dN}.\]
+<p>This identity relates neighboring equilibrium states even if an actual path connecting them is irreversible; one must not identify \(\delta Q\) with \(T\,dS\) for an irreversible path.</p>
+<p>Read off natural derivatives:</p>
+\[T=\left(\frac{\partial U}{\partial S}\right)_{V,N},\quad
+P=-\left(\frac{\partial U}{\partial V}\right)_{S,N},\quad
+\mu=\left(\frac{\partial U}{\partial N}\right)_{S,V}.\]
+</div></details>
+</section>
+<section class="lesson" id="entropy"><p class="tag">01.2 · Second law</p><h2>Entropy and reversibility</h2>
+<div class="equation">\[dS\ge\frac{\delta Q}{T_{\mathrm{boundary}}}\quad\text{(suitable closed-system heat exchange)},\]
+\[\boxed{\Delta S_{\mathrm{isolated}}\ge0}.\]</div>
+<p>Entropy is not a synonym for heat. For a reversible transfer \(dS=\delta Q_{\rm rev}/T\); in an irreversible process, additional entropy is generated internally.</p>
+<details><summary>Worked example · free expansion of an ideal gas</summary><div class="steps">
+<p>An insulated ideal gas expands freely from \(V_i\) to \(V_f\) into vacuum. For the actual process, \(Q=0\) and \(W=0\), hence \(\Delta U=0\). For an ideal gas \(U=U(T)\), thus \(T_f=T_i\).</p>
+<p>To evaluate the <em>state function</em> \(\Delta S\), imagine a reversible isothermal path connecting the same initial and final equilibrium states:</p>
+\[\Delta S=\int_i^f \frac{\delta Q_{\rm rev}}{T}=\int_{V_i}^{V_f}\frac{P\,dV}{T}.\]
+<p>Use \(P=Nk_BT/V\):</p>
+\[\boxed{\Delta S=Nk_B\ln\left(\frac{V_f}{V_i}\right)&gt;0}\quad(V_f&gt;V_i).\]
+<p>Entropy increases although no heat enters during the <em>actual</em> irreversible expansion.</p>
+</div></details>
+</section>
+<section class="lesson" id="potentials"><p class="tag">01.3 · Legendre transforms</p><h2>Thermodynamic potentials and natural variables</h2>
+<details open><summary>Derive the differentials of \(H,F,G\)</summary><div class="steps">
+<p>Begin with \(dU=T\,dS-P\,dV+\mu\,dN\). Introduce enthalpy \(H=U+PV\):</p>
+\[dH=dU+P\,dV+V\,dP=\boxed{T\,dS+V\,dP+\mu\,dN}.\]
+<p>Define Helmholtz free energy \(F=U-TS\):</p>
+\[dF=dU-T\,dS-S\,dT=\boxed{-S\,dT-P\,dV+\mu\,dN}.\]
+<p>Define Gibbs free energy \(G=U+PV-TS\):</p>
+\[dG=dU+P\,dV+V\,dP-T\,dS-S\,dT=\boxed{-S\,dT+V\,dP+\mu\,dN}.\]
+<p>Natural variables: \(U(S,V,N)\), \(H(S,P,N)\), \(F(T,V,N)\), and \(G(T,P,N)\). A Legendre transform exchanges a variable (such as \(S\)) for its conjugate variable (such as \(T\)).</p>
+</div></details>
+<details><summary>Derive the grand potential and equilibrium criterion</summary><div class="steps">
+<p>For variable particle number at fixed \(T,V,\mu\), use \(\Omega_{\rm G}=F-\mu N=U-TS-\mu N\). Differentiate:</p>
+\[d\Omega_{\rm G}=dF-\mu\,dN-N\,d\mu,\]
+\[\boxed{d\Omega_{\rm G}=-S\,dT-P\,dV-N\,d\mu}.\]
+<p>At fixed \(T,V,N\), equilibrium minimizes \(F\) when only allowed mechanical/internal variations occur. At fixed \(T,P,N\), the appropriate minimum principle is for \(G\); at fixed \(T,V,\mu\), it is for \(\Omega_{\rm G}\). These statements require the relevant reservoir constraints and stable equilibrium.</p>
+</div></details>
+</section>
+<section class="lesson" id="maxwell"><p class="tag">01.4 · Mixed derivatives</p><h2>Derive a Maxwell relation</h2>
+<details open><summary>From \(dF\) to \(\partial_V S=\partial_T P\)</summary><div class="steps">
+<p>At fixed \(N\), \(dF=-S\,dT-P\,dV\), hence</p>
+\[S=-\left(\frac{\partial F}{\partial T}\right)_{V,N},\quad
+P=-\left(\frac{\partial F}{\partial V}\right)_{T,N}.\]
+<p>Differentiate the first expression with respect to \(V\) at fixed \(T,N\), and the second with respect to \(T\) at fixed \(V,N\). Smoothness of \(F\) ensures its mixed derivatives commute:</p>
+\[\left(\frac{\partial S}{\partial V}\right)_{T,N}
+=-\frac{\partial^2F}{\partial V\partial T}
+=\left(\frac{\partial P}{\partial T}\right)_{V,N}.\]
+\[\boxed{\left(\frac{\partial S}{\partial V}\right)_{T,N}
+=\left(\frac{\partial P}{\partial T}\right)_{V,N}}.\]
+<p>Other Maxwell relations follow in the same manner from \(U,H,G\). A Maxwell relation is not an additional law: it follows from the existence of a smooth thermodynamic potential.</p>
+</div></details>
+</section>
+<section class="lesson" id="heat"><p class="tag">01.5 · Response functions</p><h2>Heat capacities and adiabatic ideal-gas process</h2>
+<div class="equation">
+\[\boxed{C_V=\left(\frac{\partial U}{\partial T}\right)_{V,N}},\qquad
+\boxed{C_P=\left(\frac{\partial H}{\partial T}\right)_{P,N}}.\]
+<p>For a classical monatomic ideal gas in 3D, \(U=\frac32Nk_BT\), \(C_V=\frac32Nk_B\), \(C_P=\frac52Nk_B\), and \(C_P-C_V=Nk_B\).</p></div>
+<details><summary>Derive \(TV^{\gamma-1}=\mathrm{constant}\) for a reversible adiabat</summary><div class="steps">
+<p>For a reversible adiabatic (\(\delta Q=0\)), first law gives \(dU=-P\,dV\). For an ideal gas with constant \(C_V\), \(dU=C_VdT\), and \(P=Nk_BT/V\).</p>
+\[C_V\,dT=-\frac{Nk_BT}{V}\,dV.\]
+<p>Divide by \(T\), and integrate:</p>
+\[\frac{dT}{T}=-\frac{Nk_B}{C_V}\frac{dV}{V}
+\ \Longrightarrow\ \ln T+\frac{Nk_B}{C_V}\ln V=\mathrm{constant}.\]
+<p>With \(\gamma=C_P/C_V\) and \(Nk_B=C_P-C_V\),</p>
+\[\boxed{TV^{\gamma-1}=\mathrm{constant}},\qquad
+\boxed{PV^\gamma=\mathrm{constant}}.\]
+<p>Free expansion is adiabatic but <em>not</em> a reversible adiabat, so this \(PV^\gamma\) law should not be used for it.</p>
+</div></details>
+</section>
+<div class="chapter-move"><span></span><a href="./02.html">02 Microstates and Entropy →</a></div>
+<footer><p>MS Physics · Statistical Mechanics Field Notes</p><p>SI notation unless stated otherwise. Mathematical assumptions and conventions are identified in each derivation. Expand a proof to see its steps.</p><a href="../index.html">Back to contents</a></footer>
+</main></body></html>
