@@ -28,6 +28,7 @@
 
 <section class="lesson" id="methods"><p class="tag">12.1 · Exam strategy</p><h2>How to approach a Statistical Mechanics derivation</h2><p class="units-note"><strong>SI units:</strong> Partition function \(Z\) dimensionless, \(\beta\) in \(\mathrm{J^{-1}}\), \(U,F,E_i\) in \(\mathrm{J}\), \(S,C_V\) in \(\mathrm{J/K}\).</p>
 <p>For every system, start by identifying the ensemble (\(E,V,N\), \(T,V,N\), or \(T,V,\mu\)); list allowed levels and their degeneracies; construct \(Z\) or \(\Xi\); derive observables <em>by differentiating</em>; and check dimensions and limits. Do not invoke equipartition without confirming its classical assumptions.</p>
+<div class="theorem-intro" role="note"><h3>Before invoking a theorem in an exam</h3><p><strong>Explain its statement in words.</strong> Equipartition concerns classical quadratic Hamiltonian terms, whereas canonical heat-capacity fluctuations concern energy variance. Do not begin by quoting an unexplained formula.</p><p><strong>Describe its physical meaning.</strong> Identify how probability, accessible states or fluctuations produce the thermodynamic effect, and then write the appropriate mathematical expression.</p><p><strong>Check applicability.</strong> Confirm the ensemble, held-fixed variables, classical/quantum regime, spectrum, degeneracy and any interactions or reservoir assumptions before deriving a result.</p></div>
 <div class="equation">\[\boxed{
 Z=\sum_i e^{-\beta E_i},\quad
 F=-k_BT\ln Z,\quad
@@ -93,6 +94,7 @@ C_V=\frac{\operatorname{Var}(E)}{k_BT^2}
 </section>
 <section class="lesson" id="problem5"><p class="tag">12.6 · Fully worked</p><h2>Problem 5 · Debye low-temperature heat capacity</h2><p class="units-note"><strong>SI units:</strong> Debye angular frequency \(\omega_D\) in \(\mathrm{rad/s}\), \(\Theta_D,T\) in \(\mathrm{K}\), \(U_{\rm th}\) in \(\mathrm{J}\), \(C_V\) in \(\mathrm{J/K}\).</p>
 <p>A 3D Debye solid has \(3N\) acoustic vibrational modes with \(g(\omega)=9N\omega^2/\omega_D^3\). Derive \(C_V\) in the low-temperature limit.</p>
+<div class="theorem-intro" role="note"><h3>Principle before proof: Debye's \(T^3\) law</h3><p><strong>Statement.</strong> A 3D harmonic solid's low-frequency acoustic phonon density of states varies as \(\omega^2\); hence at low temperature \(U_{\rm th}\propto T^4\) and \(C_V\propto T^3\).</p><p><strong>Interpretation and limits.</strong> Cooling leaves mostly long-wavelength sound-like modes available. This is an asymptotic Debye-model result, not an exact heat capacity for every material or temperature.</p></div>
 <details><summary>Solution · Bose integral and T³ law</summary><div class="steps">
 <p>Thermal energy is</p>
 \[U_{\rm th}=\int_0^{\omega_D}\frac{\hbar\omega\,g(\omega)}{e^{\beta\hbar\omega}-1}d\omega.\]
@@ -106,6 +108,7 @@ C_V=\frac{\operatorname{Var}(E)}{k_BT^2}
 </div></details><p class="units-check"><strong>Answer unit check:</strong> \(Nk_B(T/\Theta_D)^3\) is in \(\mathrm{J/K}\).</p>
 </section>
 <section class="lesson" id="problem6"><p class="tag">12.7 · Conceptual question</p><h2>Problem 6 · When does equipartition fail?</h2><p class="units-note"><strong>SI units:</strong> \(\hbar\omega,k_BT,U\) in \(\mathrm{J}\), \(C_V\) in \(\mathrm{J/K}\), and \(x=\hbar\omega/(k_BT)\) dimensionless.</p>
+<div class="theorem-intro" role="note"><h3>Principle before proof: the classical equipartition theorem</h3><p><strong>Statement.</strong> Each classical quadratic energy term contributes \(k_BT/2\) in canonical equilibrium. A 1D classical harmonic oscillator has two such terms, giving \(k_BT\).</p><p><strong>Why it can fail.</strong> A quantum oscillator has widely separated levels when \(k_BT\lesssim\hbar\omega\), so the classical rule no longer gives its exact internal energy or heat capacity.</p></div>
 <details><summary>Answer with quantitative oscillator example</summary><div class="steps">
 <p>Classical equipartition says each independent quadratic Hamiltonian term contributes \(k_BT/2\). For a <em>quantum</em> harmonic oscillator, however,</p>
 \[U=\hbar\omega\left(\frac12+\frac1{e^{\hbar\omega/(k_BT)}-1}\right).\]
