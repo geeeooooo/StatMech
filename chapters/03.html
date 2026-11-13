@@ -14,7 +14,7 @@
 <div class="tools"><button id="smaller" type="button" aria-label="Decrease text size">A−</button><button id="larger" type="button" aria-label="Increase text size">A+</button><button id="expand" type="button">Show derivations</button><button id="collapse" type="button">Hide derivations</button></div>
 </div></header>
 <main id="main" class="shell">
-<nav class="chapter-jump" aria-label="Within chapter"><a href="#microcanonical">Microcanonical ensemble</a><a href="#canonical">Canonical ensemble and Boltzmann probability</a><a href="#grand">Grand canonical ensemble</a><a href="#comparison">Ensembles compared</a><a href="#si-units">SI units</a></nav>
+<nav class="chapter-jump" aria-label="Within chapter"><a href="#microcanonical">Microcanonical ensemble</a><a href="#canonical">Canonical ensemble and Boltzmann probability</a><a href="#boltzmann-derivation">Boltzmann derivation</a><a href="#grand">Grand canonical ensemble</a><a href="#comparison">Ensembles compared</a><a href="#si-units">SI units</a></nav>
 <details class="si-guide" id="si-units"><summary>SI units &amp; fundamental constants</summary><div class="steps">
 <p><strong>Thermodynamics.</strong> Temperature \(T\) in kelvins \(\mathrm{K}\); internal energy \(U\), microstate energy \(E_i\), work \(W\), heat \(Q\), free energies \(F,G\), and chemical potential \(\mu\) in joules \(\mathrm{J}\) (chemical potential is energy per particle); entropy \(S\) and heat capacity \(C_V,C_P\) in \(\mathrm{J/K}\); pressure \(P\) in pascals \(\mathrm{Pa}=\mathrm{J/m^3}\); volume \(V\) in \(\mathrm{m^3}\).</p>
 <p><strong>Statistical quantities.</strong> Particle count \(N\), multiplicity \(\Omega\), degeneracy \(g\), probability \(p_i\), occupation \(\bar n_i\), and properly normalized partition functions \(Z,\Xi\) are dimensionless; \(\beta=1/(k_BT)\) has units \(\mathrm{J^{-1}}\). Energy variance has units \(\mathrm{J^2}\).</p>
@@ -47,10 +47,123 @@
 \[p_i\propto\exp(-\beta E_i).\]
 <p>Normalize:</p>
 \[\boxed{p_i=\frac{e^{-\beta E_i}}{Z}},\qquad \boxed{Z=\sum_i e^{-\beta E_i}}.\]
-<p>Constraints: \(T,V,N\) are fixed macroscopically, but the system's energy fluctuates. The spectrum may have degeneracies, which must be counted in the sum.</p>
+<p>Constraints: \(T,V,N\) are fixed macroscopically, but the system's energy fluctuates. The spectrum may have degeneracies, which must be counted in the sum. Continue with the <a href="#boltzmann-derivation">complete Boltzmann-distribution derivation</a> below, including the maximum-entropy proof and a two-level example.</p>
 </div></details>
 <div class="equation"><p><strong>Thermodynamic connection:</strong> \(F=-k_BT\ln Z\), and \(U=-\partial_\beta\ln Z\). See <a href="./04.html">Chapter 04</a> for complete derivations and heat capacity.</p></div>
 </section>
+
+<section class="lesson" id="boltzmann-derivation">
+<p class="tag">03.2A · Full derivation</p>
+<h2>Boltzmann distribution: where the exponential comes from</h2>
+<p>The <strong>Boltzmann distribution</strong> is the equilibrium probability of a particular <em>microstate</em> \(i\) of a system that can exchange energy with a large heat reservoir. The system has fixed \(V,N\), while its energy fluctuates; the reservoir fixes temperature \(T\).</p>
+<div class="equation">
+\[\boxed{p_i=\frac{e^{-E_i/(k_BT)}}{\sum_j e^{-E_j/(k_BT)}}
+=\frac{e^{-\beta E_i}}{Z}},\qquad
+\boxed{\beta=\frac1{k_BT}},\]
+\[\boxed{Z=\sum_j e^{-\beta E_j}}.\]
+<p>Here \(U=\langle E_i\rangle=\sum_i p_i E_i\) is the <strong>mean thermodynamic internal energy</strong>; it is not generally the energy of each microstate.</p>
+</div>
+<p class="units-note"><strong>SI units:</strong> \(E_i,U\) in \(\mathrm{J}\); \(T\) in \(\mathrm{K}\); \(k_B=1.380649\times10^{-23}\ \mathrm{J/K}\) (exact); \(\beta\) in \(\mathrm{J^{-1}}\). Both \(\beta E_i\), \(p_i\), and \(Z\) are dimensionless.</p>
+
+<details open><summary>Derivation I · microcanonical system + reservoir (step by step)</summary><div class="steps">
+<h4>Step 1 · Make the composite system isolated</h4>
+<p>Let a small subsystem \(S\) exchange energy with a much larger reservoir \(R\). The combined system is isolated and has fixed total internal energy \(U_{\mathrm{tot}}\), volume, and particle number. If \(S\) is in microstate \(i\), its energy is \(E_i\). Conservation gives</p>
+\[\boxed{U_R=U_{\mathrm{tot}}-E_i}.\]
+<p>The reservoir's multiplicity \(\Omega_R(U_R)\) counts the accessible microscopic reservoir states at energy \(U_R\). For <em>one specified microstate</em> \(i\) of the small system, the number of compatible composite microstates is \(\Omega_R(U_{\mathrm{tot}}-E_i)\).</p>
+<h4>Step 2 · Apply equal a priori probabilities</h4>
+<p>In the microcanonical description of the isolated composite, all accessible composite microstates have equal probabilities. Thus the probability of system microstate \(i\) is proportional to the reservoir's compatible multiplicity:</p>
+\[\boxed{p_i\propto\Omega_R(U_{\mathrm{tot}}-E_i)}.\]
+<p>Different subsystem energies leave different amounts of energy available to the reservoir, so they generally have different probabilities.</p>
+<h4>Step 3 · Convert multiplicity into entropy</h4>
+<p>Boltzmann's entropy formula for the reservoir is</p>
+\[S_R(U_R)=k_B\ln\Omega_R(U_R),\quad
+\Omega_R(U_R)=e^{S_R(U_R)/k_B}.\]
+<p>Expand the reservoir entropy to first order about a reference energy \(U_{\mathrm{tot}}\), treating \(E_i\) as small compared with the reservoir energy scale:</p>
+\[\begin{aligned}
+S_R(U_{\mathrm{tot}}-E_i)
+&amp;\simeq S_R(U_{\mathrm{tot}})
+-E_i\left(\frac{\partial S_R}{\partial U_R}\right)_{V_R,N_R}.
+\end{aligned}\]
+<p>Thermodynamics defines reservoir temperature by</p>
+\[\boxed{\frac1T=\left(\frac{\partial S_R}{\partial U_R}\right)_{V_R,N_R}}.\]
+<p>Therefore</p>
+\[\boxed{S_R(U_{\mathrm{tot}}-E_i)\simeq S_R(U_{\mathrm{tot}})-\frac{E_i}{T}}.\]
+<p>The approximation assumes a very large reservoir with negligible temperature change over the subsystem's accessible energy range. One may expand about any suitable reservoir reference energy; constant factors cancel upon normalization.</p>
+<h4>Step 4 · Obtain the exponential weight</h4>
+<p>Exponentiate the entropy expression:</p>
+\[\begin{aligned}
+\Omega_R(U_{\mathrm{tot}}-E_i)
+&amp;\simeq\exp\left[\frac{S_R(U_{\mathrm{tot}})}{k_B}-\frac{E_i}{k_BT}\right]\\
+&amp;=\exp\left[\frac{S_R(U_{\mathrm{tot}})}{k_B}\right]e^{-\beta E_i}.
+\end{aligned}\]
+<p>The first exponential is independent of \(i\). It is therefore absorbed into the proportionality constant:</p>
+\[\boxed{p_i=C\,e^{-\beta E_i}}.\]
+<h4>Step 5 · Determine the normalization constant</h4>
+<p>The system must occupy <em>some</em> microstate, so its probabilities sum to one:</p>
+\[\sum_i p_i=1=C\sum_i e^{-\beta E_i}.\]
+<p>Define \(Z=\sum_i e^{-\beta E_i}\). It follows that \(C=1/Z\), giving</p>
+\[\boxed{p_i=\frac{e^{-\beta E_i}}{Z}}.\]
+<p><strong>Interpretation:</strong> the lower the microstate energy, the greater its probability at a fixed positive temperature. No claim is made that the system is always in its lowest-energy state.</p>
+</div></details>
+
+<details><summary>Derivation II · maximize Gibbs entropy under fixed mean energy</summary><div class="steps">
+<p>The same canonical distribution follows from the probability distribution that maximizes the Gibbs entropy while preserving normalization and prescribed mean energy \(U\):</p>
+\[S=-k_B\sum_i p_i\ln p_i,\qquad
+\sum_i p_i=1,\qquad
+\sum_i p_iE_i=U.\]
+<p>Introduce dimensionless multiplier \(\alpha\) for normalization and multiplier \(\beta\,[\mathrm{J^{-1}}]\) for mean energy. Maximize the dimensionless functional</p>
+\[\mathcal L=-\sum_i p_i\ln p_i
+-\alpha\left(\sum_i p_i-1\right)
+-\beta\left(\sum_i p_iE_i-U\right).\]
+<p>Differentiate with respect to each \(p_i\), treating the constraints with their multipliers:</p>
+\[\frac{\partial\mathcal L}{\partial p_i}
+=-(\ln p_i+1)-\alpha-\beta E_i=0.\]
+<p>Solve for \(p_i\):</p>
+\[\ln p_i=-1-\alpha-\beta E_i,\qquad
+p_i=e^{-1-\alpha}e^{-\beta E_i}.\]
+<p>Normalization implies \(e^{-1-\alpha}=1/Z\), with \(Z=\sum_i e^{-\beta E_i}\). Thus</p>
+\[\boxed{p_i=\frac{e^{-\beta E_i}}{Z}}.\]
+<p>To identify the multiplier, substitute this result back into the entropy:</p>
+\[\begin{aligned}
+S&amp;=-k_B\sum_i p_i(-\beta E_i-\ln Z)\\
+&amp;=k_B(\ln Z+\beta U).
+\end{aligned}\]
+<p>For the entropy-maximizing family at fixed \(V,N\), \(\partial S/\partial U=k_B\beta\). The thermodynamic definition \((\partial S/\partial U)_{V,N}=1/T\) therefore gives</p>
+\[\boxed{\beta=\frac1{k_BT}}.\]
+<p>This is an <em>alternative derivation</em> of the same equilibrium formula; it does not require treating Bose–Einstein or Fermi–Dirac occupations as the starting point.</p>
+</div></details>
+
+<details open><summary>Normalized probabilities, energy ratios and degeneracy</summary><div class="steps">
+<h4>Probability ratio of two microstates</h4>
+<p>For microstates \(i,j\), the common partition function cancels:</p>
+\[\boxed{\frac{p_i}{p_j}=e^{-\beta(E_i-E_j)}}.\]
+<p>Thus only energy <em>differences</em> determine relative probabilities. If every energy is shifted by the same constant \(C_0\), then \(Z'=e^{-\beta C_0}Z\) and all probabilities remain unchanged.</p>
+<h4>Probability of a degenerate energy level</h4>
+<p>If an energy \(E_n\) has \(g_n\) distinct microstates, each has probability \(e^{-\beta E_n}/Z\), but the probability that the <em>energy level</em> is occupied is the sum over those microstates:</p>
+\[\boxed{P(E_n)=\frac{g_n e^{-\beta E_n}}{Z}},\qquad
+\boxed{Z=\sum_n g_ne^{-\beta E_n}}.\]
+<p>Degeneracy \(g_n\) is a dimensionless count. Distinguish \(p_i\) (one microstate) from \(P(E_n)\) (an entire energy level).</p>
+</div></details>
+
+<details><summary>Worked example · two energy levels</summary><div class="steps">
+<p>Consider a <em>nondegenerate</em> ground state with \(E_0=0\) and one excited state at \(E_1=\Delta\), where \(\Delta&gt;0\) is in \(\mathrm{J}\). The partition function is</p>
+\[\boxed{Z=1+e^{-\beta\Delta}}.\]
+<p>Consequently</p>
+\[\boxed{p_0=\frac{1}{1+e^{-\beta\Delta}}},\quad
+\boxed{p_1=\frac{e^{-\beta\Delta}}{1+e^{-\beta\Delta}}}.\]
+<p>The ratio and internal energy are</p>
+\[\boxed{\frac{p_1}{p_0}=e^{-\Delta/(k_BT)}},\quad
+\boxed{U=\sum_i p_i E_i=\frac{\Delta}{e^{\beta\Delta}+1}}.\]
+<p>Check the limiting behavior: when \(k_BT\ll\Delta\), \(p_1\to0\) and \(U\to0\); when \(k_BT\gg\Delta\), \(p_1\to1/2\) and \(U\to\Delta/2\). The result for \(U\) has units of \(\mathrm{J}\) because probabilities are dimensionless.</p>
+<p>If the excited energy has degeneracy \(g\), use \(Z=1+ge^{-\beta\Delta}\) and \(P_{\mathrm{exc}}=ge^{-\beta\Delta}/Z\) instead.</p>
+</div></details>
+
+<div class="equation">
+<h3>Exam distinction: Boltzmann probability versus Maxwell–Boltzmann occupation</h3>
+<p>The canonical formula \(p_i=e^{-\beta E_i}/Z\) gives the probability of one <strong>complete microstate</strong>. The dilute-gas occupation law \(\bar n_{\mathrm{MB}}(\epsilon)\approx e^{-\beta(\epsilon-\mu)}\) gives the <strong>mean occupancy of a single-particle orbital</strong> in the classical limit. They are related, but \(p_i\) and \(\bar n\) are not the same statistical quantity. For the latter, see <a href="./07.html#mb">Chapter 07: Maxwell–Boltzmann statistics</a>.</p>
+</div>
+</section>
+
 <section class="lesson" id="grand"><p class="tag">03.3 · Heat and particle exchange</p><h2>Grand canonical ensemble</h2><p class="units-note"><strong>SI units:</strong> Chemical potential \(\mu\) in \(\mathrm{J}\) per particle; \(\mu N\), \(E_a\), \(U\) in \(\mathrm{J}\); grand partition function \(\Xi\) and fugacity \(e^{\beta\mu}\) dimensionless; grand potential \(\Omega_{\rm G}\) in \(\mathrm{J}\).</p>
 <p>A system exchanges both energy and particles with reservoirs at \(T,\mu\), so neither \(E\) nor \(N\) is fixed for the subsystem.</p>
 <details open><summary>Derive \(\Xi\), the grand potential, and the mean particle number</summary><div class="steps">
