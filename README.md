@@ -21,6 +21,10 @@ A responsive black-and-white statistical mechanics reference for MS Physics, pub
 
 The initial outline has been replaced by an actual chapter index. Each lesson includes explanations, derivations, and examples. The coverage is deliberately modular and can be expanded as new examples and subtopics are requested; it is not a substitute for a complete graduate textbook.
 
+## Comprehensive exam practice
+
+- [`practice.html`](practice.html) — 10 new, fully worked problems grouped by Maxwell–Boltzmann, Bose–Einstein, Fermi–Dirac, Particle in a Box, and Quantum Harmonic Oscillator. Questions and solutions use native expandable `<details>` controls and existing MathJax 3 styling; linked from the homepage and Chapter 12.
+
 ## Run and publish
 
 For a simple local preview, serve the repository directory using `python -m http.server 8000` and open `http://localhost:8000`.
