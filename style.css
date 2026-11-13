@@ -61,3 +61,10 @@ footer{border-top:1px solid var(--line);padding:16px 0;font-size:.82em;color:var
 .units-note{border-left:2px solid #fff;padding:7px 0 7px 12px;margin:11px 0 15px;color:#fff;font-size:.9em;line-height:1.53}
 .units-check{border-left:1px solid #fff;padding:6px 0 6px 12px;margin:12px 0 16px;color:#fff;font-size:.87em;line-height:1.53}
 @media(max-width:440px){.units-note,.units-check{padding-left:8px}.si-guide .steps{padding:4px 10px 12px}}
+
+/* Concept-first explanations appear before proofs. Restrained monochrome styling. */
+.theorem-intro{border-left:2px solid #fff;padding:10px 13px;margin:15px 0 18px;background:transparent}
+.theorem-intro h3{font-size:1.02em;line-height:1.36;margin:0 0 9px}
+.theorem-intro p{font-size:.94em;line-height:1.57;margin:0 0 10px}
+.theorem-intro p:last-child{margin-bottom:0}
+@media(max-width:440px){.theorem-intro{padding:7px 8px;margin:12px 0 16px}.theorem-intro h3{font-size:1em}.theorem-intro p{font-size:.92em}}
