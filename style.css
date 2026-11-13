@@ -54,3 +54,10 @@ footer{border-top:1px solid var(--line);padding:16px 0;font-size:.82em;color:var
 @media(max-width:440px){.shell{width:calc(100% - 18px)}.hero{padding:17px 0 14px}.lesson{padding:20px 0}.equation,.panel,.focal{padding:10px}.steps{padding:4px 10px 12px}.catalog{grid-template-columns:1fr}.catalog a{padding:13px}.chapter-jump a{padding:6px 8px}.chapter-move a{font-size:.79em}}
 @media(max-width:275px){:root{--type:15px}.shell{width:calc(100% - 12px)}.tools button{padding:7px 8px}.toplinks a{padding:6px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* SI unit definitions, dimensional checks, and compact reference on every page. */
+.si-guide{margin:16px 0 24px;border:1px solid var(--line);border-radius:5px}
+.si-guide>summary{font-weight:700}
+.si-guide .steps{border-top:1px solid var(--line)}
+.units-note{border-left:2px solid #fff;padding:7px 0 7px 12px;margin:11px 0 15px;color:#fff;font-size:.9em;line-height:1.53}
+.units-check{border-left:1px solid #fff;padding:6px 0 6px 12px;margin:12px 0 16px;color:#fff;font-size:.87em;line-height:1.53}
+@media(max-width:440px){.units-note,.units-check{padding-left:8px}.si-guide .steps{padding:4px 10px 12px}}

@@ -14,9 +14,19 @@
 <div class="tools"><button id="smaller" type="button" aria-label="Decrease text size">A−</button><button id="larger" type="button" aria-label="Increase text size">A+</button><button id="expand" type="button">Show derivations</button><button id="collapse" type="button">Hide derivations</button></div>
 </div></header>
 <main id="main" class="shell">
-<nav class="chapter-jump" aria-label="Within chapter"><a href="#states">Microstates and macrostates</a><a href="#gibbs">Gibbs entropy and its microcanonical limit</a><a href="#paramagnet">Counting a two-state spin system</a><a href="#temperature">Temperature and equilibrium from entropy</a></nav>
+<nav class="chapter-jump" aria-label="Within chapter"><a href="#states">Microstates and macrostates</a><a href="#gibbs">Gibbs entropy and its microcanonical limit</a><a href="#paramagnet">Counting a two-state spin system</a><a href="#temperature">Temperature and equilibrium from entropy</a><a href="#si-units">SI units</a></nav>
+<details class="si-guide" id="si-units"><summary>SI units &amp; fundamental constants</summary><div class="steps">
+<p><strong>Thermodynamics.</strong> Temperature \(T\) in kelvins \(\mathrm{K}\); internal energy \(U\), microstate energy \(E_i\), work \(W\), heat \(Q\), free energies \(F,G\), and chemical potential \(\mu\) in joules \(\mathrm{J}\) (chemical potential is energy per particle); entropy \(S\) and heat capacity \(C_V,C_P\) in \(\mathrm{J/K}\); pressure \(P\) in pascals \(\mathrm{Pa}=\mathrm{J/m^3}\); volume \(V\) in \(\mathrm{m^3}\).</p>
+<p><strong>Statistical quantities.</strong> Particle count \(N\), multiplicity \(\Omega\), degeneracy \(g\), probability \(p_i\), occupation \(\bar n_i\), and properly normalized partition functions \(Z,\Xi\) are dimensionless; \(\beta=1/(k_BT)\) has units \(\mathrm{J^{-1}}\). Energy variance has units \(\mathrm{J^2}\).</p>
+<p><strong>Exact SI constants.</strong></p>
+\[\boxed{k_B=1.380649\times10^{-23}\ \mathrm{J/K}},\qquad
+\boxed{h=6.62607015\times10^{-34}\ \mathrm{J\,s}}\]
+<p>\(k_B\) (Boltzmann's constant) and \(h\) (Planck's constant) have exact defined SI values. The reduced Planck constant is \(\hbar=h/(2\pi)\approx1.054571817\times10^{-34}\ \mathrm{J\,s}\).</p>
+<p><strong>Quantum and gases.</strong> Mass \(m\) in \(\mathrm{kg}\); length \(L\), thermal wavelength \(\lambda_T\) in \(\mathrm{m}\); angular frequency \(\omega\) in \(\mathrm{rad/s}\); energy gap \(\Delta\), single-particle level \(\epsilon\) in \(\mathrm{J}\); speed \(v\) in \(\mathrm{m/s}\); number density \(n=N/V_d\) in \(\mathrm{m^{-d}}\) for \(d\) spatial dimensions.</p>
+<p><strong>Common distinctions.</strong> \(T\) in formulas for temperature is kelvins \(\mathrm{K}\); magnetic flux density \(B\) is in tesla \(\mathrm{T}\). A magnetic moment \(\mu_{\rm mag}\) has units \(\mathrm{J/T}\), different from chemical potential \(\mu\) in \(\mathrm{J}\). Logarithm/exponential arguments and quantities such as \(k_BT/(\hbar\omega)\) must be dimensionless.</p>
+</div></details>
 
-<section class="lesson" id="states"><p class="tag">02.1 · Microscopic counting</p><h2>Microstates and macrostates</h2>
+<section class="lesson" id="states"><p class="tag">02.1 · Microscopic counting</p><h2>Microstates and macrostates</h2><p class="units-note"><strong>SI units:</strong> Multiplicity \(\Omega\) and count of states are dimensionless; \(k_B\) is \(\mathrm{J/K}\), so \(S_B=k_B\ln\Omega\) has units \(\mathrm{J/K}\). Energies are in \(\mathrm{J}\).</p>
 <p>A <strong>microstate</strong> is one allowed microscopic configuration (or quantum state); a <strong>macrostate</strong> groups microstates by macroscopic constraints such as \(E,V,N\). Multiplicity \(\Omega\) counts accessible microstates.</p>
 <div class="equation">\[\boxed{S_B=k_B\ln\Omega}.\]</div>
 <p>For the microcanonical ensemble (an isolated system in a narrow energy shell), the equal-a-priori model assigns \(p_i=1/\Omega\) for each accessible microstate; other states have \(p_i=0\). Equal probability is an equilibrium postulate, not a consequence of energy conservation alone.</p>
@@ -27,7 +37,7 @@
 <p>Independence and weak coupling are crucial: correlations can invalidate a simple product count.</p>
 </div></details>
 </section>
-<section class="lesson" id="gibbs"><p class="tag">02.2 · Probabilities</p><h2>Gibbs entropy and its microcanonical limit</h2>
+<section class="lesson" id="gibbs"><p class="tag">02.2 · Probabilities</p><h2>Gibbs entropy and its microcanonical limit</h2><p class="units-note"><strong>SI units:</strong> Each probability \(p_i\) is dimensionless; \(-k_B\sum_i p_i\ln p_i\) has units \(\mathrm{J/K}\). Logarithm arguments must be dimensionless.</p>
 <div class="equation">\[\boxed{S_G=-k_B\sum_i p_i\ln p_i},\qquad \sum_i p_i=1.\]</div>
 <details open><summary>Derive \(S_G=k_B\ln\Omega\) for equal probabilities</summary><div class="steps">
 <p>In an equal-probability ensemble with \(\Omega\) accessible states, \(p_i=1/\Omega\). Substitute:</p>
@@ -37,7 +47,7 @@
 <p>The probability distribution matters: if microstates do not have equal probabilities, replace the simple multiplicity expression by the Gibbs sum.</p>
 </div></details>
 </section>
-<section class="lesson" id="paramagnet"><p class="tag">02.3 · Worked example</p><h2>Counting a two-state spin system</h2>
+<section class="lesson" id="paramagnet"><p class="tag">02.3 · Worked example</p><h2>Counting a two-state spin system</h2><p class="units-note"><strong>SI units:</strong> Magnetic field \(B\) in tesla \(\mathrm{T}\), moment \(\mu\) here in \(\mathrm{J/T}\), so \(\mu B\) is energy in \(\mathrm{J}\). Total magnetic moment \(M\) is \(\mathrm{J/T}\). \(N,n_\uparrow,n_\downarrow,p\) are dimensionless.</p>
 <p>Consider \(N\) distinguishable localized spin-\(\tfrac12\) sites, each with magnetic moment \(\pm\mu\) along a fixed field \(B\). Let \(n_\uparrow+n_\downarrow=N\), and fix \(n_\uparrow\).</p>
 <details open><summary>Derive the binomial multiplicity and magnetization</summary><div class="steps">
 <p>There are \(N!\) permutations of \(N\) sites, but exchanging two up-spins or two down-spins leaves the microstate assignment unchanged. Therefore</p>
@@ -54,9 +64,9 @@
 \[\ln\Omega\approx-N[p\ln p+(1-p)\ln(1-p)].\]
 \[\boxed{S\approx-Nk_B[p\ln p+(1-p)\ln(1-p)]}.\]
 <p>The maximum occurs at \(p=1/2\): \(S_{\max}\approx Nk_B\ln2\), when up and down spins are equally numerous. The logarithm approximation neglects subextensive finite-\(N\) terms.</p>
-</div></details>
+</div></details><p class="units-check"><strong>Answer unit check:</strong> The binomial multiplicity and the fractions \(p,m\) are dimensionless; \(E=-\mu BM/\mu\) (equivalently the stated \(E=-\mu B(n_\uparrow-n_\downarrow)\)) is in \(\mathrm{J}\), while \(M\) is in \(\mathrm{J/T}\).</p>
 </section>
-<section class="lesson" id="temperature"><p class="tag">02.4 · Thermodynamic bridge</p><h2>Temperature and equilibrium from entropy</h2>
+<section class="lesson" id="temperature"><p class="tag">02.4 · Thermodynamic bridge</p><h2>Temperature and equilibrium from entropy</h2><p class="units-note"><strong>SI units:</strong> Internal energies \(U_A,U_B\) in \(\mathrm{J}\), entropy \(S\) in \(\mathrm{J/K}\), so \(\partial S/\partial U\) is \(\mathrm{K^{-1}}\), consistent with \(1/T\).</p>
 <details open><summary>Derive equality of temperatures from total multiplicity</summary><div class="steps">
 <p>Two weakly coupled systems A and B exchange energy while their total internal energy \(U_{\rm tot}=U_A+U_B\) remains fixed. Their combined multiplicity is \(\Omega_{\rm tot}(U_A)=\Omega_A(U_A)\Omega_B(U_{\rm tot}-U_A)\).</p>
 <p>At equilibrium, the most probable division of internal energy maximizes \(S_{\rm tot}=S_A(U_A)+S_B(U_{\rm tot}-U_A)\):</p>

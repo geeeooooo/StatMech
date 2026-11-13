@@ -14,9 +14,19 @@
 <div class="tools"><button id="smaller" type="button" aria-label="Decrease text size">A−</button><button id="larger" type="button" aria-label="Increase text size">A+</button><button id="expand" type="button">Show derivations</button><button id="collapse" type="button">Hide derivations</button></div>
 </div></header>
 <main id="main" class="shell">
-<nav class="chapter-jump" aria-label="Within chapter"><a href="#laws">Heat, work, and the first law</a><a href="#entropy">Entropy and reversibility</a><a href="#potentials">Thermodynamic potentials and natural variables</a><a href="#maxwell">Derive a Maxwell relation</a><a href="#heat">Heat capacities and adiabatic ideal-gas process</a></nav>
+<nav class="chapter-jump" aria-label="Within chapter"><a href="#laws">Heat, work, and the first law</a><a href="#entropy">Entropy and reversibility</a><a href="#potentials">Thermodynamic potentials and natural variables</a><a href="#maxwell">Derive a Maxwell relation</a><a href="#heat">Heat capacities and adiabatic ideal-gas process</a><a href="#si-units">SI units</a></nav>
+<details class="si-guide" id="si-units"><summary>SI units &amp; fundamental constants</summary><div class="steps">
+<p><strong>Thermodynamics.</strong> Temperature \(T\) in kelvins \(\mathrm{K}\); internal energy \(U\), microstate energy \(E_i\), work \(W\), heat \(Q\), free energies \(F,G\), and chemical potential \(\mu\) in joules \(\mathrm{J}\) (chemical potential is energy per particle); entropy \(S\) and heat capacity \(C_V,C_P\) in \(\mathrm{J/K}\); pressure \(P\) in pascals \(\mathrm{Pa}=\mathrm{J/m^3}\); volume \(V\) in \(\mathrm{m^3}\).</p>
+<p><strong>Statistical quantities.</strong> Particle count \(N\), multiplicity \(\Omega\), degeneracy \(g\), probability \(p_i\), occupation \(\bar n_i\), and properly normalized partition functions \(Z,\Xi\) are dimensionless; \(\beta=1/(k_BT)\) has units \(\mathrm{J^{-1}}\). Energy variance has units \(\mathrm{J^2}\).</p>
+<p><strong>Exact SI constants.</strong></p>
+\[\boxed{k_B=1.380649\times10^{-23}\ \mathrm{J/K}},\qquad
+\boxed{h=6.62607015\times10^{-34}\ \mathrm{J\,s}}\]
+<p>\(k_B\) (Boltzmann's constant) and \(h\) (Planck's constant) have exact defined SI values. The reduced Planck constant is \(\hbar=h/(2\pi)\approx1.054571817\times10^{-34}\ \mathrm{J\,s}\).</p>
+<p><strong>Quantum and gases.</strong> Mass \(m\) in \(\mathrm{kg}\); length \(L\), thermal wavelength \(\lambda_T\) in \(\mathrm{m}\); angular frequency \(\omega\) in \(\mathrm{rad/s}\); energy gap \(\Delta\), single-particle level \(\epsilon\) in \(\mathrm{J}\); speed \(v\) in \(\mathrm{m/s}\); number density \(n=N/V_d\) in \(\mathrm{m^{-d}}\) for \(d\) spatial dimensions.</p>
+<p><strong>Common distinctions.</strong> \(T\) in formulas for temperature is kelvins \(\mathrm{K}\); magnetic flux density \(B\) is in tesla \(\mathrm{T}\). A magnetic moment \(\mu_{\rm mag}\) has units \(\mathrm{J/T}\), different from chemical potential \(\mu\) in \(\mathrm{J}\). Logarithm/exponential arguments and quantities such as \(k_BT/(\hbar\omega)\) must be dimensionless.</p>
+</div></details>
 
-<section class="lesson" id="laws"><p class="tag">01.1 · Fundamental laws</p><h2>Heat, work, and the first law</h2>
+<section class="lesson" id="laws"><p class="tag">01.1 · Fundamental laws</p><h2>Heat, work, and the first law</h2><p class="units-note"><strong>SI units:</strong> \(Q,W,U,H,F,G\) in \(\mathrm{J}\); \(\delta Q,\delta W,dU\) in \(\mathrm{J}\); \(P\) in \(\mathrm{Pa}\), \(dV\) in \(\mathrm{m^3}\), so \(P\,dV\) is in \(\mathrm{J}\). Temperature \(T\) is in \(\mathrm{K}\), entropy \(S\) in \(\mathrm{J/K}\), and chemical potential \(\mu\) in \(\mathrm{J}\) per particle.</p>
 <p>Choose the sign convention <strong>\(Q&gt;0\) means heat into the system</strong>, while <strong>\(W&gt;0\) means work done by the system</strong>. For a closed system,</p>
 <div class="equation">\[\boxed{\Delta U=Q-W},\qquad \boxed{dU=\delta Q-\delta W}.\]</div>
 <p>The different symbols matter: \(U\) is a state function (exact differential), whereas heat and work depend on the process path. For quasistatic mechanical pressure work, \(\delta W=P_{\mathrm{ext}}\,dV\); equality with \(P\,dV\) requires mechanical reversibility.</p>
@@ -32,7 +42,7 @@ P=-\left(\frac{\partial U}{\partial V}\right)_{S,N},\quad
 \mu=\left(\frac{\partial U}{\partial N}\right)_{S,V}.\]
 </div></details>
 </section>
-<section class="lesson" id="entropy"><p class="tag">01.2 · Second law</p><h2>Entropy and reversibility</h2>
+<section class="lesson" id="entropy"><p class="tag">01.2 · Second law</p><h2>Entropy and reversibility</h2><p class="units-note"><strong>SI units:</strong> Entropy \(S,\Delta S\) in \(\mathrm{J/K}\); \(\delta Q_{\rm rev}/T\) in \(\mathrm{J/K}\); \(N\) dimensionless, \(k_B\) in \(\mathrm{J/K}\). Volume ratios such as \(V_f/V_i\) must be dimensionless.</p>
 <div class="equation">\[dS\ge\frac{\delta Q}{T_{\mathrm{boundary}}}\quad\text{(suitable closed-system heat exchange)},\]
 \[\boxed{\Delta S_{\mathrm{isolated}}\ge0}.\]</div>
 <p>Entropy is not a synonym for heat. For a reversible transfer \(dS=\delta Q_{\rm rev}/T\); in an irreversible process, additional entropy is generated internally.</p>
@@ -43,9 +53,9 @@ P=-\left(\frac{\partial U}{\partial V}\right)_{S,N},\quad
 <p>Use \(P=Nk_BT/V\):</p>
 \[\boxed{\Delta S=Nk_B\ln\left(\frac{V_f}{V_i}\right)&gt;0}\quad(V_f&gt;V_i).\]
 <p>Entropy increases although no heat enters during the <em>actual</em> irreversible expansion.</p>
-</div></details>
+</div></details><p class="units-check"><strong>Answer unit check:</strong> \(\Delta S=Nk_B\ln(V_f/V_i)\) has units \(\mathrm{J/K}\); the logarithm's volume ratio carries no units.</p>
 </section>
-<section class="lesson" id="potentials"><p class="tag">01.3 · Legendre transforms</p><h2>Thermodynamic potentials and natural variables</h2>
+<section class="lesson" id="potentials"><p class="tag">01.3 · Legendre transforms</p><h2>Thermodynamic potentials and natural variables</h2><p class="units-note"><strong>SI units:</strong> \(H,F,G,\Omega_{\rm G}\) in \(\mathrm{J}\); \(T\,dS\) in \(\mathrm{K}\times\mathrm{J/K}=\mathrm{J}\); \(P\,dV\) in \(\mathrm{Pa\,m^3}=\mathrm{J}\); \(\mu\,dN\) in \(\mathrm{J}\).</p>
 <details open><summary>Derive the differentials of \(H,F,G\)</summary><div class="steps">
 <p>Begin with \(dU=T\,dS-P\,dV+\mu\,dN\). Introduce enthalpy \(H=U+PV\):</p>
 \[dH=dU+P\,dV+V\,dP=\boxed{T\,dS+V\,dP+\mu\,dN}.\]
@@ -62,7 +72,7 @@ P=-\left(\frac{\partial U}{\partial V}\right)_{S,N},\quad
 <p>At fixed \(T,V,N\), equilibrium minimizes \(F\) when only allowed mechanical/internal variations occur. At fixed \(T,P,N\), the appropriate minimum principle is for \(G\); at fixed \(T,V,\mu\), it is for \(\Omega_{\rm G}\). These statements require the relevant reservoir constraints and stable equilibrium.</p>
 </div></details>
 </section>
-<section class="lesson" id="maxwell"><p class="tag">01.4 · Mixed derivatives</p><h2>Derive a Maxwell relation</h2>
+<section class="lesson" id="maxwell"><p class="tag">01.4 · Mixed derivatives</p><h2>Derive a Maxwell relation</h2><p class="units-note"><strong>SI units:</strong> The two sides of \((\partial S/\partial V)_{T,N}=(\partial P/\partial T)_{V,N}\) have units \(\mathrm{J/(K\,m^3)}=\mathrm{Pa/K}\).</p>
 <details open><summary>From \(dF\) to \(\partial_V S=\partial_T P\)</summary><div class="steps">
 <p>At fixed \(N\), \(dF=-S\,dT-P\,dV\), hence</p>
 \[S=-\left(\frac{\partial F}{\partial T}\right)_{V,N},\quad
@@ -76,7 +86,7 @@ P=-\left(\frac{\partial F}{\partial V}\right)_{T,N}.\]
 <p>Other Maxwell relations follow in the same manner from \(U,H,G\). A Maxwell relation is not an additional law: it follows from the existence of a smooth thermodynamic potential.</p>
 </div></details>
 </section>
-<section class="lesson" id="heat"><p class="tag">01.5 · Response functions</p><h2>Heat capacities and adiabatic ideal-gas process</h2>
+<section class="lesson" id="heat"><p class="tag">01.5 · Response functions</p><h2>Heat capacities and adiabatic ideal-gas process</h2><p class="units-note"><strong>SI units:</strong> \(C_V,C_P\) in \(\mathrm{J/K}\) for the whole system, or \(\mathrm{J/(mol\,K)}\) if explicitly molar. The ratio \(\gamma=C_P/C_V\) and powers of volume ratios are dimensionless.</p>
 <div class="equation">
 \[\boxed{C_V=\left(\frac{\partial U}{\partial T}\right)_{V,N}},\qquad
 \boxed{C_P=\left(\frac{\partial H}{\partial T}\right)_{P,N}}.\]
@@ -91,7 +101,7 @@ P=-\left(\frac{\partial F}{\partial V}\right)_{T,N}.\]
 \[\boxed{TV^{\gamma-1}=\mathrm{constant}},\qquad
 \boxed{PV^\gamma=\mathrm{constant}}.\]
 <p>Free expansion is adiabatic but <em>not</em> a reversible adiabat, so this \(PV^\gamma\) law should not be used for it.</p>
-</div></details>
+</div></details><p class="units-check"><strong>Answer unit check:</strong> Both \(TV^{\gamma-1}=\mathrm{constant}\) and \(PV^\gamma=\mathrm{constant}\) use the same units on each side of a comparison between states; the constants themselves generally have dimensional units, so use ratios if taking logarithms.</p>
 </section>
 <div class="chapter-move"><span></span><a href="./02.html">02 Microstates and Entropy →</a></div>
 <footer><p>MS Physics · Statistical Mechanics Field Notes</p><p>SI notation unless stated otherwise. Mathematical assumptions and conventions are identified in each derivation. Expand a proof to see its steps.</p><a href="../index.html">Back to contents</a></footer>

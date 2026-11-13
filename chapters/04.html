@@ -14,9 +14,19 @@
 <div class="tools"><button id="smaller" type="button" aria-label="Decrease text size">A−</button><button id="larger" type="button" aria-label="Increase text size">A+</button><button id="expand" type="button">Show derivations</button><button id="collapse" type="button">Hide derivations</button></div>
 </div></header>
 <main id="main" class="shell">
-<nav class="chapter-jump" aria-label="Within chapter"><a href="#setup">Energy levels, degeneracy and probability</a><a href="#energy">Derive internal energy from \(Z\)</a><a href="#potentials">Derive \(F\) and \(S\)</a><a href="#cv">Heat capacity and energy fluctuations</a><a href="#example">Two-level system: all five functions</a><a href="#summary">Exam formula summary</a></nav>
+<nav class="chapter-jump" aria-label="Within chapter"><a href="#setup">Energy levels, degeneracy and probability</a><a href="#energy">Derive internal energy from \(Z\)</a><a href="#potentials">Derive \(F\) and \(S\)</a><a href="#cv">Heat capacity and energy fluctuations</a><a href="#example">Two-level system: all five functions</a><a href="#summary">Exam formula summary</a><a href="#si-units">SI units</a></nav>
+<details class="si-guide" id="si-units"><summary>SI units &amp; fundamental constants</summary><div class="steps">
+<p><strong>Thermodynamics.</strong> Temperature \(T\) in kelvins \(\mathrm{K}\); internal energy \(U\), microstate energy \(E_i\), work \(W\), heat \(Q\), free energies \(F,G\), and chemical potential \(\mu\) in joules \(\mathrm{J}\) (chemical potential is energy per particle); entropy \(S\) and heat capacity \(C_V,C_P\) in \(\mathrm{J/K}\); pressure \(P\) in pascals \(\mathrm{Pa}=\mathrm{J/m^3}\); volume \(V\) in \(\mathrm{m^3}\).</p>
+<p><strong>Statistical quantities.</strong> Particle count \(N\), multiplicity \(\Omega\), degeneracy \(g\), probability \(p_i\), occupation \(\bar n_i\), and properly normalized partition functions \(Z,\Xi\) are dimensionless; \(\beta=1/(k_BT)\) has units \(\mathrm{J^{-1}}\). Energy variance has units \(\mathrm{J^2}\).</p>
+<p><strong>Exact SI constants.</strong></p>
+\[\boxed{k_B=1.380649\times10^{-23}\ \mathrm{J/K}},\qquad
+\boxed{h=6.62607015\times10^{-34}\ \mathrm{J\,s}}\]
+<p>\(k_B\) (Boltzmann's constant) and \(h\) (Planck's constant) have exact defined SI values. The reduced Planck constant is \(\hbar=h/(2\pi)\approx1.054571817\times10^{-34}\ \mathrm{J\,s}\).</p>
+<p><strong>Quantum and gases.</strong> Mass \(m\) in \(\mathrm{kg}\); length \(L\), thermal wavelength \(\lambda_T\) in \(\mathrm{m}\); angular frequency \(\omega\) in \(\mathrm{rad/s}\); energy gap \(\Delta\), single-particle level \(\epsilon\) in \(\mathrm{J}\); speed \(v\) in \(\mathrm{m/s}\); number density \(n=N/V_d\) in \(\mathrm{m^{-d}}\) for \(d\) spatial dimensions.</p>
+<p><strong>Common distinctions.</strong> \(T\) in formulas for temperature is kelvins \(\mathrm{K}\); magnetic flux density \(B\) is in tesla \(\mathrm{T}\). A magnetic moment \(\mu_{\rm mag}\) has units \(\mathrm{J/T}\), different from chemical potential \(\mu\) in \(\mathrm{J}\). Logarithm/exponential arguments and quantities such as \(k_BT/(\hbar\omega)\) must be dimensionless.</p>
+</div></details>
 
-<section class="lesson" id="setup"><p class="tag">04.1 · Definitions</p><h2>Energy levels, degeneracy and probability</h2>
+<section class="lesson" id="setup"><p class="tag">04.1 · Definitions</p><h2>Energy levels, degeneracy and probability</h2><p class="units-note"><strong>SI units:</strong> \(E_i\) in \(\mathrm{J}\); \(\beta\) in \(\mathrm{J^{-1}}\); degeneracy \(g_n\), probabilities \(p_i\) and \(Z\) dimensionless. Hence \(\beta E_i\) is an allowed dimensionless exponential argument.</p>
 <p>For a system of fixed \(T,V,N\) in equilibrium with a large heat reservoir, enumerate microstates \(i\) of energy \(E_i(V,N)\). Define \(\beta=(k_BT)^{-1}\).</p>
 <div class="equation">\[\boxed{Z(T,V,N)=\sum_i e^{-\beta E_i}},\qquad \boxed{p_i=\frac{e^{-\beta E_i}}{Z}}.\]</div>
 <p>If an energy \(E_n\) has degeneracy \(g_n\), count its distinct microstates:</p>
@@ -31,7 +41,7 @@
 <p>The reservoir is assumed large enough for the temperature to remain effectively fixed and for higher-order terms to be negligible.</p>
 </div></details>
 </section>
-<section class="lesson" id="energy"><p class="tag">04.2 · First derivative</p><h2>Derive internal energy from \(Z\)</h2>
+<section class="lesson" id="energy"><p class="tag">04.2 · First derivative</p><h2>Derive internal energy from \(Z\)</h2><p class="units-note"><strong>SI units:</strong> \(U\) in \(\mathrm{J}\); \(\partial_\beta\ln Z\) in \(\mathrm{J}\), since differentiating against \(\beta\,[\mathrm{J^{-1}}]\) gives an energy.</p>
 <details open><summary>Full derivation · \(U=-\partial_\beta\ln Z\)</summary><div class="steps">
 <p>By definition \(U=\langle E\rangle=\sum_i p_i E_i\), so</p>
 \[U=\frac{1}{Z}\sum_i E_i e^{-\beta E_i}.\]
@@ -46,7 +56,7 @@
 \[\boxed{U=k_BT^2\left(\frac{\partial\ln Z}{\partial T}\right)_{V,N}}.\]
 </div></details>
 </section>
-<section class="lesson" id="potentials"><p class="tag">04.3 · Free energy and entropy</p><h2>Derive \(F\) and \(S\)</h2>
+<section class="lesson" id="potentials"><p class="tag">04.3 · Free energy and entropy</p><h2>Derive \(F\) and \(S\)</h2><p class="units-note"><strong>SI units:</strong> Helmholtz free energy \(F\) and internal energy \(U\) in \(\mathrm{J}\); entropy \(S\) in \(\mathrm{J/K}\); pressure \(P\) in \(\mathrm{Pa}=\mathrm{J/m^3}\).</p>
 <details open><summary>From the Gibbs entropy formula to Helmholtz free energy</summary><div class="steps">
 <p>For canonical probabilities, Gibbs entropy is \(S=-k_B\sum_i p_i\ln p_i\). Substitute \(\ln p_i=-\beta E_i-\ln Z\):</p>
 \[S=-k_B\sum_i p_i(-\beta E_i-\ln Z).\]
@@ -65,7 +75,7 @@
 =k_BT\left(\frac{\partial\ln Z}{\partial V}\right)_{T,N}}.\]
 <p>This pressure relation assumes that the volume dependence of microscopic energies is correctly included in \(Z\).</p></div>
 </section>
-<section class="lesson" id="cv"><p class="tag">04.4 · Second derivative</p><h2>Heat capacity and energy fluctuations</h2>
+<section class="lesson" id="cv"><p class="tag">04.4 · Second derivative</p><h2>Heat capacity and energy fluctuations</h2><p class="units-note"><strong>SI units:</strong> Heat capacity \(C_V\) in \(\mathrm{J/K}\); energy variance \(\operatorname{Var}(E)\) in \(\mathrm{J^2}\); \(k_BT^2\) has units \(\mathrm{J\,K}\).</p>
 <details open><summary>Derive \(C_V\) and the variance identity</summary><div class="steps">
 <p>Heat capacity at fixed volume and particle number is</p>
 \[\boxed{C_V=\left(\frac{\partial U}{\partial T}\right)_{V,N}}.\]
@@ -83,7 +93,7 @@
 <p>For an ordinary canonical system with temperature-independent energy levels, \(C_V\ge0\). This relation connects a measurable response to equilibrium fluctuations.</p>
 </div></details>
 </section>
-<section class="lesson" id="example"><p class="tag">04.5 · Worked example</p><h2>Two-level system: all five functions</h2>
+<section class="lesson" id="example"><p class="tag">04.5 · Worked example</p><h2>Two-level system: all five functions</h2><p class="units-note"><strong>SI units:</strong> Level spacing \(\Delta\), \(U,F\) in \(\mathrm{J}\); \(y=\Delta/(k_BT)\) dimensionless; \(Z\) dimensionless; \(S,C_V\) in \(\mathrm{J/K}\).</p>
 <p>A noninteracting two-level particle has energies \(0\) and \(\Delta\), each nondegenerate, with \(\Delta&gt;0\). Set \(y=\beta\Delta\). Find \(Z,F,U,S,C_V\).</p>
 <details open><summary>Complete solution</summary><div class="steps">
 <p>Sum the two Boltzmann factors:</p>
@@ -100,9 +110,9 @@
 \[\frac{dU}{dy}=-\frac{\Delta e^y}{(e^y+1)^2},\qquad \frac{dy}{dT}=-\frac yT.\]
 \[\boxed{C_V=k_By^2\frac{e^y}{(e^y+1)^2}}.\]
 <p><strong>Checks:</strong> at \(T\to0\), \(U\to0\), \(S\to0\), \(C_V\to0\). At \(T\to\infty\), \(U\to\Delta/2\), \(S\to k_B\ln2\), \(C_V\to0\). The heat capacity has a finite-temperature Schottky peak.</p>
-</div></details>
+</div></details><p class="units-check"><strong>Answer unit check:</strong> For the two-level particle, \([Z]=1\), \([F]=[U]=\mathrm{J}\), and \([S]=[C_V]=\mathrm{J/K}\); \(y=\beta\Delta\) has no units.</p>
 </section>
-<section class="lesson" id="summary"><h2>Exam formula summary</h2><div class="equation">
+<section class="lesson" id="summary"><h2>Exam formula summary</h2><p class="units-note"><strong>SI units:</strong> \(Z\) dimensionless, \(F,U\) in \(\mathrm{J}\), \(S,C_V\) in \(\mathrm{J/K}\), \(P\) in \(\mathrm{Pa}\). These must be preserved by every derivative identity.</p><div class="equation">
 \[\begin{aligned}
 Z&amp;=\sum_i e^{-\beta E_i},&amp;F&amp;=-k_BT\ln Z,\\
 U&amp;=-\partial_\beta\ln Z,&amp;S&amp;=k_B(\ln Z+\beta U),\\

@@ -14,9 +14,19 @@
 <div class="tools"><button id="smaller" type="button" aria-label="Decrease text size">A−</button><button id="larger" type="button" aria-label="Increase text size">A+</button><button id="expand" type="button">Show derivations</button><button id="collapse" type="button">Hide derivations</button></div>
 </div></header>
 <main id="main" class="shell">
-<nav class="chapter-jump" aria-label="Within chapter"><a href="#well">1D infinite well: why \(n=1,2,\ldots\)</a><a href="#oscillator">Quantum harmonic oscillator: why \(n=0,1,\ldots\)</a><a href="#multidimensional">2D and 3D spectra and degeneracy</a><a href="#partitions">Quantum single-particle partition functions</a><a href="#summary">Exam summary</a></nav>
+<nav class="chapter-jump" aria-label="Within chapter"><a href="#well">1D infinite well: why \(n=1,2,\ldots\)</a><a href="#oscillator">Quantum harmonic oscillator: why \(n=0,1,\ldots\)</a><a href="#multidimensional">2D and 3D spectra and degeneracy</a><a href="#partitions">Quantum single-particle partition functions</a><a href="#summary">Exam summary</a><a href="#si-units">SI units</a></nav>
+<details class="si-guide" id="si-units"><summary>SI units &amp; fundamental constants</summary><div class="steps">
+<p><strong>Thermodynamics.</strong> Temperature \(T\) in kelvins \(\mathrm{K}\); internal energy \(U\), microstate energy \(E_i\), work \(W\), heat \(Q\), free energies \(F,G\), and chemical potential \(\mu\) in joules \(\mathrm{J}\) (chemical potential is energy per particle); entropy \(S\) and heat capacity \(C_V,C_P\) in \(\mathrm{J/K}\); pressure \(P\) in pascals \(\mathrm{Pa}=\mathrm{J/m^3}\); volume \(V\) in \(\mathrm{m^3}\).</p>
+<p><strong>Statistical quantities.</strong> Particle count \(N\), multiplicity \(\Omega\), degeneracy \(g\), probability \(p_i\), occupation \(\bar n_i\), and properly normalized partition functions \(Z,\Xi\) are dimensionless; \(\beta=1/(k_BT)\) has units \(\mathrm{J^{-1}}\). Energy variance has units \(\mathrm{J^2}\).</p>
+<p><strong>Exact SI constants.</strong></p>
+\[\boxed{k_B=1.380649\times10^{-23}\ \mathrm{J/K}},\qquad
+\boxed{h=6.62607015\times10^{-34}\ \mathrm{J\,s}}\]
+<p>\(k_B\) (Boltzmann's constant) and \(h\) (Planck's constant) have exact defined SI values. The reduced Planck constant is \(\hbar=h/(2\pi)\approx1.054571817\times10^{-34}\ \mathrm{J\,s}\).</p>
+<p><strong>Quantum and gases.</strong> Mass \(m\) in \(\mathrm{kg}\); length \(L\), thermal wavelength \(\lambda_T\) in \(\mathrm{m}\); angular frequency \(\omega\) in \(\mathrm{rad/s}\); energy gap \(\Delta\), single-particle level \(\epsilon\) in \(\mathrm{J}\); speed \(v\) in \(\mathrm{m/s}\); number density \(n=N/V_d\) in \(\mathrm{m^{-d}}\) for \(d\) spatial dimensions.</p>
+<p><strong>Common distinctions.</strong> \(T\) in formulas for temperature is kelvins \(\mathrm{K}\); magnetic flux density \(B\) is in tesla \(\mathrm{T}\). A magnetic moment \(\mu_{\rm mag}\) has units \(\mathrm{J/T}\), different from chemical potential \(\mu\) in \(\mathrm{J}\). Logarithm/exponential arguments and quantities such as \(k_BT/(\hbar\omega)\) must be dimensionless.</p>
+</div></details>
 
-<section class="lesson" id="well"><p class="tag">05.1 · Boundary conditions</p><h2>1D infinite well: why \(n=1,2,\ldots\)</h2>
+<section class="lesson" id="well"><p class="tag">05.1 · Boundary conditions</p><h2>1D infinite well: why \(n=1,2,\ldots\)</h2><p class="units-note"><strong>SI units:</strong> Mass \(m\) in \(\mathrm{kg}\), length \(L,x\) in \(\mathrm{m}\), \(\hbar\) in \(\mathrm{J\,s}\), wavenumber \(k_n\) in \(\mathrm{rad/m}\), energy \(E_n\) in \(\mathrm{J}\), normalized 1D wavefunction \(\psi\) in \(\mathrm{m^{-1/2}}\). Quantum number \(n\) is dimensionless.</p>
 <p>A particle of mass \(m\) occupies \(0&lt;x&lt;L\), with \(V(x)=0\) inside and infinite potential outside. The wavefunction must vanish at both impenetrable walls; normalized states must be nonzero.</p>
 <details open><summary>Derive quantized \(k_n\), wavefunctions, and energies</summary><div class="steps">
 <p>Inside the well, the stationary Schrödinger equation is</p>
@@ -32,9 +42,9 @@
 \[\boxed{\psi_n(x)=\sqrt{\frac2L}\sin\left(\frac{n\pi x}{L}\right)},\qquad n=1,2,\ldots\]
 \[\boxed{E_n=\frac{n^2\pi^2\hbar^2}{2mL^2}}.\]
 <p><strong>Physical meaning:</strong> the walls enforce nodes, and the lowest allowed mode has a finite wavelength and energy. Ground-state energy is not zero even though the potential is zero inside.</p>
-</div></details>
+</div></details><p class="units-check"><strong>Answer unit check:</strong> \(\pi^2\hbar^2/(2mL^2)\) is energy in \(\mathrm{J}\). Normalizing \(\int|\psi|^2dx=1\) requires \(|\psi|^2\) to have units \(\mathrm{m^{-1}}\).</p>
 </section>
-<section class="lesson" id="oscillator"><p class="tag">05.2 · Ladder operators</p><h2>Quantum harmonic oscillator: why \(n=0,1,\ldots\)</h2>
+<section class="lesson" id="oscillator"><p class="tag">05.2 · Ladder operators</p><h2>Quantum harmonic oscillator: why \(n=0,1,\ldots\)</h2><p class="units-note"><strong>SI units:</strong> \(\omega\) in \(\mathrm{rad/s}\), \(\hbar\omega\) and oscillator energy \(E_n\) in \(\mathrm{J}\), mass \(m\) in \(\mathrm{kg}\), \(x\) in \(\mathrm{m}\). Operators \(a,a^\dagger\) and number operator \(N\) are dimensionless.</p>
 <p>For \(V(x)=\frac12m\omega^2x^2\), the wavefunction is not forced to vanish at any finite wall. Instead, acceptable states must be square-integrable on the whole line.</p>
 <details open><summary>Derive the energy spectrum from \(a^\dagger a\)</summary><div class="steps">
 <p>Define dimensionless ladder operators</p>
@@ -57,9 +67,9 @@ a^\dagger=\sqrt{\frac{m\omega}{2\hbar}}x-\frac{i}{\sqrt{2m\hbar\omega}}p.\]
 <p>Normalization \(\int_{-\infty}^{\infty}|\psi_0|^2dx=1\), together with the Gaussian integral, gives</p>
 \[\boxed{\psi_0(x)=\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}e^{-m\omega x^2/(2\hbar)}}.\]
 <p>The Gaussian is nonzero and normalizable, so \(n=0\) is a genuine state.</p>
-</div></details>
+</div></details><p class="units-check"><strong>Answer unit check:</strong> \(\hbar\omega(n+\tfrac12)\) has units \((\mathrm{J\,s})(\mathrm{s^{-1}})=\mathrm{J}\). The Gaussian exponent \(m\omega x^2/(2\hbar)\) is dimensionless.</p>
 </section>
-<section class="lesson" id="multidimensional"><p class="tag">05.3 · Separable systems</p><h2>2D and 3D spectra and degeneracy</h2>
+<section class="lesson" id="multidimensional"><p class="tag">05.3 · Separable systems</p><h2>2D and 3D spectra and degeneracy</h2><p class="units-note"><strong>SI units:</strong> Lengths \(L_j\) in \(\mathrm{m}\), frequencies \(\omega_j\) in \(\mathrm{rad/s}\), and all energy eigenvalues \(E_{\{n_j\}}\) in \(\mathrm{J}\); quantum numbers and degeneracies are dimensionless.</p>
 <details open><summary>Rectangular box · why every \(n_j\ge1\)</summary><div class="steps">
 <p>For a rectangular box of side lengths \(L_j\), separation \(\psi(\mathbf r)=\prod_jX_j(x_j)\) yields independent sine modes with \(n_j=1,2,\ldots\). The total energy is additive:</p>
 \[\boxed{E_{\{n_j\}}=\sum_{j=1}^{d}\frac{\pi^2\hbar^2n_j^2}{2mL_j^2}},\qquad d=1,2,3.\]
@@ -75,7 +85,7 @@ a^\dagger=\sqrt{\frac{m\omega}{2\hbar}}x-\frac{i}{\sqrt{2m\hbar\omega}}p.\]
 <p>For isotropic 3D, \(N=n_x+n_y+n_z\), \(E=\hbar\omega(N+3/2)\), with degeneracy \(g_N=(N+1)(N+2)/2\).</p>
 </div></details>
 </section>
-<section class="lesson" id="partitions"><p class="tag">05.4 · Connecting spectra to thermodynamics</p><h2>Quantum single-particle partition functions</h2>
+<section class="lesson" id="partitions"><p class="tag">05.4 · Connecting spectra to thermodynamics</p><h2>Quantum single-particle partition functions</h2><p class="units-note"><strong>SI units:</strong> \(Z_{\rm osc},Z_{\rm box}\) dimensionless, \(\beta\) in \(\mathrm{J^{-1}}\), \(\hbar\omega\) and \(\epsilon\) in \(\mathrm{J}\). Their products with \(\beta\) are dimensionless.</p>
 <details open><summary>Oscillator partition function: geometric series</summary><div class="steps">
 <p>For one oscillator, insert \(E_n=\hbar\omega(n+1/2)\) into the canonical sum:</p>
 \[Z_{\rm osc}=\sum_{n=0}^\infty e^{-\beta\hbar\omega(n+1/2)}
@@ -91,7 +101,7 @@ a^\dagger=\sqrt{\frac{m\omega}{2\hbar}}x-\frac{i}{\sqrt{2m\hbar\omega}}p.\]
 <p>Unlike the oscillator spectrum, the energies scale quadratically with \(n\), so the sum is <em>not</em> an elementary geometric series. For a separable rectangular box \(Z_d=\prod_j\sum_{n_j=1}^\infty\exp[-\beta\pi^2\hbar^2n_j^2/(2mL_j^2)]\).</p>
 </div></details>
 </section>
-<section class="lesson" id="summary"><h2>Exam summary</h2>
+<section class="lesson" id="summary"><h2>Exam summary</h2><p class="units-note"><strong>SI units:</strong> The lowest energies in both systems are in \(\mathrm{J}\); \(n\) is dimensionless and \(\omega\) is in \(\mathrm{rad/s}\).</p>
 <div class="equation">\[\begin{array}{c|c|c}
 \text{System}&amp;\text{Allowed }n&amp;\text{Ground energy}\\\hline
 \text{Infinite well}&amp;1,2,\dots&amp;\pi^2\hbar^2/(2mL^2)\\

@@ -14,9 +14,19 @@
 <div class="tools"><button id="smaller" type="button" aria-label="Decrease text size">A−</button><button id="larger" type="button" aria-label="Increase text size">A+</button><button id="expand" type="button">Show derivations</button><button id="collapse" type="button">Hide derivations</button></div>
 </div></header>
 <main id="main" class="shell">
-<nav class="chapter-jump" aria-label="Within chapter"><a href="#classical-Z">Derive the classical ideal-gas partition function</a><a href="#thermo">Derive \(F,U,P,S,C_V\) for an ideal gas</a><a href="#equipartition">Equipartition: proof and limits</a><a href="#maxwell">Maxwell–Boltzmann velocities and speeds</a><a href="#dimensional">Worked comparison: ideal gases in 1D, 2D and 3D</a></nav>
+<nav class="chapter-jump" aria-label="Within chapter"><a href="#classical-Z">Derive the classical ideal-gas partition function</a><a href="#thermo">Derive \(F,U,P,S,C_V\) for an ideal gas</a><a href="#equipartition">Equipartition: proof and limits</a><a href="#maxwell">Maxwell–Boltzmann velocities and speeds</a><a href="#dimensional">Worked comparison: ideal gases in 1D, 2D and 3D</a><a href="#si-units">SI units</a></nav>
+<details class="si-guide" id="si-units"><summary>SI units &amp; fundamental constants</summary><div class="steps">
+<p><strong>Thermodynamics.</strong> Temperature \(T\) in kelvins \(\mathrm{K}\); internal energy \(U\), microstate energy \(E_i\), work \(W\), heat \(Q\), free energies \(F,G\), and chemical potential \(\mu\) in joules \(\mathrm{J}\) (chemical potential is energy per particle); entropy \(S\) and heat capacity \(C_V,C_P\) in \(\mathrm{J/K}\); pressure \(P\) in pascals \(\mathrm{Pa}=\mathrm{J/m^3}\); volume \(V\) in \(\mathrm{m^3}\).</p>
+<p><strong>Statistical quantities.</strong> Particle count \(N\), multiplicity \(\Omega\), degeneracy \(g\), probability \(p_i\), occupation \(\bar n_i\), and properly normalized partition functions \(Z,\Xi\) are dimensionless; \(\beta=1/(k_BT)\) has units \(\mathrm{J^{-1}}\). Energy variance has units \(\mathrm{J^2}\).</p>
+<p><strong>Exact SI constants.</strong></p>
+\[\boxed{k_B=1.380649\times10^{-23}\ \mathrm{J/K}},\qquad
+\boxed{h=6.62607015\times10^{-34}\ \mathrm{J\,s}}\]
+<p>\(k_B\) (Boltzmann's constant) and \(h\) (Planck's constant) have exact defined SI values. The reduced Planck constant is \(\hbar=h/(2\pi)\approx1.054571817\times10^{-34}\ \mathrm{J\,s}\).</p>
+<p><strong>Quantum and gases.</strong> Mass \(m\) in \(\mathrm{kg}\); length \(L\), thermal wavelength \(\lambda_T\) in \(\mathrm{m}\); angular frequency \(\omega\) in \(\mathrm{rad/s}\); energy gap \(\Delta\), single-particle level \(\epsilon\) in \(\mathrm{J}\); speed \(v\) in \(\mathrm{m/s}\); number density \(n=N/V_d\) in \(\mathrm{m^{-d}}\) for \(d\) spatial dimensions.</p>
+<p><strong>Common distinctions.</strong> \(T\) in formulas for temperature is kelvins \(\mathrm{K}\); magnetic flux density \(B\) is in tesla \(\mathrm{T}\). A magnetic moment \(\mu_{\rm mag}\) has units \(\mathrm{J/T}\), different from chemical potential \(\mu\) in \(\mathrm{J}\). Logarithm/exponential arguments and quantities such as \(k_BT/(\hbar\omega)\) must be dimensionless.</p>
+</div></details>
 
-<section class="lesson" id="classical-Z"><p class="tag">06.1 · Phase space</p><h2>Derive the classical ideal-gas partition function</h2>
+<section class="lesson" id="classical-Z"><p class="tag">06.1 · Phase space</p><h2>Derive the classical ideal-gas partition function</h2><p class="units-note"><strong>SI units:</strong> Mass \(m\) in \(\mathrm{kg}\), momentum \(p\) in \(\mathrm{kg\,m/s}\), \(\beta\) in \(\mathrm{J^{-1}}\), \(V\) in \(\mathrm{m^3}\), \(h\) in \(\mathrm{J\,s}\), thermal wavelength \(\lambda_T\) in \(\mathrm{m}\). Both \(q_1\) and \(Z_N\) are dimensionless after phase-space normalization.</p>
 <p>For a 3D monatomic ideal gas with \(N\) identical, noninteracting particles, Hamiltonian \(H=\sum_j \mathbf p_j^2/(2m)\), and volume \(V\), the classical limit requires a sufficiently dilute, nondegenerate gas.</p>
 <details open><summary>From the phase-space integral to \(Z_N\)</summary><div class="steps">
 <p>Use the classical canonical phase-space expression, with one factor \(h^{-3}\) per particle and \(1/N!\) for indistinguishable identical particles:</p>
@@ -32,7 +42,7 @@ e^{-\beta\sum_j p_j^2/(2m)}.\]
 <p>In \(d\) dimensions the same calculation gives \(q_1=V_d/\lambda_T^d\), where \(V_d\) is a \(d\)-dimensional volume. The Gibbs \(N!\) factor is valid in the classical dilute limit and avoids the ideal-gas mixing paradox for identical particles.</p>
 </div></details>
 </section>
-<section class="lesson" id="thermo"><p class="tag">06.2 · Observables</p><h2>Derive \(F,U,P,S,C_V\) for an ideal gas</h2>
+<section class="lesson" id="thermo"><p class="tag">06.2 · Observables</p><h2>Derive \(F,U,P,S,C_V\) for an ideal gas</h2><p class="units-note"><strong>SI units:</strong> \(F,U\) in \(\mathrm{J}\), \(P\) in \(\mathrm{Pa}\), \(S,C_V,C_P\) in \(\mathrm{J/K}\), \(V\) in \(\mathrm{m^3}\). The logarithm \(V/(N\lambda_T^3)\) is dimensionless.</p>
 <details open><summary>Explicit derivatives from the classical \(Z_N\)</summary><div class="steps">
 <p>For \(N\gg1\), Stirling's approximation \(\ln N!\approx N\ln N-N\) yields</p>
 \[\ln Z_N=N\ln V-3N\ln\lambda_T-N\ln N+N
@@ -49,7 +59,7 @@ e^{-\beta\sum_j p_j^2/(2m)}.\]
 \[\boxed{C_V=\frac32Nk_B},\qquad\boxed{C_P=\frac52Nk_B}.\]
 </div></details>
 </section>
-<section class="lesson" id="equipartition"><p class="tag">06.3 · Theorem</p><h2>Equipartition: proof and limits</h2>
+<section class="lesson" id="equipartition"><p class="tag">06.3 · Theorem</p><h2>Equipartition: proof and limits</h2><p class="units-note"><strong>SI units:</strong> Each quadratic contribution \(\langle ax^2\rangle\) and \(k_BT/2\) is in \(\mathrm{J}\); \(a\) carries units of energy divided by the square of whatever variable \(x\) denotes.</p>
 <details open><summary>Derive \(k_BT/2\) per quadratic Hamiltonian term</summary><div class="steps">
 <p>Suppose a classical canonical variable \(x\) appears in the Hamiltonian as \(H_x=ax^2\) with \(a&gt;0\), and its domain is all real numbers. Its one-variable partition integral is</p>
 \[z_x=\int_{-\infty}^{\infty}e^{-\beta ax^2}\,dx=\sqrt{\frac{\pi}{\beta a}}.\]
@@ -61,7 +71,7 @@ e^{-\beta\sum_j p_j^2/(2m)}.\]
 <p><strong>Conditions:</strong> classical continuous variables, appropriate canonical measure, quadratic separable terms and convergent integrals. The theorem is not generally valid for a quantum oscillator when \(k_BT\) is comparable to or below \(\hbar\omega\).</p>
 </div></details>
 </section>
-<section class="lesson" id="maxwell"><p class="tag">06.4 · Distribution</p><h2>Maxwell–Boltzmann velocities and speeds</h2>
+<section class="lesson" id="maxwell"><p class="tag">06.4 · Distribution</p><h2>Maxwell–Boltzmann velocities and speeds</h2><p class="units-note"><strong>SI units:</strong> Velocity \(v,v_{\mathrm{rms}},v_{\mathrm{mp}}\) in \(\mathrm{m/s}\); \(f(v_x)\) and speed density \(f_{\rm speed}(v)\) in \(\mathrm{s/m}\), so \(f_{\rm speed}(v)\,dv\) is dimensionless.</p>
 <details open><summary>Derive the 3D speed distribution from component Gaussians</summary><div class="steps">
 <p>Velocity component \(v_x=p_x/m\) has normalized distribution</p>
 \[f(v_x)=\sqrt{\frac{m}{2\pi k_BT}}\,e^{-mv_x^2/(2k_BT)}.\]
@@ -72,9 +82,9 @@ e^{-\beta\sum_j p_j^2/(2m)}.\]
 <p>Mean-square speed follows from equipartition: \(m\langle v^2\rangle/2=3k_BT/2\), so</p>
 \[\boxed{v_{\rm rms}=\sqrt{\frac{3k_BT}{m}}}.\]
 <p>To find the most probable speed, set \(d(\ln f_{\rm speed})/dv=0\): \(2/v-mv/(k_BT)=0\). Hence \(v_{\rm mp}=\sqrt{2k_BT/m}\). Direct integration gives \(v_{\rm mean}=\sqrt{8k_BT/(\pi m)}\).</p>
-</div></details>
+</div></details><p class="units-check"><strong>Answer unit check:</strong> All three characteristic speeds are in \(\mathrm{m/s}\), and the Maxwell speed probability density is in \((\mathrm{m/s})^{-1}\), as required by \(\int_0^\infty f(v)\,dv=1\).</p>
 </section>
-<section class="lesson" id="dimensional"><h2>Worked comparison: ideal gases in 1D, 2D and 3D</h2>
+<section class="lesson" id="dimensional"><h2>Worked comparison: ideal gases in 1D, 2D and 3D</h2><p class="units-note"><strong>SI units:</strong> In \(d\) dimensions, \(V_d\) is in \(\mathrm{m^d}\), \(\lambda_T\) in \(\mathrm{m}\), \(U\) in \(\mathrm{J}\), and \(C_V\) in \(\mathrm{J/K}\); dimensionality \(d\) and particle count \(N\) are dimensionless.</p>
 <details open><summary>Show the dimension dependence of heat capacity</summary><div class="steps">
 <p>For a one-particle free gas with \(d\) translational coordinates, \(q_1=V_d/\lambda_T^d\). At fixed spatial volume, \(\ln Z_N=N\ln V_d-dN\ln\lambda_T-\ln N!\). Since \(\lambda_T\propto\beta^{1/2}\),</p>
 \[\frac{\partial\ln Z_N}{\partial\beta}=-\frac{dN}{2\beta}.\]
