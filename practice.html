@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#000000"><meta name="description" content="Ten complete, fully worked MS Physics statistical mechanics comprehensive-exam practice problems in MB, BE, FD, particle in a box, and harmonic oscillator physics.">
+<title>10 Worked Comprehensive Problems · Statistical Mechanics</title>
+<link rel="stylesheet" href="./style.css"><link rel="icon" href="./icon.svg" type="image/svg+xml">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],packages:{'[+]':['ams']}},svg:{fontCache:'local'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script defer src="./reader.js"></script>
+</head><body>
+<a class="skip" href="#main">Skip to practice problems</a>
+<header class="hero"><div class="shell">
+<p class="eyebrow"><a href="./index.html">STATISTICAL MECHANICS</a> / EXAM PRACTICE</p>
+<h1>10 Worked Comprehensive Problems</h1>
+<p class="subtitle">Maxwell–Boltzmann · Bose–Einstein · Fermi–Dirac · Particle in a Box · Quantum Harmonic Oscillator</p>
+<nav class="toplinks" aria-label="Website navigation"><a href="./index.html">All chapters</a><a href="./chapters/12.html">Exam toolkit</a><a href="https://geeeooooo.github.io/EM/">Electromagnetism</a></nav>
+<div class="tools"><button id="smaller" type="button" aria-label="Decrease text size">A−</button><button id="larger" type="button" aria-label="Increase text size">A+</button><button id="expand" type="button">Show all solutions</button><button id="collapse" type="button">Hide all solutions</button></div>
+</div></header>
+<main id="main" class="shell">
+<section class="prelude"><p class="eyebrow">MS PHYSICS · DERIVATION FIRST</p>
+<p>Ten comprehensive-exam-style questions with step-by-step solutions. Each problem begins with the question, followed by a collapsed solution so you can try it independently before revealing the derivation.</p>
+<p class="small">Use the topic links to jump between sections. Text-size controls and horizontally scrollable equations support phone and narrow watch screens. MathJax requires a network connection on first load.</p>
+<div class="equation">\[\beta=(k_BT)^{-1},\qquad U=-\frac{\partial\ln Z}{\partial\beta},\qquad C_V=\left(\frac{\partial U}{\partial T}\right)_V\]</div>
+</section>
+<nav class="chapter-jump practice-nav" aria-label="Five topic groups"><a href="#mb">Maxwell–Boltzmann</a><a href="#be">Bose–Einstein</a><a href="#fd">Fermi–Dirac</a><a href="#box">Particle in a Box</a><a href="#osc">Quantum Harmonic Oscillator</a></nav>
+<section class="lesson practice-topic" id="mb"><p class="tag">PRACTICE SET · MAXWELL–BOLTZMANN</p><h2>Maxwell–Boltzmann</h2><p class="muted">Classical ideal gas and the Maxwell speed distribution</p><article class="practice-problem" id="problem-1"><p class="tag">PROBLEM 01 · MAXWELL–BOLTZMANN</p><h3>1. Classical ideal gas from phase-space integration</h3><div class="problem-question"><p class="eyebrow">QUESTION</p><p>Consider \(N\) identical, noninteracting classical particles of mass \(m\) in a 3D box of volume \(V\), at temperature \(T\).</p><p>(a) Derive the single-particle partition function using phase-space integration. (b) Construct \(Z_N\). (c) Derive \(U\), \(P\), and \(C_V\). (d) Verify \(U\) by equipartition.</p></div><details><summary>Show complete step-by-step solution</summary><div class="steps"><h3>(a) Single-particle phase-space sum</h3>
+<p>The Hamiltonian contains only three quadratic kinetic terms:</p>
+\[
+H=\frac{p_x^2+p_y^2+p_z^2}{2m},\qquad
+z_1=\frac{1}{h^3}\int_Vd^3r\int_{\mathbb R^3}d^3p\,e^{-\beta H}.
+\]
+<p>The spatial integral is \(V\); the momentum integrals separate. With \(\int_{-\infty}^{\infty}e^{-ap^2}dp=\sqrt{\pi/a}\),</p>
+\[
+z_1=\frac{V}{h^3}\left(\sqrt{\frac{2\pi m}{\beta}}\right)^3
+=V\left(\frac{2\pi mk_BT}{h^2}\right)^{3/2}.
+\]
+<p>Define \(\lambda_T=h/\sqrt{2\pi mk_BT}\), giving</p>
+\[\boxed{z_1=\frac{V}{\lambda_T^3}}.\]
+<h3>(b) Canonical partition function</h3>
+<p>For identical particles in the dilute Maxwell–Boltzmann regime, correct the independent-particle product by \(N!\):</p>
+\[\boxed{Z_N=\frac{z_1^N}{N!}=\frac1{N!}\left(\frac{V}{\lambda_T^3}\right)^N}.\]
+<p>The assumption is \(N\lambda_T^3/V\ll1\), so quantum degeneracy is negligible.</p>
+<h3>(c) Thermodynamics by differentiation</h3>
+\[
+\ln Z_N=N\ln V-3N\ln\lambda_T-\ln N!,
+\qquad \lambda_T\propto\beta^{1/2}.
+\]
+\[
+U=-\frac{\partial\ln Z_N}{\partial\beta}=\frac{3N}{2\beta}
+\quad\Longrightarrow\quad\boxed{U=\frac32Nk_BT}.
+\]
+\[
+P=k_BT\left(\frac{\partial\ln Z_N}{\partial V}\right)_{T,N}
+=\frac{Nk_BT}{V}
+\quad\Longrightarrow\quad\boxed{PV=Nk_BT}.
+\]
+\[\boxed{C_V=\left(\frac{\partial U}{\partial T}\right)_V=\frac32Nk_B}.\]
+<h3>(d) Equipartition check</h3>
+<p>Each of \(p_x^2/(2m)\), \(p_y^2/(2m)\), and \(p_z^2/(2m)\) contributes \(k_BT/2\). Thus \(\langle E\rangle_{\rm particle}=3k_BT/2\), and \(N\) particles give \(U=3Nk_BT/2\), matching the partition-function derivation.</p></div></details></article>
+<article class="practice-problem" id="problem-2"><p class="tag">PROBLEM 02 · MAXWELL–BOLTZMANN</p><h3>2. Most probable, mean, and RMS speeds</h3><div class="problem-question"><p class="eyebrow">QUESTION</p><p>The Maxwell speed distribution in three dimensions is</p>
+\[
+f(v)=4\pi\left(\frac{m}{2\pi k_BT}\right)^{3/2}v^2 e^{-mv^2/(2k_BT)},\qquad v\ge0.
+\]
+<p>(a) Derive \(v_{\rm mp}\). (b) Find \(v_{\rm rms}\) from equipartition. (c) Derive \(\langle v\rangle\) by integration. (d) Compare the three speeds.</p></div><details><summary>Show complete step-by-step solution</summary><div class="steps"><h3>(a) Most probable speed</h3>
+<p>Set \(a=m/(2k_BT)\). The \(v\)-dependent factor is \(v^2e^{-av^2}\). Differentiate:</p>
+\[
+\frac{d}{dv}(v^2e^{-av^2})
+=2ve^{-av^2}(1-av^2)=0.
+\]
+<p>The interior maximum is at \(av^2=1\), so</p>
+\[\boxed{v_{\rm mp}=\sqrt{\frac{2k_BT}{m}}}.\]
+<h3>(b) Root-mean-square speed</h3>
+<p>There are three quadratic kinetic energies, so the equipartition theorem yields</p>
+\[
+\left\langle\frac12mv^2\right\rangle=\frac32k_BT
+\quad\Longrightarrow\quad
+\langle v^2\rangle=\frac{3k_BT}{m}.
+\]
+\[\boxed{v_{\rm rms}=\sqrt{\frac{3k_BT}{m}}}.\]
+<h3>(c) Mean speed</h3>
+\[
+\langle v\rangle=\int_0^\infty vf(v)\,dv
+=4\pi\left(\frac{m}{2\pi k_BT}\right)^{3/2}
+\int_0^\infty v^3e^{-av^2}dv.
+\]
+<p>Substitute \(u=av^2\); then \(v^3dv=(u/(2a^2))du\) and \(\int_0^\infty ue^{-u}du=1\):</p>
+\[
+\int_0^\infty v^3e^{-av^2}dv=\frac1{2a^2},
+\qquad
+\boxed{\langle v\rangle=\sqrt{\frac{8k_BT}{\pi m}}}.
+\]
+<h3>(d) Interpretation</h3>
+\[\boxed{v_{\rm mp}<\langle v\rangle<v_{\rm rms}}.\]
+<p>The speed distribution is asymmetric; its mode, arithmetic mean, and RMS value therefore differ. Equipartition alone determines \(\langle v^2\rangle\), not \(\langle v\rangle\).</p></div></details></article></section>
+<section class="lesson practice-topic" id="be"><p class="tag">PRACTICE SET · BOSE–EINSTEIN</p><h2>Bose–Einstein</h2><p class="muted">Occupation sums and Bose–Einstein condensation</p><article class="practice-problem" id="problem-6"><p class="tag">PROBLEM 06 · BOSE–EINSTEIN</p><h3>6. Derive MB, BE, and FD occupation numbers</h3><div class="problem-question"><p class="eyebrow">QUESTION</p><p>A single-particle orbital of energy \(\epsilon\) exchanges energy and particles with a reservoir at \(T,\mu\).</p><p>(a) Derive Bose–Einstein occupation. (b) Derive Fermi–Dirac occupation. (c) Obtain Maxwell–Boltzmann occupation. (d) Show the dilute classical limit.</p></div><details><summary>Show complete step-by-step solution</summary><div class="steps"><p>The grand-canonical weight for occupation \(n\) is \(e^{-\beta n(\epsilon-\mu)}\). Let \(z=e^{-\beta(\epsilon-\mu)}\), so \(\partial z/\partial\mu=\beta z\). The mean number in one orbital is</p>
+\[\bar n=\frac1\beta\frac{\partial\ln\Xi}{\partial\mu}.\]
+<h3>(a) Bosons: \(n=0,1,2,\ldots\)</h3>
+\[
+\Xi_{\rm BE}=\sum_{n=0}^\infty z^n=\frac1{1-z},\qquad z<1.
+\]
+\[
+\bar n_{\rm BE}=\frac{z}{1-z}
+\quad\Longrightarrow\quad
+\boxed{\bar n_{\rm BE}=\frac1{e^{\beta(\epsilon-\mu)}-1}}.
+\]
+<h3>(b) Fermions: \(n=0,1\)</h3>
+\[
+\Xi_{\rm FD}=1+z,\qquad
+\bar n_{\rm FD}=\frac{z}{1+z}
+\quad\Longrightarrow\quad
+\boxed{\bar n_{\rm FD}=\frac1{e^{\beta(\epsilon-\mu)}+1}}.
+\]
+<p>This counting applies to one spin-orbital; different spin orientations are separate orbitals.</p>
+<h3>(c) Maxwell–Boltzmann classical counting</h3>
+<p>With the classical indistinguishable-particle occupation factor \(1/n!\),</p>
+\[
+\Xi_{\rm MB}=\sum_{n=0}^\infty\frac{z^n}{n!}=e^z,\qquad
+\boxed{\bar n_{\rm MB}=z=e^{-\beta(\epsilon-\mu)}}.
+\]
+<h3>(d) Low-occupation limit</h3>
+<p>If \(z\ll1\), both \(z/(1-z)\) and \(z/(1+z)\) approach \(z\). Therefore,</p>
+\[\boxed{\bar n_{\rm BE}\simeq\bar n_{\rm FD}\simeq\bar n_{\rm MB}}.\]
+<p>For a homogeneous dilute gas, this corresponds to small degeneracy parameter \(n\lambda_T^3/g_s\). These expressions are average occupations of individual orbitals, not probabilities for an energy level with unspecified degeneracy.</p></div></details></article>
+<article class="practice-problem" id="problem-8"><p class="tag">PROBLEM 08 · BOSE–EINSTEIN</p><h3>8. Bose–Einstein condensation in a three-dimensional box</h3><div class="problem-question"><p class="eyebrow">QUESTION</p><p>Consider \(N\) noninteracting spinless bosons with \(\epsilon=p^2/(2m)\) in a large three-dimensional box of volume \(V\).</p><p>(a) Find the maximum excited-state population at temperature \(T\). (b) Derive \(T_c\). (c) Find the condensate fraction below \(T_c\). State the assumptions.</p></div><details><summary>Show complete step-by-step solution</summary><div class="steps"><h3>(a) Excited-state population and density of states</h3>
+<p>The BE occupation is \(\bar n(\epsilon)=[e^{\beta(\epsilon-\mu)}-1]^{-1}\). Use the three-dimensional spinless density of states</p>
+\[
+g(\epsilon)=\frac{V}{4\pi^2}\left(\frac{2m}{\hbar^2}\right)^{3/2}\epsilon^{1/2}.
+\]
+\[
+N_{\rm ex}=\int_0^\infty\frac{g(\epsilon)}
+{e^{\beta(\epsilon-\mu)}-1}\,d\epsilon.
+\]
+<p>Set the ground-state energy reference to zero. The largest possible excited population occurs as \(\mu\to0^{-}\). Substitute \(u=\beta\epsilon\):</p>
+\[
+N_{\rm ex,max}=
+\frac{V}{4\pi^2}\left(\frac{2mk_BT}{\hbar^2}\right)^{3/2}
+\int_0^\infty\frac{u^{1/2}}{e^u-1}\,du.
+\]
+<p>Apply \(\int_0^\infty u^{s-1}/(e^u-1)\,du=\Gamma(s)\zeta(s)\) for \(s>1\), with \(\Gamma(3/2)=\sqrt\pi/2\):</p>
+\[
+\boxed{N_{\rm ex,max}=\frac{V}{\lambda_T^3}\zeta(3/2)},
+\quad \lambda_T=\frac{h}{\sqrt{2\pi mk_BT}}.
+\]
+<h3>(b) Critical temperature</h3>
+<p>At the transition all \(N\) particles just fit in the excited states, so \(N=V\zeta(3/2)/\lambda_{T_c}^3\). Solving,</p>
+\[
+\boxed{T_c=\frac{2\pi\hbar^2}{mk_B}
+\left[\frac{N/V}{\zeta(3/2)}\right]^{2/3}}.
+\]
+<h3>(c) Condensate fraction</h3>
+<p>Below \(T_c\), excited-state occupation scales as \(T^{3/2}\). Therefore,</p>
+\[
+N_{\rm ex}=N\left(\frac{T}{T_c}\right)^{3/2},
+\qquad
+\boxed{\frac{N_0}{N}=1-\left(\frac{T}{T_c}\right)^{3/2}}.
+\]
+<p>This applies to a uniform, ideal, spinless three-dimensional Bose gas in the thermodynamic limit. Separate the macroscopically occupied ground state from the continuum integral.</p></div></details></article></section>
+<section class="lesson practice-topic" id="fd"><p class="tag">PRACTICE SET · FERMI–DIRAC</p><h2>Fermi–Dirac</h2><p class="muted">Two-particle exclusion and the degenerate Fermi gas</p><article class="practice-problem" id="problem-7"><p class="tag">PROBLEM 07 · FERMI–DIRAC</p><h3>7. Two particles: distinguishable, bosonic, and fermionic counting</h3><div class="problem-question"><p class="eyebrow">QUESTION</p><p>Two noninteracting particles may occupy two nondegenerate single-particle orbitals of energies \(\epsilon_0=0\) and \(\epsilon_1=\Delta\).</p><p>(a) Find the two-particle canonical partition function for distinguishable particles. (b) Repeat for identical spinless bosons. (c) Repeat for identical spinless fermions. (d) Derive \(U\) in each case.</p></div><details><summary>Show complete step-by-step solution</summary><div class="steps"><p>Let \(a=\beta\Delta\).</p>
+<h3>(a) Distinguishable particles</h3>
+<p>The four ordered configurations have total energies \(0,\Delta,\Delta,2\Delta\):</p>
+\[
+Z_{\rm dist}=1+2e^{-a}+e^{-2a}
+=\boxed{(1+e^{-a})^2}.
+\]
+\[
+U_{\rm dist}=-\partial_\beta\ln Z_{\rm dist}
+=\boxed{\frac{2\Delta}{e^a+1}}.
+\]
+<h3>(b) Identical spinless bosons</h3>
+<p>The three occupation configurations \((n_0,n_1)=(2,0),(1,1),(0,2)\) have energies \(0,\Delta,2\Delta\). Each configuration is counted once:</p>
+\[
+\boxed{Z_{\rm BE}=1+e^{-a}+e^{-2a}},
+\qquad
+\boxed{U_{\rm BE}=\frac{\Delta e^{-a}+2\Delta e^{-2a}}{1+e^{-a}+e^{-2a}}}.
+\]
+<h3>(c) Identical spinless fermions</h3>
+<p>Pauli exclusion forces one fermion into each orbital: \((n_0,n_1)=(1,1)\), with total energy \(\Delta\).</p>
+\[\boxed{Z_{\rm FD}=e^{-a}},\qquad
+\boxed{U_{\rm FD}=\Delta}.\]
+<h3>(d) Zero-temperature comparison and counting caveat</h3>
+<p>As \(T\to0\), \(U_{\rm dist}\to0\), \(U_{\rm BE}\to0\), and \(U_{\rm FD}=\Delta\). Pauli exclusion raises the fermionic ground-state energy.</p>
+<p>In a small discrete system, dividing \(Z_{\rm dist}\) by \(2!\) does <em>not</em> yield the exact bosonic or fermionic canonical partition function. The classical Gibbs \(1/N!\) correction works in the dilute Maxwell–Boltzmann approximation.</p></div></details></article>
+<article class="practice-problem" id="problem-9"><p class="tag">PROBLEM 09 · FERMI–DIRAC</p><h3>9. Fermi energy and degeneracy pressure at zero temperature</h3><div class="problem-question"><p class="eyebrow">QUESTION</p><p>Consider \(N\) noninteracting spin-\(\frac12\) fermions of mass \(m\), in a 3D box of volume \(V\), at \(T=0\).</p><p>(a) Derive \(p_F\). (b) Derive \(E_F\). (c) Show that \(U=\frac35NE_F\). (d) Derive the zero-temperature pressure.</p></div><details><summary>Show complete step-by-step solution</summary><div class="steps"><h3>(a) Filled Fermi sea</h3>
+<p>At \(T=0\), Fermi–Dirac occupation is one below \(E_F\) and zero above. Each momentum state can hold two particles due to the two spin orientations. Count states inside the momentum-space sphere of radius \(p_F\):</p>
+\[
+N=2\frac{V}{h^3}\frac{4\pi p_F^3}{3}
+=\frac{Vp_F^3}{3\pi^2\hbar^3}.
+\]
+\[\boxed{p_F=\hbar\left(3\pi^2\frac NV\right)^{1/3}}.\]
+<h3>(b) Fermi energy</h3>
+\[
+E_F=\frac{p_F^2}{2m}
+\quad\Longrightarrow\quad
+\boxed{E_F=\frac{\hbar^2}{2m}\left(3\pi^2\frac NV\right)^{2/3}}.
+\]
+<h3>(c) Ground-state internal energy</h3>
+\[
+U=2\frac{V}{h^3}\int_{|\mathbf p|\le p_F}\frac{p^2}{2m}\,d^3p
+=\frac{4\pi V}{mh^3}\int_0^{p_F}p^4\,dp
+=\frac{4\pi Vp_F^5}{5mh^3}.
+\]
+<p>Use \(N=8\pi Vp_F^3/(3h^3)\) and \(E_F=p_F^2/(2m)\):</p>
+\[\boxed{U=\frac35NE_F}.\]
+<h3>(d) Degeneracy pressure</h3>
+<p>Since \(E_F\propto(N/V)^{2/3}\), at fixed \(N\) one has \(U\propto V^{-2/3}\). Thus,</p>
+\[
+P=-\left(\frac{\partial U}{\partial V}\right)_N
+=\frac{2U}{3V}
+\quad\Longrightarrow\quad
+\boxed{P=\frac25\frac NV E_F}.
+\]
+<p>This nonzero \(T=0\) pressure originates in exclusion-driven occupation of high-momentum states, not thermal agitation.</p></div></details></article></section>
+<section class="lesson practice-topic" id="box"><p class="tag">PRACTICE SET · PARTICLE IN A BOX</p><h2>Particle in a Box</h2><p class="muted">Boundary conditions and quantum-to-classical limits</p><article class="practice-problem" id="problem-3"><p class="tag">PROBLEM 03 · PARTICLE IN A BOX</p><h3>3. Quantum box spectrum and high-temperature classical limit</h3><div class="problem-question"><p class="eyebrow">QUESTION</p><p>A particle of mass \(m\) occupies a one-dimensional infinite square well \(0<q<L\).</p><p>(a) Derive allowed eigenvalues and explain why \(n=0\) is forbidden. (b) Construct \(Z\). (c) Obtain the high-temperature continuum approximation. (d) Derive \(U\) and \(C_V\) and verify equipartition.</p></div><details><summary>Show complete step-by-step solution</summary><div class="steps"><h3>(a) Quantum states and boundary conditions</h3>
+<p>Inside the well, \(-\hbar^2\psi''/(2m)=E\psi\). Write \(\psi=A\sin(kq)+B\cos(kq)\). From \(\psi(0)=0\), \(B=0\). From \(\psi(L)=0\), \(\sin(kL)=0\), so \(k=n\pi/L\).</p>
+\[
+\psi_n(q)=\sqrt{\frac2L}\sin\left(\frac{n\pi q}{L}\right),
+\qquad
+\boxed{E_n=\frac{n^2\pi^2\hbar^2}{2mL^2}},\quad n=1,2,\ldots
+\]
+<p>For \(n=0\), the wavefunction is identically zero and cannot be normalized, so it does not describe a physical state.</p>
+<h3>(b) Canonical sum</h3>
+<p>Define \(\epsilon=\pi^2\hbar^2/(2mL^2)\). The energy is quadratic in the quantum number:</p>
+\[\boxed{Z=\sum_{n=1}^\infty e^{-\beta\epsilon n^2}}.\]
+<p>This is not an ordinary geometric series.</p>
+<h3>(c) High-temperature continuum limit</h3>
+<p>If \(k_BT\gg\epsilon\), many levels are populated, and the leading approximation is the Gaussian integral:</p>
+\[
+Z\simeq\int_0^\infty e^{-\beta\epsilon n^2}\,dn
+=\frac12\sqrt{\frac{\pi}{\beta\epsilon}}.
+\]
+<p>Substitute \(\epsilon\) and \(\beta=1/(k_BT)\):</p>
+\[\boxed{Z\simeq L\sqrt{\frac{mk_BT}{2\pi\hbar^2}}}.\]
+<h3>(d) Internal energy and heat capacity</h3>
+<p>Here \(Z\propto\beta^{-1/2}\), so \(\ln Z=\text{constant}-\frac12\ln\beta\).</p>
+\[
+U=-\frac{\partial\ln Z}{\partial\beta}=\frac{1}{2\beta},
+\quad\boxed{U\simeq\frac12k_BT},
+\quad\boxed{C_V\simeq\frac12k_B}.
+\]
+<p>The free particle has one quadratic kinetic term, \(p^2/(2m)\), and no interior position-dependent potential. Equipartition predicts the same high-temperature result. The finite box still has nonzero ground-state energy at \(T=0\).</p></div></details></article></section>
+<section class="lesson practice-topic" id="osc"><p class="tag">PRACTICE SET · QUANTUM HARMONIC OSCILLATOR</p><h2>Quantum Harmonic Oscillator</h2><p class="muted">Partition functions, heat capacities, and identical particles</p><article class="practice-problem" id="problem-4"><p class="tag">PROBLEM 04 · QUANTUM HARMONIC OSCILLATOR</p><h3>4. Exact oscillator thermodynamics and equipartition</h3><div class="problem-question"><p class="eyebrow">QUESTION</p><p>A one-dimensional oscillator has levels \(E_n=\hbar\omega(n+\frac12)\), with \(n=0,1,2,\ldots\).</p><p>(a) Derive \(Z\). (b) Obtain Helmholtz free energy \(F\), internal energy \(U\), and heat capacity \(C_V\). (c) Verify the high-temperature equipartition limit. (d) Explain the low-temperature limit.</p></div><details><summary>Show complete step-by-step solution</summary><div class="steps"><h3>(a) Partition function</h3>
+<p>Let \(a=\beta\hbar\omega\). Factor out the ground-state Boltzmann factor and sum the geometric series:</p>
+\[
+Z=\sum_{n=0}^\infty e^{-a(n+1/2)}
+=e^{-a/2}\sum_{n=0}^\infty(e^{-a})^n
+\quad\Longrightarrow\quad
+\boxed{Z=\frac{e^{-a/2}}{1-e^{-a}}}.
+\]
+<h3>(b) Free energy, internal energy, and heat capacity</h3>
+\[
+\ln Z=-\frac a2-\ln(1-e^{-a}),
+\qquad
+F=-k_BT\ln Z
+\]
+\[\boxed{F=\frac12\hbar\omega+k_BT\ln(1-e^{-a})}.\]
+<p>Because \(\partial a/\partial\beta=\hbar\omega\),</p>
+\[
+U=-\frac{\partial\ln Z}{\partial\beta}
+=\frac12\hbar\omega+\frac{\hbar\omega e^{-a}}{1-e^{-a}}
+\quad\Longrightarrow\quad
+\boxed{U=\frac12\hbar\omega+\frac{\hbar\omega}{e^a-1}}.
+\]
+<p>Since \(da/dT=-a/T\), differentiation gives</p>
+\[\boxed{C_V=k_Ba^2\frac{e^a}{(e^a-1)^2}}.\]
+<h3>(c) Classical high-temperature limit</h3>
+<p>For \(a\ll1\), use the more accurate series \(1/(e^a-1)=1/a-1/2+a/12+\cdots\). Then</p>
+\[
+U=\frac12\hbar\omega+\hbar\omega\left(\frac1a-\frac12+\frac a{12}+\cdots\right)
+=k_BT+\frac{(\hbar\omega)^2}{12k_BT}+\cdots.
+\]
+\[\boxed{U\simeq k_BT,\qquad C_V\simeq k_B}.\]
+<p>Equipartition gives \(k_BT/2\) from momentum and \(k_BT/2\) from the quadratic potential.</p>
+<h3>(d) Low-temperature behavior</h3>
+<p>For \(a\gg1\), excitations are exponentially rare:</p>
+\[
+U\simeq\frac12\hbar\omega+\hbar\omega e^{-a},
+\qquad
+C_V\simeq k_Ba^2e^{-a}.
+\]
+\[\boxed{U\to\hbar\omega/2,\qquad C_V\to0}.\]
+<p>Zero-point energy persists, but the oscillator hardly absorbs additional thermal energy.</p></div></details></article>
+<article class="practice-problem" id="problem-5"><p class="tag">PROBLEM 05 · QUANTUM HARMONIC OSCILLATOR</p><h3>5. Anisotropic two-dimensional oscillator</h3><div class="problem-question"><p class="eyebrow">QUESTION</p><p>A particle moves in a two-dimensional harmonic potential with \(\omega_x=\omega\) and \(\omega_y=2\omega\).</p><p>(a) Derive the factorized canonical partition function. (b) Find \(U\). (c) Derive exact \(C_V\). (d) Check the high-temperature limit by equipartition.</p></div><details><summary>Show complete step-by-step solution</summary><div class="steps"><h3>(a) Separate the quantum energies</h3>
+\[
+E_{n_x,n_y}=\hbar\omega(n_x+\tfrac12)
++2\hbar\omega(n_y+\tfrac12),\qquad n_x,n_y=0,1,\ldots
+\]
+<p>Let \(a=\beta\hbar\omega\). The two sums factor because the two quantum numbers are independent:</p>
+\[
+Z=e^{-3a/2}
+\left(\sum_{n_x=0}^\infty e^{-an_x}\right)
+\left(\sum_{n_y=0}^\infty e^{-2an_y}\right).
+\]
+\[\boxed{Z=\frac{e^{-3a/2}}{(1-e^{-a})(1-e^{-2a})}}.\]
+<h3>(b) Internal energy</h3>
+\[
+\ln Z=-\frac{3a}{2}-\ln(1-e^{-a})-\ln(1-e^{-2a}).
+\]
+<p>Differentiate with respect to \(\beta\), using \(\partial a/\partial\beta=\hbar\omega\):</p>
+\[\boxed{U=\frac32\hbar\omega+\frac{\hbar\omega}{e^a-1}+\frac{2\hbar\omega}{e^{2a}-1}}.\]
+<h3>(c) Exact heat capacity</h3>
+<p>Use \(da/dT=-a/T\). The zero-point term is independent of temperature:</p>
+\[
+\boxed{C_V=k_B\left[
+a^2\frac{e^a}{(e^a-1)^2}
++4a^2\frac{e^{2a}}{(e^{2a}-1)^2}\right]}.
+\]
+<h3>(d) High-temperature check</h3>
+<p>The classical Hamiltonian has four independent quadratic terms:</p>
+\[
+H=\frac{p_x^2}{2m}+\frac{p_y^2}{2m}
++\frac12m\omega^2q_x^2+\frac12m(2\omega)^2q_y^2.
+\]
+<p>Each contributes \(k_BT/2\). For \(k_BT\gg2\hbar\omega\),</p>
+\[\boxed{U\simeq2k_BT,\qquad C_V\simeq2k_B}.\]
+<p>Different frequencies affect quantum spacings and the intermediate-temperature behavior, but not the number of classical quadratic terms.</p></div></details></article>
+<article class="practice-problem" id="problem-10"><p class="tag">PROBLEM 10 · QUANTUM HARMONIC OSCILLATOR</p><h3>10. Two identical bosons versus fermions in an oscillator</h3><div class="problem-question"><p class="eyebrow">QUESTION</p><p>Two identical, noninteracting, spinless particles occupy a one-dimensional harmonic oscillator with single-particle levels \(\epsilon_n=\hbar\omega(n+\frac12)\).</p><p>(a) Find the bosonic ground-state energy. (b) Find the fermionic ground-state energy. (c) Derive each two-particle canonical partition function. (d) Obtain both internal energies and their high-temperature limits.</p></div><details><summary>Show complete step-by-step solution</summary><div class="steps"><p>Define \(a=\beta\hbar\omega\).</p>
+<h3>(a) Bosonic ground state</h3>
+<p>Both bosons occupy \(n=0\), so</p>
+\[\boxed{E_{0,B}=2(\hbar\omega/2)=\hbar\omega}.\]
+<h3>(b) Fermionic ground state</h3>
+<p>Pauli exclusion forces occupation of \(n=0\) and \(n=1\), so</p>
+\[\boxed{E_{0,F}=\hbar\omega/2+3\hbar\omega/2=2\hbar\omega}.\]
+<h3>(c) Two-particle canonical partition functions</h3>
+<p>For bosons, choose ordered occupations \(0\le n_1\le n_2\). Parameterize \(n_1=j,n_2=j+l\), with \(j,l=0,1,\ldots\). The total energy is \(\hbar\omega(2j+l+1)\):</p>
+\[
+Z_B=\sum_{j,l=0}^\infty e^{-a(2j+l+1)}
+=\frac{e^{-a}}{(1-e^{-2a})(1-e^{-a})}.
+\]
+\[\boxed{Z_B=\frac{e^{-a}}{(1-e^{-a})(1-e^{-2a})}}.\]
+<p>For fermions, \(0\le n_1<n_2\). Parameterize \(n_1=j,n_2=j+l+1\), giving energy \(\hbar\omega(2j+l+2)\):</p>
+\[
+Z_F=\sum_{j,l=0}^\infty e^{-a(2j+l+2)}
+\quad\Longrightarrow\quad
+\boxed{Z_F=\frac{e^{-2a}}{(1-e^{-a})(1-e^{-2a})}}.
+\]
+<p>Hence \(Z_F=e^{-a}Z_B\).</p>
+<h3>(d) Internal energies and limiting results</h3>
+\[
+U_B=-\partial_\beta\ln Z_B
+=\boxed{\hbar\omega+
+\frac{\hbar\omega}{e^a-1}
++\frac{2\hbar\omega}{e^{2a}-1}}.
+\]
+\[\boxed{U_F=U_B+\hbar\omega}.\]
+<p>The constant energy offset implies identical heat capacities \(C_{V,F}=C_{V,B}\). At \(T\to0\), \(U_B\to\hbar\omega\), \(U_F\to2\hbar\omega\). At \(k_BT\gg\hbar\omega\), their leading thermal energies coincide:</p>
+\[\boxed{U_B\simeq U_F\simeq2k_BT,\qquad C_V\simeq2k_B}.\]
+<p>The absolute energies retain a constant exchange-statistics offset; the high-temperature statement concerns the leading term.</p></div></details></article></section>
+<footer><p>MS Physics · Statistical Mechanics Field Notes</p><p>For calculations: distinguish single-particle energies \(E_i\) from thermodynamic internal energy \(U\); state classical versus quantum assumptions.</p><p><a href="./index.html">Back to chapters</a> · <a href="./chapters/12.html">Comprehensive exam toolkit</a></p></footer>
+</main></body></html>
