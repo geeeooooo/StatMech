@@ -15,9 +15,18 @@
 </div></header>
 <main id="main" class="shell">
 <p class="panel"><strong>Additional practice:</strong> <a href="../practice.html">Ten fully worked MB, BE, FD, box, and oscillator problems</a>, organized by topic with hidden solutions.</p>
-<nav class="chapter-jump" aria-label="Within chapter"><a href="#methods">How to approach a Statistical Mechanics derivation</a><a href="#problem1">Problem 1 · 2D anisotropic harmonic oscillator</a><a href="#problem2">Problem 2 · Particle in a 1D infinite box</a><a href="#problem3">Problem 3 · Derive all ideal-gas functions</a><a href="#problem4">Problem 4 · Derive boson and fermion occupations</a><a href="#problem5">Problem 5 · Debye low-temperature heat capacity</a><a href="#problem6">Problem 6 · When does equipartition fail?</a><a href="#summary">Essential equation sheet</a></nav>
+<nav class="chapter-jump" aria-label="Within chapter"><a href="#methods">How to approach a Statistical Mechanics derivation</a><a href="#problem1">Problem 1 · 2D anisotropic harmonic oscillator</a><a href="#problem2">Problem 2 · Particle in a 1D infinite box</a><a href="#problem3">Problem 3 · Derive all ideal-gas functions</a><a href="#problem4">Problem 4 · Derive boson and fermion occupations</a><a href="#problem5">Problem 5 · Debye low-temperature heat capacity</a><a href="#problem6">Problem 6 · When does equipartition fail?</a><a href="#summary">Essential equation sheet</a><a href="#si-units">SI units</a></nav><details class="si-guide" id="si-units"><summary>SI units &amp; fundamental constants</summary><div class="steps">
+<p><strong>Thermodynamics.</strong> Temperature \(T\) in kelvins \(\mathrm{K}\); internal energy \(U\), microstate energy \(E_i\), heat \(Q\), work \(W\), free energies and chemical potential \(\mu\) in joules \(\mathrm{J}\) (chemical potential is energy per particle); entropy \(S\) and heat capacity \(C_V,C_P\) in \(\mathrm{J/K}\); pressure \(P\) in pascals \(\mathrm{Pa}=\mathrm{J/m^3}\); volume \(V\) in \(\mathrm{m^3}\).</p>
+<p><strong>Statistical quantities.</strong> Particle count \(N\), multiplicity \(\Omega\), degeneracy \(g\), probability \(p_i\), occupation \(\bar n_i\), and properly normalized partition functions \(Z,\Xi\) are dimensionless; \(\beta=1/(k_BT)\) has units \(\mathrm{J^{-1}}\). Energy variance has units \(\mathrm{J^2}\).</p>
+<p><strong>Exact SI constants.</strong></p>
+\[\boxed{k_B=1.380649\times10^{-23}\ \mathrm{J/K}},\qquad
+\boxed{h=6.62607015\times10^{-34}\ \mathrm{J\,s}}\]
+<p>\(k_B\) (Boltzmann's constant) and \(h\) (Planck's constant) have exact defined SI values. The reduced Planck constant is \(\hbar=h/(2\pi)\approx1.054571817\times10^{-34}\ \mathrm{J\,s}\).</p>
+<p><strong>Quantum and gases.</strong> Mass \(m\) in \(\mathrm{kg}\); length \(L\), thermal wavelength \(\lambda_T\) in \(\mathrm{m}\); angular frequency \(\omega\) in \(\mathrm{rad/s}\); energy gap \(\Delta\), single-particle level \(\epsilon\) in \(\mathrm{J}\); speed \(v\) in \(\mathrm{m/s}\); number density \(n=N/V_d\) in \(\mathrm{m^{-d}}\) for \(d\) spatial dimensions.</p>
+<p><strong>Common distinctions.</strong> \(T\) in formulas for temperature is kelvins \(\mathrm{K}\); magnetic flux density \(B\) is in tesla \(\mathrm{T}\). A magnetic moment \(\mu_{\rm mag}\) has units \(\mathrm{J/T}\), different from chemical potential \(\mu\) in \(\mathrm{J}\). Logarithm/exponential arguments and quantities such as \(k_BT/(\hbar\omega)\) must be dimensionless.</p>
+</div></details>
 
-<section class="lesson" id="methods"><p class="tag">12.1 · Exam strategy</p><h2>How to approach a Statistical Mechanics derivation</h2>
+<section class="lesson" id="methods"><p class="tag">12.1 · Exam strategy</p><h2>How to approach a Statistical Mechanics derivation</h2><p class="units-note"><strong>SI units:</strong> Partition function \(Z\) dimensionless, \(\beta\) in \(\mathrm{J^{-1}}\), \(U,F,E_i\) in \(\mathrm{J}\), \(S,C_V\) in \(\mathrm{J/K}\).</p>
 <p>For every system, start by identifying the ensemble (\(E,V,N\), \(T,V,N\), or \(T,V,\mu\)); list allowed levels and their degeneracies; construct \(Z\) or \(\Xi\); derive observables <em>by differentiating</em>; and check dimensions and limits. Do not invoke equipartition without confirming its classical assumptions.</p>
 <div class="equation">\[\boxed{
 Z=\sum_i e^{-\beta E_i},\quad
@@ -27,7 +36,7 @@ S=k_B(\ln Z+\beta U),\quad
 C_V=\frac{\operatorname{Var}(E)}{k_BT^2}
 }\]</div>
 </section>
-<section class="lesson" id="problem1"><p class="tag">12.2 · Fully worked</p><h2>Problem 1 · 2D anisotropic harmonic oscillator</h2>
+<section class="lesson" id="problem1"><p class="tag">12.2 · Fully worked</p><h2>Problem 1 · 2D anisotropic harmonic oscillator</h2><p class="units-note"><strong>SI units:</strong> \(\omega_x,\omega_y\) in \(\mathrm{rad/s}\); \(\hbar\omega_j,E_n,U\) in \(\mathrm{J}\), \(C_V\) in \(\mathrm{J/K}\), \(Z,x_j\) dimensionless.</p>
 <p>A single particle moves in \(V(x,y)=\tfrac12m\omega_x^2x^2+\tfrac12m\omega_y^2y^2\). Derive the energy eigenvalues, canonical partition function, \(U\), and \(C_V\). Find low- and high-\(T\) limits.</p>
 <details open><summary>Solution · separation, geometric sums and derivatives</summary><div class="steps">
 <p>Separate the Hamiltonian \(H=H_x+H_y\), with independent oscillator quantum numbers \(n_x,n_y=0,1,\ldots\):</p>
@@ -42,9 +51,9 @@ C_V=\frac{\operatorname{Var}(E)}{k_BT^2}
 <p>Since \(dx_j/dT=-x_j/T\), the heat capacity is</p>
 \[\boxed{C_V=k_B\sum_{j=x,y}x_j^2\frac{e^{x_j}}{(e^{x_j}-1)^2}}.\]
 <p>Low \(T\), when \(k_BT\ll\hbar\omega_x,\hbar\omega_y\): \(U\to\hbar(\omega_x+\omega_y)/2\), \(C_V\to0\). High \(T\), when \(k_BT\gg\hbar\omega_x,\hbar\omega_y\): \(U\sim2k_BT\), \(C_V\to2k_B\).</p>
-</div></details>
+</div></details><p class="units-check"><strong>Answer unit check:</strong> \(U,E_n\) are \(\mathrm{J}\); \(C_V\) is \(\mathrm{J/K}\); \(Z\) dimensionless.</p>
 </section>
-<section class="lesson" id="problem2"><p class="tag">12.3 · Fully worked</p><h2>Problem 2 · Particle in a 1D infinite box</h2>
+<section class="lesson" id="problem2"><p class="tag">12.3 · Fully worked</p><h2>Problem 2 · Particle in a 1D infinite box</h2><p class="units-note"><strong>SI units:</strong> Box length \(L\) in \(\mathrm{m}\), mass \(m\) in \(\mathrm{kg}\), gap \(\Delta\), level spacing \(\epsilon\), and \(U\) in \(\mathrm{J}\), \(C_V\) in \(\mathrm{J/K}\).</p>
 <p>For a particle in \(0&lt;x&lt;L\), derive the first excitation gap and its leading low-temperature heat capacity. Explain the high-temperature continuum result.</p>
 <details open><summary>Solution · gap and asymptotic partition function</summary><div class="steps">
 <p>Dirichlet boundary conditions give \(\psi_n(x)=\sqrt{2/L}\sin(n\pi x/L)\) with \(n=1,2,\ldots\) and \(E_n=\epsilon n^2\), \(\epsilon=\pi^2\hbar^2/(2mL^2)\).</p>
@@ -54,9 +63,9 @@ C_V=\frac{\operatorname{Var}(E)}{k_BT^2}
 \[U\approx\epsilon+\frac{\Delta}{e^y+1},\qquad
 \boxed{C_V\approx k_By^2\frac{e^y}{(e^y+1)^2}\sim k_By^2e^{-y}}.\]
 <p>At sufficiently high \(T\), approximate \(\sum_{n=1}^\infty e^{-\beta\epsilon n^2}\) by \(\int_0^\infty e^{-\beta\epsilon n^2}dn=L/\lambda_T\), giving \(U\sim\frac12 k_BT\) and \(C_V\to\frac12k_B\).</p>
-</div></details>
+</div></details><p class="units-check"><strong>Answer unit check:</strong> \(\Delta=3\pi^2\hbar^2/(2mL^2)\) is in \(\mathrm{J}\), \(C_V\) in \(\mathrm{J/K}\).</p>
 </section>
-<section class="lesson" id="problem3"><p class="tag">12.4 · Fully worked</p><h2>Problem 3 · Derive all ideal-gas functions</h2>
+<section class="lesson" id="problem3"><p class="tag">12.4 · Fully worked</p><h2>Problem 3 · Derive all ideal-gas functions</h2><p class="units-note"><strong>SI units:</strong> Partition \(Z_N\), ratio \(V/(N\lambda_T^3)\) dimensionless, \(F,U\) in \(\mathrm{J}\), \(P\) in \(\mathrm{Pa}\), \(S,C_V\) in \(\mathrm{J/K}\).</p>
 <p>For \(N\) identical classical monatomic particles in 3D, use \(Z_N=(V/\lambda_T^3)^N/N!\). Derive the free energy, pressure, energy, entropy and heat capacity.</p>
 <details><summary>Solution · apply thermodynamic derivative identities</summary><div class="steps">
 <p>Use Stirling's approximation: \(\ln N!\approx N\ln N-N\). Thus</p>
@@ -66,9 +75,9 @@ C_V=\frac{\operatorname{Var}(E)}{k_BT^2}
 \[\boxed{PV=Nk_BT,\quad U=\frac32Nk_BT,\quad C_V=\frac32Nk_B},\]
 \[\boxed{S=Nk_B\left[\ln\frac{V}{N\lambda_T^3}+\frac52\right]}.\]
 <p>These require the dilute classical ideal-gas regime. They should not be used unchanged for degenerate fermions or Bose-condensed gases.</p>
-</div></details>
+</div></details><p class="units-check"><strong>Answer unit check:</strong> \(PV\) has units \(\mathrm{Pa\,m^3}=\mathrm{J}\), matching \(Nk_BT\).</p>
 </section>
-<section class="lesson" id="problem4"><p class="tag">12.5 · Fully worked</p><h2>Problem 4 · Derive boson and fermion occupations</h2>
+<section class="lesson" id="problem4"><p class="tag">12.5 · Fully worked</p><h2>Problem 4 · Derive boson and fermion occupations</h2><p class="units-note"><strong>SI units:</strong> Orbital energy \(\epsilon\), chemical potential \(\mu\) in \(\mathrm{J}\); \(\Xi,y\), and occupations \(\bar n\) dimensionless.</p>
 <p>An independent orbital of energy \(\epsilon\) can hold unlimited bosons or at most one fermion. Show how the grand-canonical sum gives BE and FD occupations.</p>
 <details><summary>Solution · two different sums</summary><div class="steps">
 <p>Let \(y=e^{-\beta(\epsilon-\mu)}\). For bosons,</p>
@@ -80,9 +89,9 @@ C_V=\frac{\operatorname{Var}(E)}{k_BT^2}
 \bar n_{\rm F}=y\frac{\partial\ln\Xi_{\rm F}}{\partial y}
 =\boxed{\frac1{e^{\beta(\epsilon-\mu)}+1}}.\]
 <p>When \(y\ll1\), either is \(\bar n\approx y=e^{-\beta(\epsilon-\mu)}\), the dilute Maxwell–Boltzmann limit.</p>
-</div></details>
+</div></details><p class="units-check"><strong>Answer unit check:</strong> The grand sum \(\Xi\) and all orbital occupation numbers are dimensionless.</p>
 </section>
-<section class="lesson" id="problem5"><p class="tag">12.6 · Fully worked</p><h2>Problem 5 · Debye low-temperature heat capacity</h2>
+<section class="lesson" id="problem5"><p class="tag">12.6 · Fully worked</p><h2>Problem 5 · Debye low-temperature heat capacity</h2><p class="units-note"><strong>SI units:</strong> Debye angular frequency \(\omega_D\) in \(\mathrm{rad/s}\), \(\Theta_D,T\) in \(\mathrm{K}\), \(U_{\rm th}\) in \(\mathrm{J}\), \(C_V\) in \(\mathrm{J/K}\).</p>
 <p>A 3D Debye solid has \(3N\) acoustic vibrational modes with \(g(\omega)=9N\omega^2/\omega_D^3\). Derive \(C_V\) in the low-temperature limit.</p>
 <details><summary>Solution · Bose integral and T³ law</summary><div class="steps">
 <p>Thermal energy is</p>
@@ -94,16 +103,16 @@ C_V=\frac{\operatorname{Var}(E)}{k_BT^2}
 <p>Differentiate with respect to temperature:</p>
 \[\boxed{C_V\approx\frac{12\pi^4}{5}Nk_B\left(\frac T{\Theta_D}\right)^3}.\]
 <p>The low-temperature lattice heat capacity follows \(T^3\) in this 3D acoustic model; it is not the exponential form of Einstein's single-frequency approximation.</p>
-</div></details>
+</div></details><p class="units-check"><strong>Answer unit check:</strong> \(Nk_B(T/\Theta_D)^3\) is in \(\mathrm{J/K}\).</p>
 </section>
-<section class="lesson" id="problem6"><p class="tag">12.7 · Conceptual question</p><h2>Problem 6 · When does equipartition fail?</h2>
+<section class="lesson" id="problem6"><p class="tag">12.7 · Conceptual question</p><h2>Problem 6 · When does equipartition fail?</h2><p class="units-note"><strong>SI units:</strong> \(\hbar\omega,k_BT,U\) in \(\mathrm{J}\), \(C_V\) in \(\mathrm{J/K}\), and \(x=\hbar\omega/(k_BT)\) dimensionless.</p>
 <details><summary>Answer with quantitative oscillator example</summary><div class="steps">
 <p>Classical equipartition says each independent quadratic Hamiltonian term contributes \(k_BT/2\). For a <em>quantum</em> harmonic oscillator, however,</p>
 \[U=\hbar\omega\left(\frac12+\frac1{e^{\hbar\omega/(k_BT)}-1}\right).\]
 <p>At \(T\to0\), \(U\to\hbar\omega/2\), not zero, while \(C_V\to0\). At \(T\gg\hbar\omega/k_B\), \(U\to k_BT\) and \(C_V\to k_B\), as expected from the two classical quadratic terms. Therefore equipartition requires the relevant levels to be thermally dense and the classical quadratic model to apply.</p>
-</div></details>
+</div></details><p class="units-check"><strong>Answer unit check:</strong> The oscillator energy \(U\) is in \(\mathrm{J}\) and \(C_V\) in \(\mathrm{J/K}\).</p>
 </section>
-<section class="lesson" id="summary"><h2>Essential equation sheet</h2>
+<section class="lesson" id="summary"><h2>Essential equation sheet</h2><p class="units-note"><strong>SI units:</strong> Boltzmann \(k_B\) in \(\mathrm{J/K}\), \(h,\hbar\) in \(\mathrm{J\,s}\), wavelength \(\lambda_T\) in \(\mathrm{m}\), \(U,F,\mu,\epsilon\) in \(\mathrm{J}\), \(C_V\) in \(\mathrm{J/K}\).</p>
 <div class="equation">
 \[\begin{aligned}
 \beta&amp;=(k_BT)^{-1},\\

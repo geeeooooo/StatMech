@@ -14,9 +14,18 @@
 <div class="tools"><button id="smaller" type="button" aria-label="Decrease text size">A−</button><button id="larger" type="button" aria-label="Increase text size">A+</button><button id="expand" type="button">Show derivations</button><button id="collapse" type="button">Hide derivations</button></div>
 </div></header>
 <main id="main" class="shell">
-<nav class="chapter-jump" aria-label="Within chapter"><a href="#canonicalfluct">Canonical energy fluctuations and heat capacity</a><a href="#grandfluct">Grand canonical number fluctuations</a><a href="#susceptibility">Fluctuation–response and susceptibility</a><a href="#freeenergy">Free-energy minimization and phase coexistence</a><a href="#landau">Landau theory: a simple mean-field transition</a></nav>
+<nav class="chapter-jump" aria-label="Within chapter"><a href="#canonicalfluct">Canonical energy fluctuations and heat capacity</a><a href="#grandfluct">Grand canonical number fluctuations</a><a href="#susceptibility">Fluctuation–response and susceptibility</a><a href="#freeenergy">Free-energy minimization and phase coexistence</a><a href="#landau">Landau theory: a simple mean-field transition</a><a href="#si-units">SI units</a></nav><details class="si-guide" id="si-units"><summary>SI units &amp; fundamental constants</summary><div class="steps">
+<p><strong>Thermodynamics.</strong> Temperature \(T\) in kelvins \(\mathrm{K}\); internal energy \(U\), microstate energy \(E_i\), heat \(Q\), work \(W\), free energies and chemical potential \(\mu\) in joules \(\mathrm{J}\) (chemical potential is energy per particle); entropy \(S\) and heat capacity \(C_V,C_P\) in \(\mathrm{J/K}\); pressure \(P\) in pascals \(\mathrm{Pa}=\mathrm{J/m^3}\); volume \(V\) in \(\mathrm{m^3}\).</p>
+<p><strong>Statistical quantities.</strong> Particle count \(N\), multiplicity \(\Omega\), degeneracy \(g\), probability \(p_i\), occupation \(\bar n_i\), and properly normalized partition functions \(Z,\Xi\) are dimensionless; \(\beta=1/(k_BT)\) has units \(\mathrm{J^{-1}}\). Energy variance has units \(\mathrm{J^2}\).</p>
+<p><strong>Exact SI constants.</strong></p>
+\[\boxed{k_B=1.380649\times10^{-23}\ \mathrm{J/K}},\qquad
+\boxed{h=6.62607015\times10^{-34}\ \mathrm{J\,s}}\]
+<p>\(k_B\) (Boltzmann's constant) and \(h\) (Planck's constant) have exact defined SI values. The reduced Planck constant is \(\hbar=h/(2\pi)\approx1.054571817\times10^{-34}\ \mathrm{J\,s}\).</p>
+<p><strong>Quantum and gases.</strong> Mass \(m\) in \(\mathrm{kg}\); length \(L\), thermal wavelength \(\lambda_T\) in \(\mathrm{m}\); angular frequency \(\omega\) in \(\mathrm{rad/s}\); energy gap \(\Delta\), single-particle level \(\epsilon\) in \(\mathrm{J}\); speed \(v\) in \(\mathrm{m/s}\); number density \(n=N/V_d\) in \(\mathrm{m^{-d}}\) for \(d\) spatial dimensions.</p>
+<p><strong>Common distinctions.</strong> \(T\) in formulas for temperature is kelvins \(\mathrm{K}\); magnetic flux density \(B\) is in tesla \(\mathrm{T}\). A magnetic moment \(\mu_{\rm mag}\) has units \(\mathrm{J/T}\), different from chemical potential \(\mu\) in \(\mathrm{J}\). Logarithm/exponential arguments and quantities such as \(k_BT/(\hbar\omega)\) must be dimensionless.</p>
+</div></details>
 
-<section class="lesson" id="canonicalfluct"><p class="tag">11.1 · Energy variance</p><h2>Canonical energy fluctuations and heat capacity</h2>
+<section class="lesson" id="canonicalfluct"><p class="tag">11.1 · Energy variance</p><h2>Canonical energy fluctuations and heat capacity</h2><p class="units-note"><strong>SI units:</strong> Internal energy \(U\) in \(\mathrm{J}\), variance \(\operatorname{Var}(E)\) in \(\mathrm{J^2}\), \(C_V\) in \(\mathrm{J/K}\), \(\beta\) in \(\mathrm{J^{-1}}\).</p>
 <p>The canonical ensemble has fixed \(T,V,N\), but fluctuating energy. A derivative of \(\ln Z\) relates those microscopic fluctuations to the thermodynamic heat capacity.</p>
 <details open><summary>Derive \(\operatorname{Var}(E)=k_BT^2C_V\)</summary><div class="steps">
 <p>Start with \(Z=\sum_i e^{-\beta E_i}\) and \(U=\langle E\rangle=-\partial_\beta\ln Z\). First and second derivatives of \(Z\) are</p>
@@ -40,9 +49,9 @@ Z''=\sum_i E_i^2e^{-\beta E_i}.\]
 =\frac{\sqrt{\frac32N}\,k_BT}{\frac32Nk_BT}
 =\boxed{\sqrt{\frac{2}{3N}}}.\]
 <p>The relative fluctuations vanish as \(N^{-1/2}\) for macroscopic systems, helping explain why ensemble averages predict sharply defined thermodynamic observables.</p>
-</div></details>
+</div></details><p class="units-check"><strong>Answer unit check:</strong> \(\operatorname{Var}(E)\) is in \(\mathrm{J^2}\), while relative fluctuations are dimensionless.</p>
 </section>
-<section class="lesson" id="grandfluct"><p class="tag">11.2 · Particle variance</p><h2>Grand canonical number fluctuations</h2>
+<section class="lesson" id="grandfluct"><p class="tag">11.2 · Particle variance</p><h2>Grand canonical number fluctuations</h2><p class="units-note"><strong>SI units:</strong> Number \(N\) and \(\operatorname{Var}(N)\) dimensionless, chemical potential \(\mu\) and \(k_BT\) in \(\mathrm{J}\).</p>
 <details open><summary>Derive \(\operatorname{Var}(N)=k_BT(\partial N/\partial\mu)\)</summary><div class="steps">
 <p>In the grand canonical ensemble, \(\Xi=\sum_a e^{-\beta(E_a-\mu N_a)}\). Let \(u=\beta\mu\). Then</p>
 \[\frac{\partial\ln\Xi}{\partial u}=\langle N\rangle,\quad
@@ -56,7 +65,7 @@ Z''=\sum_i E_i^2e^{-\beta E_i}.\]
 <p><strong>Meaning:</strong> sensitivity of particle number to chemical potential is tied to the size of equilibrium number fluctuations.</p>
 </div></details>
 </section>
-<section class="lesson" id="susceptibility"><p class="tag">11.3 · Response theorem</p><h2>Fluctuation–response and susceptibility</h2>
+<section class="lesson" id="susceptibility"><p class="tag">11.3 · Response theorem</p><h2>Fluctuation–response and susceptibility</h2><p class="units-note"><strong>SI units:</strong> If \(M\) is a magnetic moment in \(\mathrm{J/T}\) and coupling \(h\) a field in tesla \(\mathrm{T}\), \(\chi=\partial M/\partial h\) is in \(\mathrm{J/T^2}\). This differs from dimensionless volume susceptibility.</p>
 <details open><summary>Derive \(\chi=\beta\,\operatorname{Var}(M)\)</summary><div class="steps">
 <p>Suppose an externally controlled field \(h\) couples to an observable \(M\) via the Hamiltonian \(H(h)=H_0-hM\), with \(M\) independent of \(h\). Then</p>
 \[Z(h)=\sum_i e^{-\beta(E_{0i}-hM_i)}.\]
@@ -77,9 +86,9 @@ Z''=\sum_i E_i^2e^{-\beta E_i}.\]
 <p>Differentiate once more:</p>
 \[\boxed{\chi=\beta\mu^2\,\operatorname{sech}^2(\beta\mu h)}.\]
 <p>At zero field, \(\chi_0=\mu^2/(k_BT)\); for \(N\) noninteracting identical spins multiply by \(N\). The inverse-temperature behavior is the Curie-law form for this simple model.</p>
-</div></details>
+</div></details><p class="units-check"><strong>Answer unit check:</strong> Total-moment susceptibility \(\chi\) is in \(\mathrm{J/T^2}\) for a magnetic field measured in tesla.</p>
 </section>
-<section class="lesson" id="freeenergy"><p class="tag">11.4 · Stability</p><h2>Free-energy minimization and phase coexistence</h2>
+<section class="lesson" id="freeenergy"><p class="tag">11.4 · Stability</p><h2>Free-energy minimization and phase coexistence</h2><p class="units-note"><strong>SI units:</strong> Gibbs energy \(G\) and \(\mu\,dN\) in \(\mathrm{J}\), \(T\) in \(\mathrm{K}\), \(P\) in \(\mathrm{Pa}\), chemical potential \(\mu\) in \(\mathrm{J}\) per particle.</p>
 <p>At fixed \(T,V,N\), a stable equilibrium minimizes Helmholtz \(F\) over accessible macroscopic configurations. At fixed \(T,P,N\), minimize Gibbs \(G\). Local stability requires appropriate positive curvature with respect to allowed order-parameter variations.</p>
 <details open><summary>Derive equality of chemical potentials in coexisting phases</summary><div class="steps">
 <p>Two phases \(\alpha,\beta\) are in thermal and mechanical equilibrium at the same \(T,P\), and may exchange particles while total \(N=N_\alpha+N_\beta\) remains fixed.</p>
@@ -92,7 +101,7 @@ Z''=\sum_i E_i^2e^{-\beta E_i}.\]
 <p>This is one chemical-equilibrium condition for coexisting phases, alongside equal temperature and pressure.</p>
 </div></details>
 </section>
-<section class="lesson" id="landau"><p class="tag">11.5 · Advanced extension</p><h2>Landau theory: a simple mean-field transition</h2>
+<section class="lesson" id="landau"><p class="tag">11.5 · Advanced extension</p><h2>Landau theory: a simple mean-field transition</h2><p class="units-note"><strong>SI units:</strong> Free energy \(F\) in \(\mathrm{J}\), critical temperature \(T_c\) in \(\mathrm{K}\). For dimensionless order parameter \(m\), \(a\) in \(\mathrm{J/K}\), \(b\) in \(\mathrm{J}\); this \(m\) is not mass.</p>
 <details><summary>Minimize an even fourth-order free-energy model</summary><div class="steps">
 <p>Consider an order parameter \(m\) and a phenomenological free energy, where \(a,b&gt;0\):</p>
 \[F(m,T)=F_0+\frac a2(T-T_c)m^2+\frac b4m^4.\]

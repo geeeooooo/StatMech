@@ -14,9 +14,18 @@
 <div class="tools"><button id="smaller" type="button" aria-label="Decrease text size">A−</button><button id="larger" type="button" aria-label="Increase text size">A+</button><button id="expand" type="button">Show derivations</button><button id="collapse" type="button">Hide derivations</button></div>
 </div></header>
 <main id="main" class="shell">
-<nav class="chapter-jump" aria-label="Within chapter"><a href="#meaning">What “low temperature” means</a><a href="#osc">Exact low/high \(T\) heat capacity in 1D–3D</a><a href="#box">Low-temperature freeze-out and classical continuum</a><a href="#gas">When are Bose and Fermi gases classical?</a><a href="#summary">Summary: which high-\(T\) law applies?</a></nav>
+<nav class="chapter-jump" aria-label="Within chapter"><a href="#meaning">What “low temperature” means</a><a href="#osc">Exact low/high \(T\) heat capacity in 1D–3D</a><a href="#box">Low-temperature freeze-out and classical continuum</a><a href="#gas">When are Bose and Fermi gases classical?</a><a href="#summary">Summary: which high-\(T\) law applies?</a><a href="#si-units">SI units</a></nav><details class="si-guide" id="si-units"><summary>SI units &amp; fundamental constants</summary><div class="steps">
+<p><strong>Thermodynamics.</strong> Temperature \(T\) in kelvins \(\mathrm{K}\); internal energy \(U\), microstate energy \(E_i\), heat \(Q\), work \(W\), free energies and chemical potential \(\mu\) in joules \(\mathrm{J}\) (chemical potential is energy per particle); entropy \(S\) and heat capacity \(C_V,C_P\) in \(\mathrm{J/K}\); pressure \(P\) in pascals \(\mathrm{Pa}=\mathrm{J/m^3}\); volume \(V\) in \(\mathrm{m^3}\).</p>
+<p><strong>Statistical quantities.</strong> Particle count \(N\), multiplicity \(\Omega\), degeneracy \(g\), probability \(p_i\), occupation \(\bar n_i\), and properly normalized partition functions \(Z,\Xi\) are dimensionless; \(\beta=1/(k_BT)\) has units \(\mathrm{J^{-1}}\). Energy variance has units \(\mathrm{J^2}\).</p>
+<p><strong>Exact SI constants.</strong></p>
+\[\boxed{k_B=1.380649\times10^{-23}\ \mathrm{J/K}},\qquad
+\boxed{h=6.62607015\times10^{-34}\ \mathrm{J\,s}}\]
+<p>\(k_B\) (Boltzmann's constant) and \(h\) (Planck's constant) have exact defined SI values. The reduced Planck constant is \(\hbar=h/(2\pi)\approx1.054571817\times10^{-34}\ \mathrm{J\,s}\).</p>
+<p><strong>Quantum and gases.</strong> Mass \(m\) in \(\mathrm{kg}\); length \(L\), thermal wavelength \(\lambda_T\) in \(\mathrm{m}\); angular frequency \(\omega\) in \(\mathrm{rad/s}\); energy gap \(\Delta\), single-particle level \(\epsilon\) in \(\mathrm{J}\); speed \(v\) in \(\mathrm{m/s}\); number density \(n=N/V_d\) in \(\mathrm{m^{-d}}\) for \(d\) spatial dimensions.</p>
+<p><strong>Common distinctions.</strong> \(T\) in formulas for temperature is kelvins \(\mathrm{K}\); magnetic flux density \(B\) is in tesla \(\mathrm{T}\). A magnetic moment \(\mu_{\rm mag}\) has units \(\mathrm{J/T}\), different from chemical potential \(\mu\) in \(\mathrm{J}\). Logarithm/exponential arguments and quantities such as \(k_BT/(\hbar\omega)\) must be dimensionless.</p>
+</div></details>
 
-<section class="lesson" id="meaning"><p class="tag">09.1 · Assumptions</p><h2>What “low temperature” means</h2>
+<section class="lesson" id="meaning"><p class="tag">09.1 · Assumptions</p><h2>What “low temperature” means</h2><p class="units-note"><strong>SI units:</strong> Gap \(\Delta\) and thermal energy \(k_BT\) in \(\mathrm{J}\), \(T\) in \(\mathrm{K}\); \(y=\Delta/(k_BT)\), \(n\lambda_T^d\) dimensionless.</p>
 <p>A system is quantum or classical relative to the energy scales of the states it can access; dimensionality alone is not sufficient. A discrete gap \(\Delta\) defines \(y=\Delta/(k_BT)\).</p>
 <div class="equation">\[\begin{aligned}
 k_BT\ll\Delta&amp;:\ \text{ground-state dominated},\\
@@ -24,7 +33,7 @@ k_BT\gg\Delta&amp;:\ \text{many levels accessible}.
 \end{aligned}\]</div>
 <p>For a many-particle gas, a further condition governs quantum degeneracy: \(n\lambda_T^d\) small or large (with density \(n=N/V_d\) and thermal wavelength \(\lambda_T=h/\sqrt{2\pi mk_BT}\)). At high temperature with \(n\lambda_T^d\ll1\), Bose/Fermi gases approach Maxwell–Boltzmann statistics.</p>
 </section>
-<section class="lesson" id="osc"><p class="tag">09.2 · Harmonic oscillators</p><h2>Exact low/high \(T\) heat capacity in 1D–3D</h2>
+<section class="lesson" id="osc"><p class="tag">09.2 · Harmonic oscillators</p><h2>Exact low/high \(T\) heat capacity in 1D–3D</h2><p class="units-note"><strong>SI units:</strong> Oscillator frequencies \(\omega_j\) in \(\mathrm{rad/s}\), quanta \(\hbar\omega_j\) and \(U_d\) in \(\mathrm{J}\), \(C_{V,d}\) in \(\mathrm{J/K}\), \(x_j\) dimensionless.</p>
 <details open><summary>Derive \(U\) and \(C_V\) for a 1D oscillator</summary><div class="steps">
 <p>Let \(x=\beta\hbar\omega\). For one oscillator,</p>
 \[Z=\frac{e^{-x/2}}{1-e^{-x}},\qquad
@@ -48,9 +57,9 @@ k_BT\gg\Delta&amp;:\ \text{many levels accessible}.
 <p>For \(d=2\), sum the \(x\) and \(y\) terms; for \(d=3\), also include \(z\). At \(T\to0\), \(U_d\to\frac12\sum_j\hbar\omega_j\) and \(C_{V,d}\to0\). At \(k_BT\gg\hbar\omega_j\) for <em>all</em> modes,</p>
 \[\boxed{U_d\to d\,k_BT,\qquad C_{V,d}\to d\,k_B}.\]
 <p>When frequencies differ greatly, one mode may be classical while another remains quantum: use the exact sum rather than imposing one limit on every mode.</p>
-</div></details>
+</div></details><p class="units-check"><strong>Answer unit check:</strong> The exact and limiting \(U_d\) are in \(\mathrm{J}\), \(C_{V,d}\) in \(\mathrm{J/K}\); \(x_j\) dimensionless.</p>
 </section>
-<section class="lesson" id="box"><p class="tag">09.3 · Particles in boxes</p><h2>Low-temperature freeze-out and classical continuum</h2>
+<section class="lesson" id="box"><p class="tag">09.3 · Particles in boxes</p><h2>Low-temperature freeze-out and classical continuum</h2><p class="units-note"><strong>SI units:</strong> Length \(L\) and wavelength \(\lambda_T\) in \(\mathrm{m}\); \(\epsilon,E_0,\Delta,U\) in \(\mathrm{J}\); \(C_V\) in \(\mathrm{J/K}\); \(Z\) dimensionless.</p>
 <details open><summary>Derive the ground state and first excitation gap in \(d\) dimensions</summary><div class="steps">
 <p>For one noninteracting particle in a \(d\)-dimensional cubic box of side \(L\), let \(\epsilon=\pi^2\hbar^2/(2mL^2)\). The energy is</p>
 \[E_{\mathbf n}=\epsilon\sum_{j=1}^d n_j^2,\qquad n_j=1,2,\ldots\]
@@ -76,9 +85,9 @@ k_BT\gg\Delta&amp;:\ \text{many levels accessible}.
 \[\boxed{U=-\partial_\beta\ln Z_d\approx\frac d{2\beta}=\frac d2 k_BT},\]
 \[\boxed{C_V\approx\frac d2k_B}.\]
 <p><strong>Dimension dependence:</strong> a free translational degree contributes \(k_BT/2\), whereas an oscillator degree (kinetic plus quadratic potential) contributes \(k_BT\) when classical.</p>
-</div></details>
+</div></details><p class="units-check"><strong>Answer unit check:</strong> \(E_0,\Delta,U\) are in \(\mathrm{J}\), \(C_V\) in \(\mathrm{J/K}\), and \(Z_d\sim(L/\lambda_T)^d\) dimensionless.</p>
 </section>
-<section class="lesson" id="gas"><p class="tag">09.4 · Quantum statistics</p><h2>When are Bose and Fermi gases classical?</h2>
+<section class="lesson" id="gas"><p class="tag">09.4 · Quantum statistics</p><h2>When are Bose and Fermi gases classical?</h2><p class="units-note"><strong>SI units:</strong> Orbital energy \(\epsilon\), chemical potential \(\mu\) in \(\mathrm{J}\); fugacity \(z\), occupation \(\bar n\), and \(n\lambda_T^d/g_s\) dimensionless.</p>
 <details><summary>Classical fugacity and occupation-number limit</summary><div class="steps">
 <p>For bosons or fermions at fugacity \(z=e^{\beta\mu}\), mean occupations are</p>
 \[\bar n_{\rm BE}=\frac1{z^{-1}e^{\beta\epsilon}-1},\qquad
@@ -90,7 +99,7 @@ k_BT\gg\Delta&amp;:\ \text{many levels accessible}.
 <p>where \(g_s\) is spin degeneracy and \(n=N/V_d\). Low \(T\) does <em>not</em> always imply all particles occupy a single state: fermions fill many levels up to the Fermi energy at \(T=0\).</p>
 </div></details>
 </section>
-<section class="lesson" id="summary"><h2>Summary: which high-\(T\) law applies?</h2>
+<section class="lesson" id="summary"><h2>Summary: which high-\(T\) law applies?</h2><p class="units-note"><strong>SI units:</strong> Internal energy \(U\) in \(\mathrm{J}\), heat capacity \(C_V\) in \(\mathrm{J/K}\); dimensionality \(d\) and quantum numbers dimensionless.</p>
 <div class="equation">\[\begin{array}{c|c|c}
 \text{One particle; }d\text{ dimensions}&amp;U_{\text{high }T}&amp;C_{V,\text{high }T}\\\hline
 \text{Free in box}&amp;\frac d2k_BT&amp;\frac d2 k_B\\

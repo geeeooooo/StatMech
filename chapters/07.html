@@ -14,14 +14,23 @@
 <div class="tools"><button id="smaller" type="button" aria-label="Decrease text size">A−</button><button id="larger" type="button" aria-label="Increase text size">A+</button><button id="expand" type="button">Show derivations</button><button id="collapse" type="button">Hide derivations</button></div>
 </div></header>
 <main id="main" class="shell">
-<nav class="chapter-jump" aria-label="Within chapter"><a href="#counting">Why occupation statistics differ</a><a href="#bose">Derive Bose–Einstein occupation</a><a href="#fermi">Derive Fermi–Dirac occupation</a><a href="#mb">Maxwell–Boltzmann from Bose and Fermi formulas</a><a href="#integrals">Particle number, energy and density of states</a><a href="#condensation">Bose–Einstein condensation in 3D</a></nav>
+<nav class="chapter-jump" aria-label="Within chapter"><a href="#counting">Why occupation statistics differ</a><a href="#bose">Derive Bose–Einstein occupation</a><a href="#fermi">Derive Fermi–Dirac occupation</a><a href="#mb">Maxwell–Boltzmann from Bose and Fermi formulas</a><a href="#integrals">Particle number, energy and density of states</a><a href="#condensation">Bose–Einstein condensation in 3D</a><a href="#si-units">SI units</a></nav><details class="si-guide" id="si-units"><summary>SI units &amp; fundamental constants</summary><div class="steps">
+<p><strong>Thermodynamics.</strong> Temperature \(T\) in kelvins \(\mathrm{K}\); internal energy \(U\), microstate energy \(E_i\), heat \(Q\), work \(W\), free energies and chemical potential \(\mu\) in joules \(\mathrm{J}\) (chemical potential is energy per particle); entropy \(S\) and heat capacity \(C_V,C_P\) in \(\mathrm{J/K}\); pressure \(P\) in pascals \(\mathrm{Pa}=\mathrm{J/m^3}\); volume \(V\) in \(\mathrm{m^3}\).</p>
+<p><strong>Statistical quantities.</strong> Particle count \(N\), multiplicity \(\Omega\), degeneracy \(g\), probability \(p_i\), occupation \(\bar n_i\), and properly normalized partition functions \(Z,\Xi\) are dimensionless; \(\beta=1/(k_BT)\) has units \(\mathrm{J^{-1}}\). Energy variance has units \(\mathrm{J^2}\).</p>
+<p><strong>Exact SI constants.</strong></p>
+\[\boxed{k_B=1.380649\times10^{-23}\ \mathrm{J/K}},\qquad
+\boxed{h=6.62607015\times10^{-34}\ \mathrm{J\,s}}\]
+<p>\(k_B\) (Boltzmann's constant) and \(h\) (Planck's constant) have exact defined SI values. The reduced Planck constant is \(\hbar=h/(2\pi)\approx1.054571817\times10^{-34}\ \mathrm{J\,s}\).</p>
+<p><strong>Quantum and gases.</strong> Mass \(m\) in \(\mathrm{kg}\); length \(L\), thermal wavelength \(\lambda_T\) in \(\mathrm{m}\); angular frequency \(\omega\) in \(\mathrm{rad/s}\); energy gap \(\Delta\), single-particle level \(\epsilon\) in \(\mathrm{J}\); speed \(v\) in \(\mathrm{m/s}\); number density \(n=N/V_d\) in \(\mathrm{m^{-d}}\) for \(d\) spatial dimensions.</p>
+<p><strong>Common distinctions.</strong> \(T\) in formulas for temperature is kelvins \(\mathrm{K}\); magnetic flux density \(B\) is in tesla \(\mathrm{T}\). A magnetic moment \(\mu_{\rm mag}\) has units \(\mathrm{J/T}\), different from chemical potential \(\mu\) in \(\mathrm{J}\). Logarithm/exponential arguments and quantities such as \(k_BT/(\hbar\omega)\) must be dimensionless.</p>
+</div></details>
 
-<section class="lesson" id="counting"><p class="tag">07.1 · Identical quantum particles</p><h2>Why occupation statistics differ</h2>
+<section class="lesson" id="counting"><p class="tag">07.1 · Identical quantum particles</p><h2>Why occupation statistics differ</h2><p class="units-note"><strong>SI units:</strong> Single-particle levels \(\epsilon_j\), chemical potential \(\mu\) in \(\mathrm{J}\); inverse temperature \(\beta\) in \(\mathrm{J^{-1}}\); occupations \(n_j\), fugacity \(z\), and \(\Xi\) dimensionless.</p>
 <p>For independent single-particle levels \(\epsilon_j\), a many-body microstate is specified by occupations \(n_j\). Bosons permit \(n_j=0,1,2,\ldots\); spinless fermions or one fermionic spin-orbital permit \(n_j=0,1\). The particle number and energy are \(N=\sum_jn_j\), \(E=\sum_jn_j\epsilon_j\).</p>
 <div class="equation">\[\boxed{\Xi=\prod_j\Xi_j},\qquad \Xi_j=\sum_{n_j}e^{-\beta(\epsilon_j-\mu)n_j}.\]</div>
 <p>Factorization assumes a noninteracting gas in the grand canonical ensemble. Different spin states correspond to different orbitals; a level of degeneracy \(g_j\) includes \(g_j\) independent orbitals.</p>
 </section>
-<section class="lesson" id="bose"><p class="tag">07.2 · Bosons</p><h2>Derive Bose–Einstein occupation</h2>
+<section class="lesson" id="bose"><p class="tag">07.2 · Bosons</p><h2>Derive Bose–Einstein occupation</h2><p class="units-note"><strong>SI units:</strong> Orbital energy \(\epsilon\) and \(\mu\) in \(\mathrm{J}\); \(T\) in \(\mathrm{K}\); exponent \(\beta(\epsilon-\mu)\) and mean occupation \(\bar n_{\rm BE}\) dimensionless.</p>
 <details open><summary>Grand sum over all nonnegative occupancies</summary><div class="steps">
 <p>Let \(y=e^{-\beta(\epsilon-\mu)}=ze^{-\beta\epsilon}\), with fugacity \(z=e^{\beta\mu}\). For a bosonic orbital,</p>
 \[\Xi_\epsilon=\sum_{n=0}^{\infty}y^n=\frac1{1-y}\qquad (y&lt;1).\]
@@ -33,7 +42,7 @@
 <p>For a finite-temperature ideal Bose gas, the fugacity must satisfy \(\mu&lt;\epsilon_0\), where \(\epsilon_0\) is the lowest one-particle energy, to keep the geometric sums finite. In thermodynamic-limit BEC the chemical potential approaches \(\epsilon_0\) from below.</p>
 </div></details>
 </section>
-<section class="lesson" id="fermi"><p class="tag">07.3 · Fermions</p><h2>Derive Fermi–Dirac occupation</h2>
+<section class="lesson" id="fermi"><p class="tag">07.3 · Fermions</p><h2>Derive Fermi–Dirac occupation</h2><p class="units-note"><strong>SI units:</strong> Fermi energy \(\epsilon_F\) in \(\mathrm{J}\); mean occupation \(\bar n_{\rm FD}\) dimensionless and bounded by one per spin-orbital.</p>
 <details open><summary>Grand sum over occupancy zero or one</summary><div class="steps">
 <p>For one fermionic orbital the allowed occupancies are 0 and 1, so</p>
 \[\Xi_\epsilon=1+y,\qquad y=e^{-\beta(\epsilon-\mu)}.\]
@@ -49,7 +58,7 @@
 <p>At zero temperature the chemical potential approaches the Fermi energy \(\epsilon_F\) of the fixed-density gas. Therefore the many-body ground state fills multiple single-particle orbitals rather than placing all fermions in the lowest orbital.</p>
 </div></details>
 </section>
-<section class="lesson" id="mb"><p class="tag">07.4 · Classical limit</p><h2>Maxwell–Boltzmann from Bose and Fermi formulas</h2>
+<section class="lesson" id="mb"><p class="tag">07.4 · Classical limit</p><h2>Maxwell–Boltzmann from Bose and Fermi formulas</h2><p class="units-note"><strong>SI units:</strong> Fugacity \(z\), occupation \(\bar n\), and \(n\lambda_T^d/g_s\) dimensionless; density \(n\) in \(\mathrm{m^{-d}}\), thermal wavelength \(\lambda_T\) in \(\mathrm{m}\).</p>
 <details open><summary>Show why the ±1 becomes negligible</summary><div class="steps">
 <p>Write \(y=e^{-\beta(\epsilon-\mu)}=ze^{-\beta\epsilon}\). The bosonic and fermionic mean occupancies are \(\bar n_{\rm BE}=y/(1-y)\) and \(\bar n_{\rm FD}=y/(1+y)\).</p>
 <p>When \(y\ll1\), expand \(1/(1\mp y)=1\pm y+O(y^2)\). To leading order,</p>
@@ -64,7 +73,7 @@ e^{-\beta(\epsilon-\mu)},&amp;\mathrm{MB\ (dilute)},\\[3pt]
 (e^{\beta(\epsilon-\mu)}+1)^{-1},&amp;\mathrm{FD}.
 \end{cases}}\]</div>
 </section>
-<section class="lesson" id="integrals"><p class="tag">07.5 · Thermodynamic sums</p><h2>Particle number, energy and density of states</h2>
+<section class="lesson" id="integrals"><p class="tag">07.5 · Thermodynamic sums</p><h2>Particle number, energy and density of states</h2><p class="units-note"><strong>SI units:</strong> Density of states \(g(\epsilon)\) in \(\mathrm{J^{-1}}\), differential \(d\epsilon\) in \(\mathrm{J}\); \(N\) a dimensionless count, internal energy \(U\) in \(\mathrm{J}\).</p>
 <p>For mean occupation \(\bar n(\epsilon)\), the ideal-gas sums are \(N=\sum_j\bar n_j\), \(U=\sum_j\epsilon_j\bar n_j\). In a large system, introduce a density of states \(g(\epsilon)\) that includes spin degeneracy:</p>
 \[\boxed{N=\int_0^\infty g(\epsilon)\bar n(\epsilon)\,d\epsilon},\quad
 \boxed{U=\int_0^\infty \epsilon\,g(\epsilon)\bar n(\epsilon)\,d\epsilon}.\]
@@ -78,16 +87,16 @@ e^{-\beta(\epsilon-\mu)},&amp;\mathrm{MB\ (dilute)},\\[3pt]
 <p>Divide the equations:</p>
 \[\boxed{U=\frac35N\epsilon_F}.\]
 <p>This is a many-particle quantum ground-state energy, not a zero-energy classical gas. The specific heat tends to zero as \(T\to0\), despite finite \(U\).</p>
-</div></details>
+</div></details><p class="units-check"><strong>Answer unit check:</strong> \(g(\epsilon)d\epsilon\) counts states; \(U=3N\epsilon_F/5\) has units \(\mathrm{J}\).</p>
 </section>
-<section class="lesson" id="condensation"><p class="tag">07.6 · Extension</p><h2>Bose–Einstein condensation in 3D</h2>
+<section class="lesson" id="condensation"><p class="tag">07.6 · Extension</p><h2>Bose–Einstein condensation in 3D</h2><p class="units-note"><strong>SI units:</strong> Critical temperature \(T_c\) in \(\mathrm{K}\), mass \(m\) in \(\mathrm{kg}\), density \(n\) in \(\mathrm{m^{-3}}\), \(\hbar\) in \(\mathrm{J\,s}\), and \(\zeta(3/2)\) dimensionless.</p>
 <details><summary>Sketch the ideal Bose-gas critical temperature</summary><div class="steps">
 <p>For a 3D uniform ideal gas of spinless bosons with ground energy set to zero, the maximum number of particles occupying excited states at temperature \(T\) occurs as \(\mu\to0^-\):</p>
 \[N_{\rm ex,max}=\frac V{\lambda_T^3}\zeta(3/2).\]
 <p>The onset of condensation occurs when \(N=N_{\rm ex,max}\). With \(n=N/V\) and \(\lambda_T=h/\sqrt{2\pi mk_BT}\), solve for \(T\):</p>
 \[\boxed{T_c=\frac{2\pi\hbar^2}{mk_B}\left(\frac n{\zeta(3/2)}\right)^{2/3}}.\]
 <p>Below \(T_c\), the excess particles occupy the lowest state macroscopically: \(N_0=N-N_{\rm ex}\) in the thermodynamic limit. This formula assumes a uniform, noninteracting, three-dimensional, spinless gas. The corresponding homogeneous ideal Bose gas does not have conventional finite-temperature BEC in 1D or 2D in the thermodynamic limit.</p>
-</div></details>
+</div></details><p class="units-check"><strong>Answer unit check:</strong> The quantity \(\hbar^2n^{2/3}/(mk_B)\) has units \(\mathrm{K}\), as required for \(T_c\).</p>
 </section>
 <div class="chapter-move"><a href="./06.html">← 06 Classical Ideal Gases and Equipartition</a><a href="./08.html">08 Density of States in 1D, 2D, and 3D →</a></div>
 <footer><p>MS Physics · Statistical Mechanics Field Notes</p><p>SI notation unless stated otherwise. Mathematical assumptions and conventions are identified in each derivation. Expand a proof to see its steps.</p><a href="../index.html">Back to contents</a></footer>

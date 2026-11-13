@@ -14,9 +14,18 @@
 <div class="tools"><button id="smaller" type="button" aria-label="Decrease text size">A−</button><button id="larger" type="button" aria-label="Increase text size">A+</button><button id="expand" type="button">Show derivations</button><button id="collapse" type="button">Hide derivations</button></div>
 </div></header>
 <main id="main" class="shell">
-<nav class="chapter-jump" aria-label="Within chapter"><a href="#einstein">Einstein model: partition function, \(U\), \(C_V\)</a><a href="#debyeDOS">Debye model and the phonon density of states</a><a href="#debyeCv">Debye internal energy and heat capacity</a><a href="#limits">Derive the \(T^3\) and Dulong–Petit limits</a><a href="#dimensions">Dimensional extension</a></nav>
+<nav class="chapter-jump" aria-label="Within chapter"><a href="#einstein">Einstein model: partition function, \(U\), \(C_V\)</a><a href="#debyeDOS">Debye model and the phonon density of states</a><a href="#debyeCv">Debye internal energy and heat capacity</a><a href="#limits">Derive the \(T^3\) and Dulong–Petit limits</a><a href="#dimensions">Dimensional extension</a><a href="#si-units">SI units</a></nav><details class="si-guide" id="si-units"><summary>SI units &amp; fundamental constants</summary><div class="steps">
+<p><strong>Thermodynamics.</strong> Temperature \(T\) in kelvins \(\mathrm{K}\); internal energy \(U\), microstate energy \(E_i\), heat \(Q\), work \(W\), free energies and chemical potential \(\mu\) in joules \(\mathrm{J}\) (chemical potential is energy per particle); entropy \(S\) and heat capacity \(C_V,C_P\) in \(\mathrm{J/K}\); pressure \(P\) in pascals \(\mathrm{Pa}=\mathrm{J/m^3}\); volume \(V\) in \(\mathrm{m^3}\).</p>
+<p><strong>Statistical quantities.</strong> Particle count \(N\), multiplicity \(\Omega\), degeneracy \(g\), probability \(p_i\), occupation \(\bar n_i\), and properly normalized partition functions \(Z,\Xi\) are dimensionless; \(\beta=1/(k_BT)\) has units \(\mathrm{J^{-1}}\). Energy variance has units \(\mathrm{J^2}\).</p>
+<p><strong>Exact SI constants.</strong></p>
+\[\boxed{k_B=1.380649\times10^{-23}\ \mathrm{J/K}},\qquad
+\boxed{h=6.62607015\times10^{-34}\ \mathrm{J\,s}}\]
+<p>\(k_B\) (Boltzmann's constant) and \(h\) (Planck's constant) have exact defined SI values. The reduced Planck constant is \(\hbar=h/(2\pi)\approx1.054571817\times10^{-34}\ \mathrm{J\,s}\).</p>
+<p><strong>Quantum and gases.</strong> Mass \(m\) in \(\mathrm{kg}\); length \(L\), thermal wavelength \(\lambda_T\) in \(\mathrm{m}\); angular frequency \(\omega\) in \(\mathrm{rad/s}\); energy gap \(\Delta\), single-particle level \(\epsilon\) in \(\mathrm{J}\); speed \(v\) in \(\mathrm{m/s}\); number density \(n=N/V_d\) in \(\mathrm{m^{-d}}\) for \(d\) spatial dimensions.</p>
+<p><strong>Common distinctions.</strong> \(T\) in formulas for temperature is kelvins \(\mathrm{K}\); magnetic flux density \(B\) is in tesla \(\mathrm{T}\). A magnetic moment \(\mu_{\rm mag}\) has units \(\mathrm{J/T}\), different from chemical potential \(\mu\) in \(\mathrm{J}\). Logarithm/exponential arguments and quantities such as \(k_BT/(\hbar\omega)\) must be dimensionless.</p>
+</div></details>
 
-<section class="lesson" id="einstein"><p class="tag">10.1 · Independent oscillators</p><h2>Einstein model: partition function, \(U\), \(C_V\)</h2>
+<section class="lesson" id="einstein"><p class="tag">10.1 · Independent oscillators</p><h2>Einstein model: partition function, \(U\), \(C_V\)</h2><p class="units-note"><strong>SI units:</strong> Angular frequency \(\omega_E\) in \(\mathrm{rad/s}\), \(\hbar\omega_E,U_E\) in \(\mathrm{J}\), Einstein temperature \(\Theta_E\) in \(\mathrm{K}\), heat capacity \(C_{V,E}\) in \(\mathrm{J/K}\).</p>
 <p>Model a solid with \(N\) atoms as \(3N\) independent identical quantum harmonic modes with a common frequency \(\omega_E\). The excitation number of each mode is \(n=0,1,2,\ldots\).</p>
 <details open><summary>Derive Einstein heat capacity from a geometric series</summary><div class="steps">
 <p>A mode has \(E_n=\hbar\omega_E(n+1/2)\). Its partition function is</p>
@@ -29,9 +38,9 @@
 <p>With \(dx/dT=-x/T\),</p>
 \[\boxed{C_{V,E}=3Nk_B\,x^2\frac{e^x}{(e^x-1)^2}}.\]
 <p>At \(T\ll\Theta_E\), \(C_{V,E}\approx3Nk_Bx^2e^{-x}\); at \(T\gg\Theta_E\), \(C_{V,E}\to3Nk_B\). The zero-point term \(3N\hbar\omega_E/2\) contributes to \(U_E\) but not \(C_{V,E}\).</p>
-</div></details>
+</div></details><p class="units-check"><strong>Answer unit check:</strong> \(3N\hbar\omega_E(\cdots)\) has units \(\mathrm{J}\), and \(C_{V,E}\) has \(\mathrm{J/K}\).</p>
 </section>
-<section class="lesson" id="debyeDOS"><p class="tag">10.2 · Continuum phonons</p><h2>Debye model and the phonon density of states</h2>
+<section class="lesson" id="debyeDOS"><p class="tag">10.2 · Continuum phonons</p><h2>Debye model and the phonon density of states</h2><p class="units-note"><strong>SI units:</strong> Angular frequencies \(\omega,\omega_D\) in \(\mathrm{rad/s}\), phonon DOS \(g_D(\omega)\) in inverse angular frequency (numerically \(\mathrm{s}\)), Debye temperature \(\Theta_D\) in \(\mathrm{K}\).</p>
 <p>Debye replaces identical-frequency Einstein modes with collective acoustic modes of different \(\omega\), approximated as linearly dispersing \(\omega=vk\) in an isotropic solid. Three polarizations are represented by an effective average velocity. Mode counting imposes a cutoff \(\omega_D\) so the total is \(3N\).</p>
 <details open><summary>Derive \(g(\omega)=9N\omega^2/\omega_D^3\)</summary><div class="steps">
 <p>In three spatial dimensions, the number of k-states in a spherical shell is proportional to \(4\pi k^2\,dk\). With \(\omega\propto k\), the frequency density of states therefore scales as \(g(\omega)=A\omega^2\).</p>
@@ -42,7 +51,7 @@
 <p>Define Debye temperature \(\Theta_D=\hbar\omega_D/k_B\).</p>
 </div></details>
 </section>
-<section class="lesson" id="debyeCv"><p class="tag">10.3 · Derivation</p><h2>Debye internal energy and heat capacity</h2>
+<section class="lesson" id="debyeCv"><p class="tag">10.3 · Derivation</p><h2>Debye internal energy and heat capacity</h2><p class="units-note"><strong>SI units:</strong> Debye thermal energy \(U_{\rm th}\) in \(\mathrm{J}\), heat capacity \(C_{V,D}\) in \(\mathrm{J/K}\), \(T,\Theta_D\) in \(\mathrm{K}\), variable \(x=\hbar\omega/(k_BT)\) dimensionless.</p>
 <details open><summary>Convert the frequency integral to the Debye function</summary><div class="steps">
 <p>A phonon mode of frequency \(\omega\) has thermal mean energy \(\hbar\omega/(e^{\beta\hbar\omega}-1)\), in addition to its temperature-independent zero-point contribution. Sum the thermal portions over \(g_D(\omega)\):</p>
 \[U_{\rm th}=\int_0^{\omega_D}g_D(\omega)\frac{\hbar\omega}{e^{\beta\hbar\omega}-1}\,d\omega.\]
@@ -56,7 +65,7 @@
 <p>The last form follows by differentiating each mode's Bose occupation under the integral; it is equivalent to differentiating the expression for \(U_{\rm th}\) with a moving upper limit.</p>
 </div></details>
 </section>
-<section class="lesson" id="limits"><p class="tag">10.4 · Asymptotics</p><h2>Derive the \(T^3\) and Dulong–Petit limits</h2>
+<section class="lesson" id="limits"><p class="tag">10.4 · Asymptotics</p><h2>Derive the \(T^3\) and Dulong–Petit limits</h2><p class="units-note"><strong>SI units:</strong> \(U_{\rm th}\) in \(\mathrm{J}\); \(C_V\) in \(\mathrm{J/K}\), \(T,\Theta_D\) in \(\mathrm{K}\), ratio \(T/\Theta_D\) dimensionless.</p>
 <details open><summary>Low-temperature Debye \(T^3\) law</summary><div class="steps">
 <p>If \(T\ll\Theta_D\), the upper limit \(\Theta_D/T\to\infty\). The convergent Bose integral becomes</p>
 \[\int_0^\infty\frac{x^3}{e^x-1}dx
@@ -73,9 +82,9 @@
 \[U_{\rm th}\approx\int_0^{\omega_D}g_D(\omega)\,k_BT\,d\omega=3Nk_BT.\]
 \[\boxed{C_{V,D}\to3Nk_B}.\]
 <p>This is the Dulong–Petit law; it is shared by Einstein and Debye models in their classical high-temperature limits.</p>
-</div></details>
+</div></details><p class="units-check"><strong>Answer unit check:</strong> Debye heat capacities have units \(\mathrm{J/K}\); \((T/\Theta_D)^3\) is dimensionless.</p>
 </section>
-<section class="lesson" id="dimensions"><h2>Dimensional extension</h2><div class="equation">
+<section class="lesson" id="dimensions"><h2>Dimensional extension</h2><p class="units-note"><strong>SI units:</strong> Spatial dimension \(d\) dimensionless, \(g_d(\omega)\) in inverse angular frequency, \(U_{\rm th}\) in \(\mathrm{J}\), \(C_V\) in \(\mathrm{J/K}\).</p><div class="equation">
 <p>For acoustic phonons with linear dispersion in an idealized \(d\)-dimensional continuum, \(g_d(\omega)\propto\omega^{d-1}\). The thermal energy scales as \(U_{\rm th}\propto T^{d+1}\) at sufficiently low temperatures, so \(C_V\propto T^d\). Actual low-dimensional materials may have flexural modes, anisotropy, and finite-size effects that alter this scaling.</p></div>
 </section>
 <div class="chapter-move"><a href="./09.html">← 09 Quantum-to-Classical Temperature Limits</a><a href="./11.html">11 Fluctuations and Phase Behavior →</a></div>
